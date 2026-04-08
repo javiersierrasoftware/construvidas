@@ -1,0 +1,12 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/admin/products/route.js")
+R.c("server/chunks/8faab_next_bd93282c._.js")
+R.c("server/chunks/8faab_lodash_8b25211e._.js")
+R.c("server/chunks/8faab_cloudinary_72bbdf96._.js")
+R.c("server/chunks/8faab_next-auth_deabcca4._.js")
+R.c("server/chunks/8faab_openid-client_a6841749._.js")
+R.c("server/chunks/8faab_acd06f1d._.js")
+R.c("server/chunks/[root-of-the-server]__93df3763._.js")
+R.c("server/chunks/[root-of-the-server]__17a8bfc7._.js")
+R.c("server/chunks/44d49__next-internal_server_app_api_admin_products_route_actions_cbea4557.js")
+R.m("[project]/Software/construvidas/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Software/construvidas/src/app/api/admin/products/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/Software/construvidas/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Software/construvidas/src/app/api/admin/products/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

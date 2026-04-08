@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-gobold: 'Oswald', sans-serif;
+    --font-caviar: 'Montserrat', sans-serif;
+  }
+}
+
+body {
+  @apply text-slate-900 min-h-screen;
+  background-color: #ffffff; /* Pure white as requested */
+}

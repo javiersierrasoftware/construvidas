@@ -1,0 +1,3 @@
+module.exports=[83958,a=>{"use strict";var b=a.i(11753),c=a.i(54015);function d({productId:a,name:d,price:e,image:f}){let g=(0,c.useCartStore)(a=>a.addItem);return(0,b.jsx)("button",{onClick:()=>{g({productId:a,name:d,price:e,image:f||"/placeholder-image.jpg"})},className:"bg-gradient-to-br from-cyan-300 to-orange-300  text-black font-bold px-8 py-3 rounded-full mt-6",children:"Agregar al carrito"})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=Software_construvidas_src_components_store_AddToCartButton_tsx_dddcad00._.js.map

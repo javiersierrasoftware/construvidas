@@ -1,0 +1,12 @@
+var R=require("../../../../../chunks/[turbopack]_runtime.js")("server/app/api/admin/hero-slider/[id]/route.js")
+R.c("server/chunks/6efc9_next_4b1d13bf._.js")
+R.c("server/chunks/6efc9_next-auth_f2ea5aa5._.js")
+R.c("server/chunks/6efc9_openid-client_8969738a._.js")
+R.c("server/chunks/6efc9_eb0963da._.js")
+R.c("server/chunks/6efc9_lodash_89625ce8._.js")
+R.c("server/chunks/6efc9_cloudinary_ad8bf4cb._.js")
+R.c("server/chunks/[root-of-the-server]__74709f22._.js")
+R.c("server/chunks/[root-of-the-server]__75000528._.js")
+R.c("server/chunks/bf651__next-internal_server_app_api_admin_hero-slider_[id]_route_actions_9f2dc1e4.js")
+R.m("[project]/Projects/en gravity/tritonweb/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Projects/en gravity/tritonweb/src/app/api/admin/hero-slider/[id]/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/Projects/en gravity/tritonweb/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Projects/en gravity/tritonweb/src/app/api/admin/hero-slider/[id]/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

@@ -1,0 +1,178 @@
+"use client";
+
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Calendar, Clock, MapPin, Users, CreditCard } from "lucide-react";
+import { openRegistration } from "@/utils/registration";
+
+export default function EventsSection() {
+  const [events, setEvents] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchEvents() {
+      try {
+        // Obtenemos solo los 3 eventos más próximos
+        const res = await fetch("/api/events?limit=3");
+        if (res.ok) {
+          const data = await res.json();
+          setEvents(data);
+        }
+      } catch (error) {
+        console.error("Error cargando eventos para la sección principal:", error);
+      }
+    }
+    fetchEvents();
+  }, []);
+
+  return (
+    <section className="w-full" id="eventos">
+      {/* CONTENEDOR PRINCIPAL – IGUAL QUE FEED */}
+      <div className="max-w-6xl mx-auto px-4">
+        {/* TITULO */}
+        <div className="flex flex-col gap-3 mb-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              src="/construvidastransparente.png"
+              alt="logo"
+              className="h-7 w-7 object-contain"
+            />
+            <div>
+              <h2 className="text-2xl font-bold">Eventos CONSTRUVIDAS</h2>
+              <p className="text-slate-700 text-sm">
+                Próximas carreras, fondos y entrenamientos especiales
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2 text-xs">
+            {/* A futuro: este botón puede ser solo para ADMIN */}
+            <Link
+              href="/events/create"
+              className="inline-flex items-center gap-2 bg-gradient-to-br from-secondary-400 to-accent-400 text-black font-semibold px-4 py-2 rounded-full"
+            >
+              Crear evento (ADMIN)
+            </Link>
+
+            <Link
+              href="/events/request"
+              className="inline-flex items-center gap-2 border border-secondary-400/60 text-secondary-400 px-4 py-2 rounded-full bg-secondary-400/5"
+            >
+              Soy organizador, quiero publicar mi evento
+            </Link>
+          </div>
+        </div>
+
+        {/* LISTA DE EVENTOS */}
+        <div className="space-y-6">
+          {events.map((event) => {
+            let isRegistrationClosed = false;
+            if (event.maxRegistrationDate) {
+              const now = new Date();
+              const deadline = new Date(event.maxRegistrationDate);
+
+              if (event.maxRegistrationTime) {
+                const [hours, minutes] = event.maxRegistrationTime.split(":").map(Number);
+                deadline.setUTCHours(hours, minutes, 0, 0);
+              } else {
+                deadline.setUTCHours(23, 59, 59, 999);
+              }
+
+              if (now > deadline) {
+                isRegistrationClosed = true;
+              }
+            }
+
+            return (
+              <article
+                key={event.id || event._id}
+                className="bg-[#111] border border-white/5 rounded-2xl px-4 py-4
+                         flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+              >
+                {/* IZQUIERDA */}
+                <div className="flex items-start gap-3">
+                  <div
+                    className="h-10 w-10 rounded-xl bg-gradient-to-br 
+                                from-secondary-400 to-accent-400 
+                                flex items-center justify-center"
+                  >
+                    <Calendar className="text-black" size={22} />
+                  </div>
+
+                  <div>
+                    <Link
+                      href={`/events/${event._id || event.id}`}
+                      className="text-sm font-semibold hover:underline text-slate-900"
+                    >
+                      {event.name}
+                    </Link>
+
+                    <div className="flex flex-wrap items-center gap-3 mt-1 text-xs text-slate-700">
+                      <span className="inline-flex items-center gap-1">
+                        <Clock size={12} />
+                        {new Date(event.date).toLocaleDateString("es-CO", {
+                          month: "long",
+                          day: "numeric",
+                        })} · {event.time}
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <MapPin size={12} />
+                        {event.location}
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <Users size={12} />
+                        Cupos: {event.slotsLeft}
+                      </span>
+                    </div>
+
+                    <p className="mt-1 text-xs text-slate-800">
+                      Distancia:{" "}
+                      <span className="font-semibold">{event.distance}</span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* DERECHA */}
+                <div className="flex flex-col items-end gap-2 text-xs">
+                  <Link
+                    href={`/events/${event._id || event.id}`}
+                    className="text-xs text-secondary-400 hover:underline font-semibold"
+                  >
+                    Ver detalles
+                  </Link>
+
+                  <span className="px-2 py-1 rounded-full bg-white/5 text-slate-800">
+                    {event.type}
+                  </span>
+
+                  {event.price && (
+                    <span className="inline-flex items-center gap-1 text-secondary-400 font-semibold">
+                      <CreditCard size={12} />
+                      {event.price === "0" || event.price.toLowerCase() === "gratis"
+                        ? "Gratis"
+                        : event.price}
+                    </span>
+                  )}
+
+                  {isRegistrationClosed ? (
+                    <span className="mt-1 inline-flex items-center gap-2 bg-red-500/10 text-red-500 border border-red-500/20 px-4 py-1.5 rounded-full text-xs font-semibold">
+                      Cerrado
+                    </span>
+                  ) : (
+                    <button
+                      onClick={() => openRegistration(event.id || event._id, event.distance)}
+                      className="mt-1 inline-flex items-center gap-2 bg-gradient-to-br 
+                               from-secondary-400 to-accent-400 text-black 
+                               font-semibold px-4 py-1.5 rounded-full text-xs hover:opacity-90"
+                    >
+                      Inscribirme
+                    </button>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

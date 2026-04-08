@@ -1,0 +1,12 @@
+var R=require("../../../../../chunks/[turbopack]_runtime.js")("server/app/api/events/admin/[id]/route.js")
+R.c("server/chunks/6efc9_next_71d8313b._.js")
+R.c("server/chunks/6efc9_lodash_89625ce8._.js")
+R.c("server/chunks/6efc9_cloudinary_ad8bf4cb._.js")
+R.c("server/chunks/6efc9_next-auth_f2ea5aa5._.js")
+R.c("server/chunks/6efc9_openid-client_8969738a._.js")
+R.c("server/chunks/6efc9_eb0963da._.js")
+R.c("server/chunks/[root-of-the-server]__f209e7d2._.js")
+R.c("server/chunks/[root-of-the-server]__00a1882d._.js")
+R.c("server/chunks/bf651__next-internal_server_app_api_events_admin_[id]_route_actions_ae544c4f.js")
+R.m("[project]/Projects/en gravity/tritonweb/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Projects/en gravity/tritonweb/src/app/api/events/admin/[id]/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/Projects/en gravity/tritonweb/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Projects/en gravity/tritonweb/src/app/api/events/admin/[id]/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

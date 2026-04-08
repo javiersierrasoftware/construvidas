@@ -1,0 +1,3 @@
+{
+  "/api/stories/bulk-delete/route": "app/api/stories/bulk-delete/route.js"
+}

@@ -1,0 +1,3 @@
+{
+  "/api/webhooks/wompi/route": "app/api/webhooks/wompi/route.js"
+}

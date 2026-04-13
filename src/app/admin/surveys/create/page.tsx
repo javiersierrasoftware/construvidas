@@ -247,3 +247,11 @@ function CreateSurveyPageContent() {
     </main>
   );
 }
+
+export default function CreateSurveyPage() {
+  return (
+    <AdminAuthGuard>
+      <CreateSurveyPageContent />
+    </AdminAuthGuard>
+  );
+}

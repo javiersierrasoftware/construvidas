@@ -120,3 +120,11 @@ function AdminSurveysPageContent() {
     </main>
   );
 }
+
+export default function AdminSurveysPage() {
+  return (
+    <AdminAuthGuard>
+      <AdminSurveysPageContent />
+    </AdminAuthGuard>
+  );
+}

@@ -81,23 +81,6 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$mongoose$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs, [project]/Software/construvidas/node_modules/mongoose)");
 ;
-const RegistrationPeriodSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$mongoose$29$__["Schema"]({
-    label: {
-        type: String,
-        required: true
-    },
-    startDate: {
-        type: Date,
-        required: true
-    },
-    endDate: {
-        type: Date,
-        required: true
-    },
-    price: {
-        type: String
-    }
-});
 const EventSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$mongoose$29$__["Schema"]({
     slug: {
         type: String,
@@ -113,6 +96,13 @@ const EventSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoo
         ],
         trim: true
     },
+    ministry: {
+        type: String,
+        required: [
+            true,
+            "El ministerio es obligatorio."
+        ]
+    },
     description: {
         type: String,
         trim: true
@@ -123,12 +113,6 @@ const EventSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoo
             true,
             "La fecha es obligatoria."
         ]
-    },
-    maxRegistrationDate: {
-        type: Date
-    },
-    maxRegistrationTime: {
-        type: String
     },
     time: {
         type: String,
@@ -145,62 +129,22 @@ const EventSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoo
         ],
         trim: true
     },
-    type: {
-        type: String,
-        required: true,
-        enum: [
-            "Carrera",
-            "Triatlón",
-            "Ciclismo",
-            "Comunidad",
-            "Entrenamiento",
-            "Otro"
-        ]
+    maxRegistrationDate: {
+        type: Date
     },
-    distance: {
+    maxRegistrationTime: {
         type: String
-    },
-    distances: {
-        type: [
-            String
-        ],
-        default: []
-    },
-    category: {
-        type: [
-            String
-        ],
-        default: []
-    },
-    minAge: {
-        type: Number,
-        min: 0
-    },
-    maxAge: {
-        type: Number,
-        min: 0
-    },
-    shirtSizes: {
-        type: [
-            String
-        ],
-        default: []
     },
     price: {
-        type: String
-    },
-    slotsLeft: {
         type: Number,
         default: 0
     },
     image: {
         type: String
     },
-    registrationPeriods: {
-        type: [
-            RegistrationPeriodSchema
-        ],
-        default: []
+    active: {
+        type: Boolean,
+        default: true
     },
     createdBy: {
         type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$mongoose$29$__["Schema"].Types.ObjectId,

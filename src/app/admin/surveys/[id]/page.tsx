@@ -5,6 +5,8 @@ import { useRouter, useParams } from "next/navigation";
 import { Plus, Trash2, GripVertical, Save, ArrowLeft, Type, List, CheckCircle2, Eye } from "lucide-react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
+import { generateSlug } from "@/lib/slugs";
+import AdminAuthGuard from "@/components/auth/AdminAuthGuard";
 
 type QuestionType = 'text' | 'radio' | 'select' | 'multiple';
 
@@ -24,6 +26,7 @@ export default function EditSurveyPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [active, setActive] = useState(true);
+  const [slug, setSlug] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
 
   useEffect(() => {
@@ -34,6 +37,7 @@ export default function EditSurveyPage() {
         if (res.ok) {
           setTitle(data.title);
           setDescription(data.description || "");
+          setSlug(data.slug || "");
           setQuestions(data.questions || []);
           setActive(data.active);
         } else {
@@ -102,7 +106,7 @@ export default function EditSurveyPage() {
       const res = await fetch(`/api/admin/surveys/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, description, questions, active: isPublic }),
+        body: JSON.stringify({ title, description, slug, questions, active: isPublic }),
       });
 
       if (res.ok) {
@@ -148,16 +152,33 @@ export default function EditSurveyPage() {
         {/* HEADER SECTION */}
         <div className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-sm border-t-[12px] border-t-secondary-500">
            <div className="flex justify-between items-start mb-4">
+            <div className="flex-1">
               <input
                 type="text"
                 placeholder="Título de la Encuesta"
-                className="flex-1 text-4xl font-gobold text-slate-900 uppercase tracking-tight border-none outline-none placeholder:text-slate-200"
+                className="w-full text-4xl font-gobold text-slate-900 uppercase tracking-tight border-none outline-none placeholder:text-slate-200"
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                  if (!slug) {
+                    setSlug(generateSlug(e.target.value));
+                  }
+                }}
               />
-              <Link href={`/surveys/${id}`} target="_blank" className="p-3 bg-slate-50 text-slate-400 hover:text-secondary-500 rounded-full transition shadow-sm" title="Vista previa">
-                <Eye size={20} />
-              </Link>
+              <div className="flex items-center gap-2 mt-2">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Enlace: /surveys/</span>
+                <input
+                  type="text"
+                  placeholder="nombre-corto"
+                  className="text-xs font-bold text-secondary-600 outline-none border-b border-secondary-100 focus:border-secondary-500 bg-transparent"
+                  value={slug}
+                  onChange={(e) => setSlug(generateSlug(e.target.value))}
+                />
+              </div>
+            </div>
+            <Link href={`/surveys/${slug || id}`} target="_blank" className="p-3 bg-slate-50 text-slate-400 hover:text-secondary-500 rounded-full transition shadow-sm" title="Vista previa">
+              <Eye size={20} />
+            </Link>
            </div>
           <textarea
             placeholder="Descripción (opcional)"

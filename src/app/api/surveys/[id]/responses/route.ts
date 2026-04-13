@@ -7,12 +7,14 @@ import { isValidObjectId } from "mongoose";
 export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    if (!isValidObjectId(id)) {
-      return NextResponse.json({ message: "ID no válido" }, { status: 400 });
-    }
-
     await connectDB();
-    const survey = await Survey.findById(id);
+
+    let survey;
+    if (isValidObjectId(id)) {
+      survey = await Survey.findById(id);
+    } else {
+      survey = await Survey.findOne({ slug: id });
+    }
 
     if (!survey || !survey.active) {
       return NextResponse.json({ message: "Encuesta no disponible" }, { status: 404 });
@@ -25,7 +27,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     }
 
     const newResponse = new SurveyResponse({
-      surveyId: id,
+      surveyId: survey._id,
       answers
     });
 

@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Trash2, Edit3, BarChart2, Share2, Clipboard } from "lucide-react";
+import AdminAuthGuard from "@/components/auth/AdminAuthGuard";
 
-export default function AdminSurveysPage() {
+function AdminSurveysPageContent() {
   const [surveys, setSurveys] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,8 +39,9 @@ export default function AdminSurveysPage() {
     }
   };
 
-  const copyToClipboard = (id: string) => {
-    const url = `${window.location.origin}/surveys/${id}`;
+  const copyToClipboard = (survey: any) => {
+    const identifier = survey.slug || survey._id;
+    const url = `${window.location.origin}/surveys/${identifier}`;
     navigator.clipboard.writeText(url);
     alert("¡Enlace copiado al portapapeles!");
   };
@@ -81,7 +83,7 @@ export default function AdminSurveysPage() {
                     {survey.active ? "Activa" : "Cerrada"}
                   </span>
                   <div className="flex gap-2">
-                    <button onClick={() => copyToClipboard(survey._id)} className="p-2 text-slate-400 hover:text-slate-900 transition" title="Copiar enlace público">
+                    <button onClick={() => copyToClipboard(survey)} className="p-2 text-slate-400 hover:text-slate-900 transition" title="Copiar enlace público">
                       <Share2 size={18} />
                     </button>
                     <button onClick={() => handleDelete(survey._id)} className="p-2 text-slate-400 hover:text-red-500 transition" title="Eliminar encuesta">

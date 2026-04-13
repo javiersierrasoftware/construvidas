@@ -2,20 +2,20 @@
   "devFiles": [],
   "ampDevFiles": [],
   "polyfillFiles": [
-    "static/chunks/6efc9_next_dist_build_polyfills_polyfill-nomodule.js"
+    "static/chunks/8faab_next_dist_build_polyfills_polyfill-nomodule.js"
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_cc651d63._.js",
-    "static/chunks/6efc9_next_dist_compiled_react-dom_8dca4fec._.js",
-    "static/chunks/6efc9_next_dist_compiled_react-server-dom-turbopack_a4e55e1c._.js",
-    "static/chunks/6efc9_next_dist_compiled_next-devtools_index_3ed9d496.js",
-    "static/chunks/6efc9_next_dist_compiled_8624d153._.js",
-    "static/chunks/6efc9_next_dist_client_4980d8a4._.js",
-    "static/chunks/6efc9_next_dist_5b100419._.js",
-    "static/chunks/6efc9_@swc_helpers_cjs_a796387c._.js",
-    "static/chunks/Projects_en gravity_tritonweb_a0ff3932._.js",
-    "static/chunks/turbopack-Projects_en gravity_tritonweb_e0b8a9d9._.js"
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_2ae55892._.js",
+    "static/chunks/8faab_next_dist_compiled_react-dom_c1d68409._.js",
+    "static/chunks/8faab_next_dist_compiled_react-server-dom-turbopack_ccd8f75d._.js",
+    "static/chunks/8faab_next_dist_compiled_next-devtools_index_39a14ebf.js",
+    "static/chunks/8faab_next_dist_compiled_f1a6e5cf._.js",
+    "static/chunks/8faab_next_dist_client_8ba8f3b3._.js",
+    "static/chunks/8faab_next_dist_2fbc4f17._.js",
+    "static/chunks/8faab_@swc_helpers_cjs_5fbc8407._.js",
+    "static/chunks/Software_construvidas_a0ff3932._.js",
+    "static/chunks/turbopack-Software_construvidas_10b8036c._.js"
   ],
   "pages": {},
   "ampFirstPages": []

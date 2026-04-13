@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { Plus, Trash2, GripVertical, Save, ArrowLeft, Type, List, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
+import { generateSlug } from "@/lib/slugs";
+import AdminAuthGuard from "@/components/auth/AdminAuthGuard";
 
 type QuestionType = 'text' | 'radio' | 'select' | 'multiple';
 
@@ -16,11 +18,12 @@ interface Question {
   required: boolean;
 }
 
-export default function CreateSurveyPage() {
+function CreateSurveyPageContent() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [slug, setSlug] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
 
   const addQuestion = (type: QuestionType) => {
@@ -76,7 +79,7 @@ export default function CreateSurveyPage() {
       const res = await fetch("/api/admin/surveys", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, description, questions, active: isPublic }),
+        body: JSON.stringify({ title, description, slug, questions, active: isPublic }),
       });
 
       if (res.ok) {
@@ -123,10 +126,25 @@ export default function CreateSurveyPage() {
           <input
             type="text"
             placeholder="Título de la Encuesta"
-            className="w-full text-4xl font-gobold text-slate-900 uppercase tracking-tight border-none outline-none placeholder:text-slate-200 mb-4"
+            className="w-full text-4xl font-gobold text-slate-900 uppercase tracking-tight border-none outline-none placeholder:text-slate-200 mb-2"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => {
+              setTitle(e.target.value);
+              if (!slug || slug === generateSlug(title)) {
+                setSlug(generateSlug(e.target.value));
+              }
+            }}
           />
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Enlace: /surveys/</span>
+            <input
+              type="text"
+              placeholder="nombre-corto"
+              className="text-xs font-bold text-secondary-600 outline-none border-b border-secondary-100 focus:border-secondary-500 bg-transparent"
+              value={slug}
+              onChange={(e) => setSlug(generateSlug(e.target.value))}
+            />
+          </div>
           <textarea
             placeholder="Descripción (opcional)"
             className="w-full text-slate-500 outline-none border-none resize-none placeholder:text-slate-300"

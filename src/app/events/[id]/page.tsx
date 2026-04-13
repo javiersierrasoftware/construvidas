@@ -1,232 +1,171 @@
 import { connectDB } from "@/lib/mongodb";
 import Event from "@/models/Event";
+import { Calendar, Clock, MapPin, Tag, Info, ArrowLeft, Share2 } from "lucide-react";
 import Image from "next/image";
-import { isValidObjectId } from "mongoose";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cookies } from "next/headers";
-import jwt from "jsonwebtoken";
-import { Calendar, Clock, MapPin, Tag, Users, Award, Pencil, CreditCard } from "lucide-react";
-import RegistrationButton from "@/components/events/RegistrationButton";
-import QRCode from 'react-qr-code';
-
-interface DecodedToken {
-  id: string;
-  role: string;
-  [key: string]: any;
-}
-
-interface EventDetailPageProps {
-  params: Promise<{
-    id: string;
-  }>;
-}
+import QRCode from "react-qr-code";
 
 async function getEvent(id: string) {
-  if (!isValidObjectId(id)) {
-    return null;
-  }
   await connectDB();
-  // lean() convierte el documento de Mongoose a un objeto JS plano
   const event = await Event.findById(id).lean();
-  return event;
+  return JSON.parse(JSON.stringify(event));
 }
 
-export default async function EventDetailPage({ params }: EventDetailPageProps) {
+export default async function EventDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const event = await getEvent(id);
-
-  const cookieStore = await cookies();
-  const tokenCookie = cookieStore.get("construvidas_session_token");
-  let isAdmin = false;
-  let isLoggedIn = false;
-
-  if (tokenCookie) {
-    try {
-      const token = jwt.verify(tokenCookie.value, process.env.JWT_SECRET!) as DecodedToken;
-      if (token.role === "ADMIN") {
-        isAdmin = true;
-      }
-      isLoggedIn = true;
-    } catch (error) {
-      // Token inválido o expirado, el usuario no es admin
-    }
-  }
 
   if (!event) {
     notFound();
   }
 
-  /* ------------------- FORMATEO DE FECHA (UTC) ------------------- */
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("es-CO", {
       weekday: "long",
       year: "numeric",
       month: "long",
       day: "numeric",
-      timeZone: "UTC", // Forzar UTC para evitar desfase de día
+      timeZone: "UTC",
     });
   };
 
-  /* ------------------- FORMATEO DE HORA (AM/PM) ------------------- */
   const formatTime = (timeStr?: string) => {
     if (!timeStr) return "";
-    // Se asume formato "HH:mm" (24h)
     const [hours, minutes] = timeStr.split(":").map(Number);
     if (isNaN(hours) || isNaN(minutes)) return timeStr;
-
     const ampm = hours >= 12 ? "PM" : "AM";
     const h12 = hours % 12 || 12;
     return `${h12}:${minutes.toString().padStart(2, "0")} ${ampm}`;
   };
 
-  /* ------------------- URL DINÁMICA PARA QR ------------------- */
-  // Priorizar variable de entorno si existe (para forzar dominio en prod o pruebas),
-  // de lo contrario usar headers para detección automática.
-  const { headers } = await import("next/headers");
-  const headersData = await headers();
-
-  let baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
-  if (!baseUrl || baseUrl.includes("localhost")) {
-    const host = headersData.get("host") || "localhost:3000";
-    const protocol = headersData.get("x-forwarded-proto") || "http";
-    baseUrl = `${protocol}://${host}`;
-  }
-
-  // Si el usuario quiere forzar construvidas-tri.com en local, debería configurar NEXT_PUBLIC_BASE_URL.
-  // Pero para despliegue automático, la detección por headers es lo más robusto si la var no está.
-
-  /* ------------------- VERIFICAR CIERRE DE INSCRIPCIONES ------------------- */
-  let isRegistrationClosed = false;
-  if (event.maxRegistrationDate) {
-    const now = new Date();
-    const deadline = new Date(event.maxRegistrationDate);
-
-    if (event.maxRegistrationTime) {
-      const [hours, minutes] = event.maxRegistrationTime.split(":").map(Number);
-      deadline.setUTCHours(hours, minutes, 0, 0);
-    } else {
-      deadline.setUTCHours(23, 59, 59, 999);
-    }
-
-    if (now > deadline) {
-      isRegistrationClosed = true;
-    }
-  }
+  const isRegistrationClosed = event.maxRegistrationDate && new Date() > new Date(event.maxRegistrationDate);
 
   return (
+    <main className="min-h-screen bg-slate-50/50 pt-28 pb-20 px-6">
+      <div className="max-w-6xl mx-auto">
+        <Link href="/events" className="inline-flex items-center gap-2 text-slate-400 hover:text-secondary-600 transition-colors mb-8 text-xs font-bold uppercase tracking-widest">
+            <ArrowLeft size={16} /> Volver a eventos
+        </Link>
 
-    <main className="pb-20">
-      {/* Banner */}
-      <div className="relative w-full h-[50vh] bg-white">
-        <Image
-          src={event.image || "/event-placeholder.jpg"}
-          alt={event.name}
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        <div className="absolute inset-0 flex items-end max-w-6xl mx-auto p-8">
-          <div className="text-slate-900 space-y-2">
-            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-secondary-500 text-black">
-              {event.type}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold">{event.name}</h1>
-          </div>
-        </div>
-      </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* COLUMNA IZQUIERDA: CONTENIDO */}
+          <div className="lg:col-span-2 space-y-8">
+            <header className="space-y-4">
+               <div className="flex items-center gap-2">
+                 <span className="bg-secondary-100 text-secondary-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                    {event.ministry || "Evento"}
+                 </span>
+               </div>
+               <h1 className="text-4xl md:text-6xl font-gobold text-slate-900 uppercase tracking-tight leading-none">
+                 {event.name}
+               </h1>
+            </header>
 
-      {/* Contenido */}
-      <div className="max-w-6xl mx-auto p-8 grid grid-cols-1 md:grid-cols-3 gap-12">
-        {/* Columna principal */}
-        <div className="md:col-span-2 space-y-8">
-          <h2 className="text-2xl font-bold">Descripción del Evento</h2>
-          <p className="text-slate-800 whitespace-pre-wrap">
-            {event.description || "No hay descripción disponible."}
-          </p>
-
-          {event.distances && event.distances.length > 0 && (
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Distancias</h3>
-              <div className="flex flex-wrap gap-3">
-                {event.distances.map((d: string) => (
-                  <span key={d} className="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/20">
-                    {d}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Columna lateral */}
-        <aside className="space-y-6 bg-[#111] border border-white/10 rounded-2xl p-6 h-fit">
-          <RegistrationButton
-            eventId={event._id.toString()}
-            eventDistance={event.distance}
-            isLoggedIn={isLoggedIn}
-            isClosed={isRegistrationClosed}
-          />
-
-
-          <div className="flex flex-col items-center justify-center gap-2 pt-4 border-t border-white/10">
-            <h3 className="text-lg font-semibold text-slate-900">Inscríbete escaneando</h3>
-            <p className="text-sm text-slate-700 text-center mb-2">Escanea este código QR para ir al formulario de inscripción.</p>
-            <div className="p-2 bg-white rounded-xl">
-              <QRCode
-                value={`${baseUrl}/events/register/${event._id.toString()}`}
-                size={160}
-                level="M"
+            <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl border border-white">
+              <Image
+                src={event.image || "/event-placeholder.jpg"}
+                alt={event.name}
+                fill
+                className="object-cover"
+                priority
               />
             </div>
+
+            <section className="bg-white rounded-[3rem] p-10 shadow-sm border border-slate-100">
+               <h3 className="text-xl font-gobold text-slate-900 uppercase tracking-tight mb-6 flex items-center gap-3">
+                 <Info size={24} className="text-secondary-500" /> Descripción del Evento
+               </h3>
+               <div className="text-slate-600 leading-relaxed font-medium whitespace-pre-wrap">
+                 {event.description}
+               </div>
+            </section>
           </div>
 
-          <div className="flex items-center gap-4">
-            <Calendar className="text-secondary-400" size={24} />
-            <div>
-              <p className="font-bold capitalize">{formatDate(event.date.toISOString())}</p>
-              <p className="text-sm text-slate-700">{formatTime(event.time)}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <MapPin className="text-secondary-400" size={24} />
-            <p>{event.location}</p>
-          </div>
+          {/* COLUMNA DERECHA: SIDEBAR */}
+          <aside className="space-y-6">
+            <div className="bg-white border border-slate-200 rounded-[3rem] p-8 shadow-xl sticky top-28">
+              <div className="space-y-8">
+                {/* BOTON INSCRIPCION */}
+                <div>
+                   {isRegistrationClosed ? (
+                     <div className="w-full bg-red-50 text-red-600 font-gobold py-5 rounded-2xl text-center uppercase tracking-widest text-xs border border-red-100 italic">
+                       Inscripciones Cerradas
+                     </div>
+                   ) : (
+                     <Link
+                       href={`/events/register/${event._id}`}
+                       className="block w-full bg-slate-900 text-white font-gobold py-5 rounded-2xl text-center uppercase tracking-widest text-xs shadow-lg hover:bg-secondary-600 transition-all transform hover:-translate-y-1"
+                     >
+                       Inscribirse Ahora
+                     </Link>
+                   )}
+                </div>
 
-          {/* PRECIO: Mostrar Gratis si es 0, ocultar si undefined/null */}
-          {event.price && (
-            <div className="flex items-center gap-4">
-              <Tag className="text-secondary-400" size={24} />
-              <p className="font-semibold text-slate-900">
-                {event.price === "0" || event.price.toLowerCase() === "gratis"
-                  ? "Gratis"
-                  : event.price}
-              </p>
-            </div>
-          )}
+                <div className="pt-2">
+                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Información del Encuentro</p>
+                   
+                   <div className="space-y-6">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 bg-secondary-50 rounded-xl text-secondary-600">
+                           <Calendar size={20} />
+                        </div>
+                        <div>
+                           <p className="text-sm font-bold text-slate-900 leading-tight capitalize">{formatDate(event.date)}</p>
+                           <p className="text-[10px] text-slate-400 font-bold uppercase mt-1 flex items-center gap-1">
+                             <Clock size={10} /> {formatTime(event.time)}
+                           </p>
+                        </div>
+                      </div>
 
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 bg-secondary-50 rounded-xl text-secondary-600">
+                           <MapPin size={20} />
+                        </div>
+                        <div>
+                           <p className="text-sm font-bold text-slate-900 leading-tight">{event.location}</p>
+                           <p className="text-[10px] text-slate-400 font-bold uppercase mt-1">Lugar del evento</p>
+                        </div>
+                      </div>
 
-          {event.slotsLeft > 0 && (
-            <div className="flex items-center gap-4">
-              <Users className="text-secondary-400" size={24} />
-              <p>{event.slotsLeft} cupos disponibles</p>
-            </div>
-          )}
-          {/* CATEGORÍAS CORRECTAS */}
-          {Array.isArray(event.category) && event.category.length > 0 && (
-            <div className="flex items-start gap-4">
-              <Award className="text-secondary-400" size={24} />
-              <div className="flex flex-wrap gap-2">
-                {[...new Set<string>(event.category)].map((cat: string) => (
-                  <span key={cat} className="px-3 py-1 text-xs rounded-full bg-white/10 border border-white/20">
-                    {cat}
-                  </span>
-                ))}
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 bg-secondary-50 rounded-xl text-secondary-600">
+                           <Tag size={20} />
+                        </div>
+                        <div>
+                           <p className="text-sm font-bold text-slate-900 leading-tight">
+                             {event.price === 0 || event.price === "0" ? "Gratis" : `$${Number(event.price).toLocaleString()}`}
+                           </p>
+                           <p className="text-[10px] text-slate-400 font-bold uppercase mt-1">Valor de inscripción</p>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+
+                {/* QR CODE */}
+                <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 flex flex-col items-center gap-4">
+                  <div className="bg-white p-3 rounded-2xl shadow-inner border border-slate-100">
+                    <QRCode
+                      value={`${typeof window !== 'undefined' ? window.location.origin : ''}/events/register/${event._id}`}
+                      size={140}
+                      level="H"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">Inscríbete escaneando</p>
+                    <p className="text-[9px] text-slate-400 font-medium px-4 mt-1 leading-tight">Escanea este código QR para ir al formulario de inscripción.</p>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                   <button className="text-slate-400 hover:text-secondary-600 transition-colors flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
+                     <Share2 size={16} /> Compartir Evento
+                   </button>
+                </div>
               </div>
             </div>
-          )}
-        </aside>
+          </aside>
+        </div>
       </div>
     </main>
   );

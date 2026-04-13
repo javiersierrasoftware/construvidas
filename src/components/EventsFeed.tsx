@@ -122,9 +122,9 @@ export default function EventsFeed() {
                   {event.price && (
                     <div className="pt-4 mt-auto">
                         <p className="text-3xl font-gobold text-slate-900">
-                        {event.price === "0" || event.price.toLowerCase() === "gratis"
+                          {event.price === 0 || event.price === "0"
                             ? "Gratis"
-                            : event.price}
+                            : `$ ${Number(event.price).toLocaleString()}`}
                         </p>
                     </div>
                   )}

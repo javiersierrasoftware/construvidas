@@ -43,9 +43,20 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
     const { id } = await params;
     const data = await req.json();
+    console.log("[!] ACTUALIZANDO ENCUESTA:", id, "CON SLUG:", data.slug);
 
     await connectDB();
-    const updatedSurvey = await Survey.findByIdAndUpdate(id, data, { new: true });
+    const updatedSurvey = await Survey.findByIdAndUpdate(
+      id, 
+      { 
+        title: data.title, 
+        description: data.description, 
+        slug: data.slug || undefined,
+        questions: data.questions, 
+        active: data.active 
+      }, 
+      { new: true }
+    );
 
     if (!updatedSurvey) {
       return NextResponse.json({ message: "Encuesta no encontrada" }, { status: 404 });

@@ -8,6 +8,8 @@ const nextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "images.pexels.com" },
       { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "s3.licitacionesefectivas.com" },
+      { protocol: "https", hostname: "minio.licitacionesefectivas.com" },
     ],
   },
 

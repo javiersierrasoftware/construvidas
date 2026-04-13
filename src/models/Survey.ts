@@ -19,6 +19,7 @@ export interface ISurvey extends Document {
 const SurveySchema: Schema = new Schema({
   title: { type: String, required: true },
   description: { type: String },
+  slug: { type: String, unique: true, sparse: true },
   questions: [{
     id: { type: String, required: true },
     type: { type: String, enum: ['text', 'multiple', 'radio', 'select'], required: true },

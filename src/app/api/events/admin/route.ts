@@ -61,50 +61,23 @@ export async function POST(req: NextRequest) {
     };
 
     // Mapeo de campos simples
-    const stringFields = ["description", "time", "location", "type", "distance", "price", "maxRegistrationTime"];
+    const stringFields = ["description", "time", "location", "ministry", "maxRegistrationTime"];
     stringFields.forEach(field => {
       const val = formData.get(field);
       if (val !== null) eventObj[field] = val as string;
     });
 
+    // Precio
+    const priceVal = formData.get("price");
+    if (priceVal !== null) eventObj.price = Number(priceVal);
+
     // Fechas
     const dateVal = formData.get("date") as string;
-    if (dateVal) eventObj.date = new Date(dateVal);
+    if (dateVal) eventObj.date = new Date(`${dateVal}T12:00:00`);
 
     const maxRegDateVal = formData.get("maxRegistrationDate") as string;
     if (maxRegDateVal !== null && maxRegDateVal.trim() !== "") {
-      eventObj.maxRegistrationDate = new Date(`${maxRegDateVal}T00:00:00`);
-    }
-
-    // Números
-    const minAge = formData.get("minAge");
-    if (minAge !== null) eventObj.minAge = Number(minAge);
-
-    const maxAge = formData.get("maxAge");
-    if (maxAge !== null) eventObj.maxAge = Number(maxAge);
-
-    const slotsLeft = formData.get("slotsLeft");
-    if (slotsLeft !== null) eventObj.slotsLeft = Number(slotsLeft);
-
-    // JSON Fields
-    const distances = formData.get("distances") as string;
-    if (distances !== null) {
-      eventObj.distances = distances.split(",").map((d) => d.trim());
-    }
-
-    const category = formData.get("category") as string;
-    if (category) {
-      try { eventObj.category = JSON.parse(category); } catch (e) { eventObj.category = []; }
-    }
-
-    const shirtSizes = formData.get("shirtSizes") as string;
-    if (shirtSizes) {
-      try { eventObj.shirtSizes = JSON.parse(shirtSizes); } catch (e) { eventObj.shirtSizes = []; }
-    }
-
-    const registrationPeriods = formData.get("registrationPeriods") as string;
-    if (registrationPeriods) {
-      try { eventObj.registrationPeriods = JSON.parse(registrationPeriods); } catch (e) { eventObj.registrationPeriods = []; }
+      eventObj.maxRegistrationDate = new Date(`${maxRegDateVal}T12:00:00`);
     }
 
     console.log("LOG API: Guardando nuevo evento con:", eventObj);

@@ -2,84 +2,45 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
-import { AthleteCategory, SportType } from "@/types/Event";
-import Link from "next/link"; // Import Link component
+import { Loader2, Calendar, Clock, MapPin, DollarSign, Image as ImageIcon, Briefcase, Info, ArrowLeft } from "lucide-react";
+import AdminAuthGuard from "@/components/auth/AdminAuthGuard";
+import Link from "next/link";
 
-interface FormState {
-  name: string;
-  description: string;
-  date: string;
-  time: string;
-  location: string;
-  type: SportType | "";
-  distance: string;
-  distances: string;
-  minAge: string;
-  maxAge: string;
-  price: string;
-  slotsLeft: string;
-  image: string;
-  maxRegistrationDate: string;
-  maxRegistrationTime: string;
+const MINISTRIES = [
+  "Social",
+  "Alabanza",
+  "Niños",
+  "Jóvenes",
+  "Hombres",
+  "Mujeres",
+  "Parejas",
+  "Misiones",
+  "Otro"
+];
 
-
-  reg1Start: string;
-  reg1End: string;
-  reg2Start: string;
-  reg2End: string;
-  reg3Start: string;
-  reg3End: string;
-  reg1Price: string;
-  reg2Price: string;
-  reg3Price: string;
-
-  category: string[];
-  shirtSizes: string[];
-}
-
-const INITIAL_STATE: FormState = {
-  name: "",
-  description: "",
-  date: "",
-  time: "",
-  location: "",
-  type: "",
-  distance: "",
-  distances: "",
-  minAge: "",
-  maxAge: "",
-  price: "",
-  slotsLeft: "",
-  image: "",
-  maxRegistrationDate: "",
-  maxRegistrationTime: "",
-
-  reg1Start: "",
-  reg1End: "",
-  reg2Start: "",
-  reg2End: "",
-  reg3Start: "",
-  reg3End: "",
-  reg1Price: "",
-  reg2Price: "",
-  reg3Price: "",
-  category: [],
-  shirtSizes: [],
-};
-
-const SHIRT_OPTIONS = ["XS", "S", "M", "L", "XL", "XXL"];
-const CATEGORY_OPTIONS: AthleteCategory[] = ["Principiante", "Intermedio", "Avanzado", "Elite", "Recreativo"];
-
-export default function EditEventAdminPage() {
-  const [form, setForm] = useState<FormState>(INITIAL_STATE);
+function EditEventAdminPageContent() {
   const [loading, setLoading] = useState(false);
   const [pageLoading, setPageLoading] = useState(true);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+  
+  const [form, setForm] = useState({
+    name: "",
+    ministry: "",
+    date: "",
+    time: "",
+    maxRegistrationDate: "",
+    maxRegistrationTime: "",
+    location: "",
+    description: "",
+    price: "0",
+    image: ""
+  });
+
   const router = useRouter();
-  const params = useParams();
-  const { id } = params;
+  const { id } = useParams();
 
   useEffect(() => {
     if (!id) return;
@@ -95,40 +56,21 @@ export default function EditEventAdminPage() {
         }
 
         const event = result.data;
-
-        // Formatear fechas para los inputs de tipo 'date'
-        const formatDateForInput = (date: string) => date ? new Date(date).toISOString().split('T')[0] : "";
+        const formatDate = (d: any) => d ? new Date(d).toISOString().split('T')[0] : "";
 
         setForm({
           name: event.name || "",
-          description: event.description || "",
-          date: formatDateForInput(event.date),
+          ministry: event.ministry || "",
+          date: formatDate(event.date),
           time: event.time || "",
-          location: event.location || "",
-          type: event.type || "",
-          distance: event.distance || "",
-          distances: (event.distances || []).join(", "),
-          minAge: event.minAge?.toString() || "",
-          maxAge: event.maxAge?.toString() || "",
-          price: event.price || "",
-          slotsLeft: event.slotsLeft?.toString() || "",
-          image: event.image || "",
-          category: Array.isArray(event.category) ? event.category : [],
-          shirtSizes: event.shirtSizes || [],
-          maxRegistrationDate: event.maxRegistrationDate ? new Date(event.maxRegistrationDate).toISOString().split('T')[0] : "",
+          maxRegistrationDate: formatDate(event.maxRegistrationDate),
           maxRegistrationTime: event.maxRegistrationTime || "",
-
-
-          reg1Start: formatDateForInput(event.registrationPeriods?.[0]?.startDate),
-          reg1End: formatDateForInput(event.registrationPeriods?.[0]?.endDate),
-          reg2Start: formatDateForInput(event.registrationPeriods?.[1]?.startDate),
-          reg2End: formatDateForInput(event.registrationPeriods?.[1]?.endDate),
-          reg3Start: formatDateForInput(event.registrationPeriods?.[2]?.startDate),
-          reg3End: formatDateForInput(event.registrationPeriods?.[2]?.endDate),
-          reg1Price: event.registrationPeriods?.[0]?.price || "",
-          reg2Price: event.registrationPeriods?.[1]?.price || "",
-          reg3Price: event.registrationPeriods?.[2]?.price || "",
+          location: event.location || "",
+          description: event.description || "",
+          price: event.price?.toString() || "0",
+          image: event.image || ""
         });
+        setPreview(event.image || null);
       } catch (err: any) {
         setErrorMsg(err.message);
       } finally {
@@ -143,29 +85,15 @@ export default function EditEventAdminPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setImageFile(file);
+      setPreview(URL.createObjectURL(file));
     }
-  };
-
-  const toggleShirtSize = (size: string) => {
-    setForm((prev) => {
-      const exists = prev.shirtSizes.includes(size);
-      return {
-        ...prev,
-        shirtSizes: exists
-          ? prev.shirtSizes.filter((s) => s !== size)
-          : [...prev.shirtSizes, size],
-      };
-    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -175,40 +103,10 @@ export default function EditEventAdminPage() {
     setLoading(true);
 
     try {
-      const registrationPeriods = [
-        form.reg1Start && form.reg1End ? { label: "Preventa", startDate: form.reg1Start, endDate: form.reg1End, price: form.reg1Price } : null,
-        form.reg2Start && form.reg2End ? { label: "Inscripción regular", startDate: form.reg2Start, endDate: form.reg2End, price: form.reg2Price } : null,
-        form.reg3Start && form.reg3End ? { label: "Inscripción tardía", startDate: form.reg3Start, endDate: form.reg3End, price: form.reg3Price } : null,
-      ].filter(Boolean);
-
       const formData = new FormData();
       Object.entries(form).forEach(([key, value]) => {
-        if (
-          key !== 'shirtSizes' &&
-          key !== 'registrationPeriods' &&
-          !key.startsWith('reg') &&
-          key !== 'category' &&
-          key !== 'maxRegistrationDate' &&
-          key !== 'maxRegistrationTime'
-        ) {
-          if (value !== undefined && value !== null && key !== 'image') {
-            formData.append(key, value as string);
-          }
-        }
+        formData.append(key, value);
       });
-
-      // Asegurar que se envíen estos campos explícitamente, incluso si están vacíos
-      formData.append("maxRegistrationDate", form.maxRegistrationDate || "");
-      formData.append("maxRegistrationTime", form.maxRegistrationTime || "");
-
-
-      formData.append("shirtSizes", JSON.stringify(form.shirtSizes));
-      formData.append("registrationPeriods", JSON.stringify(registrationPeriods));
-      formData.append("category", JSON.stringify(form.category));
-      // formData.append("maxRegistrationDate", form.maxRegistrationDate); // Removed as it's handled explicitly above
-      // formData.append("maxRegistrationTime", form.maxRegistrationTime); // Removed as it's handled explicitly above
-
-      formData.append("currentImage", form.image); // Enviamos la URL actual por si no se cambia
 
       if (imageFile) {
         formData.append("image", imageFile);
@@ -216,10 +114,8 @@ export default function EditEventAdminPage() {
 
       const res = await fetch(`/api/events/admin/${id}`, {
         method: "PUT",
-        credentials: "include",
         body: formData,
       });
-
 
       const data = await res.json();
 
@@ -227,392 +123,248 @@ export default function EditEventAdminPage() {
         throw new Error(data.message || "Error al actualizar el evento");
       }
 
-      setFeedback("¡Evento actualizado exitosamente! Redirigiendo...");
-
+      setFeedback("¡Evento actualizado exitosamente!");
       setTimeout(() => {
-        router.push("/events");
-      }, 1200);
+        router.push("/events/manage");
+      }, 1500);
     } catch (err: any) {
-      setErrorMsg(err.message || "Error inesperado al actualizar el evento");
+      setErrorMsg(err.message || "Error al actualizar el evento");
     } finally {
       setLoading(false);
     }
   };
 
-  const toggleCategory = (cat: AthleteCategory) => {
-    setForm((prev) => {
-      const exists = prev.category.includes(cat);
-      if (exists) {
-        return {
-          ...prev,
-          category: prev.category.filter((c) => c !== cat),
-        };
-      }
-      return {
-        ...prev,
-        category: [...prev.category, cat],
-      };
-    });
-  };
-
   if (pageLoading) {
-    return <div className="text-center py-40">Cargando datos del evento...</div>;
+    return (
+        <div className="min-h-screen flex items-center justify-center bg-slate-50">
+             <div className="flex flex-col items-center gap-4">
+                <Loader2 className="animate-spin text-secondary-500" size={40} />
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Cargando evento...</p>
+             </div>
+        </div>
+    );
   }
 
   return (
-    <main className="min-h-screen pb-20">
-      <div className="max-w-5xl mx-auto px-4 py-10 space-y-6">
-        <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <div>
-            <h1 className="text-3xl font-bold">Editar Evento</h1>
-            <p className="text-slate-700 text-sm">
-              Modifica los detalles del evento.
-            </p>
+    <main className="min-h-screen pt-24 pb-20 px-6 bg-slate-50/50">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <header>
+          <Link href="/events/manage" className="flex items-center gap-2 text-slate-400 hover:text-secondary-600 transition-colors mb-4 text-xs font-bold uppercase tracking-widest">
+            <ArrowLeft size={16} /> Volver a gestión
+          </Link>
+          <div className="flex items-center gap-3 mb-2">
+            <span className="bg-secondary-100 text-secondary-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                Edición de Evento
+            </span>
           </div>
-          <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs border border-emerald-500/40">
-            Modo ADMIN
-          </span>
+          <h1 className="text-4xl font-gobold text-slate-900 uppercase tracking-tight">Editar Evento</h1>
         </header>
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-[#111] border border-white/10 rounded-2xl p-6 space-y-6"
-        >
-          {/* INFO BÁSICA */}
-          <section className="space-y-4">
-            <h2 className="text-lg font-semibold">Información general</h2>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm text-slate-800">Nombre del evento</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">Tipo / Ministerio</label>
-                <select
-                  name="type"
-                  value={form.type}
-                  onChange={handleChange}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                  required
-                >
-                  <option value="">Seleccionar</option>
-                  <option value="Carrera">Carrera</option>
-                  <option value="Triatlón">Triatlón</option>
-                  <option value="Ciclismo">Ciclismo</option>
-                  <option value="Comunidad">Comunidad</option>
-                  <option value="Entrenamiento">Entrenamiento</option>
-                  <option value="Otro">Otro</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">Fecha del evento</label>
-                <input
-                  type="date"
-                  name="date"
-                  value={form.date}
-                  onChange={handleChange}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">Hora</label>
-                <input
-                  type="time"
-                  name="time"
-                  value={form.time}
-                  onChange={handleChange}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">Fecha límite de inscripción</label>
-                <input
-                  type="date"
-                  name="maxRegistrationDate"
-                  value={form.maxRegistrationDate}
-                  onChange={handleChange}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">Hora límite de inscripción</label>
-                <input
-                  type="time"
-                  name="maxRegistrationTime"
-                  value={form.maxRegistrationTime}
-                  onChange={handleChange}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                />
-              </div>
-
-
-              <div className="md:col-span-2">
-                <label className="text-sm text-slate-800">Lugar / Ciudad</label>
-                <input
-                  type="text"
-                  name="location"
-                  value={form.location}
-                  onChange={handleChange}
-                  placeholder="Ej: Sincelejo - Salida desde el estadio 20 de Enero"
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="text-sm text-slate-800">Descripción</label>
-              <textarea
-                name="description"
-                value={form.description}
-                onChange={handleChange}
-                rows={4}
-                className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm resize-none"
-                placeholder="Describe brevemente la experiencia, recorrido, servicios incluidos, etc."
-              />
-            </div>
-          </section>
-
-          {/* DISTANCIAS Y CATEGORÍAS */}
-          <section className="space-y-4">
-            <h2 className="text-lg font-semibold">Distancias y categorías</h2>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm text-slate-800">
-                  Distancia principal (texto corto)
-                </label>
-                <input
-                  type="text"
-                  name="distance"
-                  value={form.distance}
-                  onChange={handleChange}
-                  placeholder="Ej: 10K, Fondo 80K, etc."
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">
-                  Distancias disponibles (separadas por coma)
-                </label>
-                <input
-                  type="text"
-                  name="distances"
-                  value={form.distances}
-                  onChange={handleChange}
-                  placeholder="Ej: 5K, 10K, 21K"
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">
-                  Categoría del deportista
-                </label>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {CATEGORY_OPTIONS.map((cat) => {
-                    const active = form.category.includes(cat);
-                    return (
-                      <button
-                        key={cat}
-                        type="button"
-                        onClick={() => toggleCategory(cat)}
-                        className={`px-3 py-1 rounded-full border text-xs ${active
-                          ? "bg-secondary-400 text-black border-secondary-400"
-                          : "border-white/20 text-gray-200 bg-white/5"
-                          }`}
-                      >
-                        {cat}
-                      </button>
-                    );
-                  })}
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* COLUMNA IZQUIERDA: IMAGEN */}
+            <div className="md:col-span-1 space-y-6">
+                <div className="bg-white border border-slate-200 rounded-[2.5rem] p-6 shadow-sm">
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-4">Imagen del Evento</label>
+                    <div className="relative group aspect-square rounded-[2rem] bg-slate-50 border-2 border-dashed border-slate-200 flex flex-col items-center justify-center overflow-hidden transition-all hover:border-secondary-400">
+                        {preview ? (
+                            <>
+                                <img src={preview} alt="Preview" className="absolute inset-0 w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button type="button" onClick={() => {setImageFile(null); setPreview(form.image)}} className="bg-white text-slate-500 p-2 rounded-full shadow-lg">
+                                        <ImageIcon size={20} />
+                                    </button>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="text-center p-6">
+                                <ImageIcon size={40} className="mx-auto text-slate-300 mb-2" />
+                                <p className="text-[10px] font-bold text-slate-400 uppercase">Haz clic para subir</p>
+                            </div>
+                        )}
+                        <input type="file" accept="image/*" onChange={handleImageChange} className="absolute inset-0 opacity-0 cursor-pointer" />
+                    </div>
                 </div>
-              </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="text-sm text-slate-800">Edad mínima</label>
-                  <input
-                    type="number"
-                    name="minAge"
-                    value={form.minAge}
-                    onChange={handleChange}
-                    min={0}
-                    className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                  />
+                <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white shadow-xl">
+                    <h3 className="text-lg font-gobold uppercase mb-4 flex items-center gap-2">
+                        <Info size={18} /> Resumen
+                    </h3>
+                    <div className="text-xs space-y-4 font-medium">
+                        <div>
+                             <p className="text-slate-400 uppercase tracking-widest text-[9px] mb-1">Última actualización</p>
+                             <p className="text-white">Hoy</p>
+                        </div>
+                        <div>
+                             <p className="text-slate-400 uppercase tracking-widest text-[9px] mb-1">Estado</p>
+                             <span className="text-secondary-400">Público y Activo</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <label className="text-sm text-slate-800">Edad máxima</label>
-                  <input
-                    type="number"
-                    name="maxAge"
-                    value={form.maxAge}
-                    onChange={handleChange}
-                    min={0}
-                    className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                  />
-                </div>
-              </div>
             </div>
 
-            <div>
-              <label className="text-sm text-slate-800">Tallas de camiseta</label>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {SHIRT_OPTIONS.map((size) => {
-                  const active = form.shirtSizes.includes(size);
-                  return (
-                    <button
-                      key={size}
-                      type="button"
-                      onClick={() => toggleShirtSize(size)}
-                      className={`px-3 py-1 rounded-full border text-xs ${active
-                        ? "bg-secondary-400 text-black border-secondary-400"
-                        : "border-white/20 text-gray-200 bg-white/5"
-                        }`}
-                    >
-                      {size}
-                    </button>
-                  );
-                })}
-              </div>
+            {/* COLUMNA DERECHA: DATOS */}
+            <div className="md:col-span-2 space-y-8">
+                <section className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-sm space-y-6">
+                    <div>
+                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                            Nombre del Evento
+                        </label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={form.name}
+                            onChange={handleChange}
+                            required
+                            className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 transition-all font-semibold text-lg"
+                        />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                                <Briefcase size={14} /> Ministerio Organizador
+                            </label>
+                            <select
+                                name="ministry"
+                                value={form.ministry}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 appearance-none font-bold"
+                            >
+                                <option value="">Seleccionar...</option>
+                                {MINISTRIES.map(m => <option key={m} value={m}>{m}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                                <DollarSign size={14} /> Valor de Inscripción
+                            </label>
+                            <input
+                                type="number"
+                                name="price"
+                                value={form.price}
+                                onChange={handleChange}
+                                className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 font-gobold text-xl text-secondary-600"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                            <MapPin size={14} /> Lugar
+                        </label>
+                        <input
+                            type="text"
+                            name="location"
+                            value={form.location}
+                            onChange={handleChange}
+                            required
+                            className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 font-medium"
+                        />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6">
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                                <Calendar size={14} /> Fecha del Evento
+                            </label>
+                            <input
+                                type="date"
+                                name="date"
+                                value={form.date}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 font-bold"
+                            />
+                        </div>
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                                <Clock size={14} /> Hora Inicio
+                            </label>
+                            <input
+                                type="time"
+                                name="time"
+                                value={form.time}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 font-bold"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6">
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                                <Calendar size={14} className="text-red-400" /> Fecha Límite Registro
+                            </label>
+                            <input
+                                type="date"
+                                name="maxRegistrationDate"
+                                value={form.maxRegistrationDate}
+                                onChange={handleChange}
+                                className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 font-bold"
+                            />
+                        </div>
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                                <Clock size={14} className="text-red-400" /> Hora Límite
+                            </label>
+                            <input
+                                type="time"
+                                name="maxRegistrationTime"
+                                value={form.maxRegistrationTime}
+                                onChange={handleChange}
+                                className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 font-bold"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                            <Info size={14} /> Descripción
+                        </label>
+                        <textarea
+                            name="description"
+                            value={form.description}
+                            onChange={handleChange}
+                            rows={6}
+                            className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:border-secondary-500 font-medium resize-none shadow-inner"
+                        />
+                    </div>
+
+                    {feedback && (
+                        <div className="bg-green-50 text-green-600 px-6 py-4 rounded-2xl text-xs font-bold border border-green-100">
+                          {feedback}
+                        </div>
+                    )}
+                    {errorMsg && (
+                        <div className="bg-red-50 text-red-600 px-6 py-4 rounded-2xl text-xs font-bold border border-red-100">
+                          {errorMsg}
+                        </div>
+                    )}
+
+                    <div className="flex justify-end pt-4">
+                        <button
+                        type="submit"
+                        disabled={loading}
+                        className="bg-slate-900 text-white font-gobold uppercase tracking-widest px-10 py-5 rounded-[2rem] disabled:opacity-50 shadow-xl hover:bg-secondary-600 transition-all flex items-center gap-3"
+                        >
+                        {loading && <Loader2 className="animate-spin" size={18} />}
+                        {loading ? "Actualizando..." : "Guardar Cambios"}
+                        </button>
+                    </div>
+                </section>
             </div>
-          </section>
-
-          {/* ECONOMÍA Y CUPOS */}
-          <section className="space-y-4">
-            <h2 className="text-lg font-semibold">Cupos y valor</h2>
-
-            <div className="grid md:grid-cols-3 gap-4">
-              <div>
-                <label className="text-sm text-slate-800">
-                  Precio de inscripción (texto)
-                </label>
-                <input
-                  type="text"
-                  name="price"
-                  value={form.price}
-                  onChange={handleChange}
-                  placeholder="Ej: $120.000"
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">Cupos disponibles</label>
-                <input
-                  type="number"
-                  name="slotsLeft"
-                  value={form.slotsLeft}
-                  onChange={handleChange}
-                  min={0}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-slate-800">Imagen del evento (banner)</label>
-                <input
-                  type="file"
-                  name="image"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-3 py-2 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-secondary-400 file:text-black hover:file:bg-secondary-500"
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* RANGOS DE FECHAS DE INSCRIPCIÓN */}
-          <section className="space-y-4">
-            <h2 className="text-lg font-semibold">Rangos de inscripción</h2>
-            <div className="grid md:grid-cols-3 gap-4 text-xs">
-              <div className="space-y-2 border border-white/10 rounded-xl p-3">
-                <p className="font-semibold">Preventa</p>
-                <label className="block text-slate-800">
-                  Inicio
-                  <input type="date" name="reg1Start" value={form.reg1Start} onChange={handleChange} className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-                <label className="block text-slate-800">
-                  Fin
-                  <input type="date" name="reg1End" value={form.reg1End} onChange={handleChange} className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-                <label className="block text-slate-800">
-                  Precio
-                  <input type="text" name="reg1Price" value={form.reg1Price} onChange={handleChange} placeholder="$100.000" className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-              </div>
-
-              <div className="space-y-2 border border-white/10 rounded-xl p-3">
-                <p className="font-semibold">Inscripción regular</p>
-                <label className="block text-slate-800">
-                  Inicio
-                  <input type="date" name="reg2Start" value={form.reg2Start} onChange={handleChange} className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-                <label className="block text-slate-800">
-                  Fin
-                  <input type="date" name="reg2End" value={form.reg2End} onChange={handleChange} className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-                <label className="block text-slate-800">
-                  Precio
-                  <input type="text" name="reg2Price" value={form.reg2Price} onChange={handleChange} placeholder="$120.000" className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-              </div>
-
-              <div className="space-y-2 border border-white/10 rounded-xl p-3">
-                <p className="font-semibold">Inscripción tardía</p>
-                <label className="block text-slate-800">
-                  Inicio
-                  <input type="date" name="reg3Start" value={form.reg3Start} onChange={handleChange} className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-                <label className="block text-slate-800">
-                  Fin
-                  <input type="date" name="reg3End" value={form.reg3End} onChange={handleChange} className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-                <label className="block text-slate-800">
-                  Precio
-                  <input type="text" name="reg3Price" value={form.reg3Price} onChange={handleChange} placeholder="$150.000" className="w-full mt-1 bg-white/40 border border-white/10 rounded-xl px-2 py-1" />
-                </label>
-              </div>
-            </div>
-          </section>
-
-          {feedback && <p className="text-sm text-emerald-400">{feedback}</p>}
-          {errorMsg && <p className="text-sm text-red-400">{errorMsg}</p>}
-
-          <div className="flex justify-end gap-4">
-            <button
-              type="button" // Important: type="button" to prevent form submission
-              onClick={() => router.push("/events/manage")}
-              className="inline-flex items-center gap-2 bg-white/10 text-slate-900 font-semibold px-6 py-2 rounded-full hover:bg-white/20 transition-colors"
-            >
-              Cancelar
-            </button>
-            <button
-              type="submit"
-              disabled={loading}
-              className="inline-flex items-center gap-2 bg-gradient-to-br from-secondary-400 to-accent-400 text-black font-semibold px-6 py-2 rounded-full disabled:opacity-50"
-            >
-              {loading ? "Guardando..." : "Guardar Cambios"}
-            </button>
-          </div>
         </form>
       </div>
     </main>
+  );
+}
+
+export default function EditEventAdminPage() {
+  return (
+    <AdminAuthGuard>
+      <EditEventAdminPageContent />
+    </AdminAuthGuard>
   );
 }

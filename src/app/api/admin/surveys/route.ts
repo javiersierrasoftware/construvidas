@@ -30,9 +30,14 @@ export async function POST(req: Request) {
 
     await connectDB();
     const data = await req.json();
+    console.log("[!] CREANDO ENCUESTA CON SLUG:", data.slug);
 
     const newSurvey = new Survey({
-      ...data,
+      title: data.title,
+      description: data.description,
+      slug: data.slug || undefined,
+      questions: data.questions,
+      active: data.active,
       createdBy: (session.user as any).id,
     });
 

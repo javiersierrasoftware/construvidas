@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { ArrowLeft, BarChart2, Users, Calendar } from "lucide-react";
 import Link from "next/link";
+import AdminAuthGuard from "@/components/auth/AdminAuthGuard";
 
-export default function SurveyResultsPage() {
+function SurveyResultsPageContent() {
   const { id } = useParams();
   const [data, setData] = useState<any>(null);
   const [responses, setResponses] = useState<any[]>([]);
@@ -143,21 +144,25 @@ export default function SurveyResultsPage() {
               </h3>
 
               {q.type === 'text' ? (
-                <div className="space-y-3">
-                  {filteredResponses.map((resp, i) => {
-                    const ans = resp.answers.find((a: any) => a.questionId === q.id);
-                    if (!ans?.value) return null;
-                    return (
-                      <div key={i} className="bg-slate-50 p-5 rounded-2xl border border-slate-100 text-sm text-slate-600 relative group">
-                         <span className="absolute -left-2 top-4 w-1 h-4 bg-slate-200 rounded-full group-hover:bg-secondary-400 transition-colors"></span>
-                         {ans.value}
-                         <div className="text-[10px] text-slate-300 mt-2 font-bold uppercase tracking-widest">
-                            {new Date(resp.createdAt).toLocaleDateString()}
-                         </div>
-                      </div>
-                    );
-                  })}
-                  {filteredResponses.length === 0 && <p className="text-slate-300 italic text-sm">No hay respuestas que coincidan con estos filtros</p>}
+                <div>
+                  <div className="flex items-center gap-2 mb-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                    <span>{filteredResponses.filter(r => r.answers.find((a: any) => a.questionId === q.id)?.value).length} respuestas escritas</span>
+                  </div>
+                  <div className="space-y-1 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {filteredResponses.map((resp, i) => {
+                      const ans = resp.answers.find((a: any) => a.questionId === q.id);
+                      if (!ans?.value) return null;
+                      return (
+                        <div key={i} className="py-3 px-4 hover:bg-slate-50 border-b border-slate-50 transition-colors flex justify-between items-start gap-4">
+                           <p className="text-sm text-slate-600 leading-tight flex-1">{ans.value}</p>
+                           <span className="text-[9px] text-slate-300 font-bold whitespace-nowrap mt-1">
+                              {new Date(resp.createdAt).toLocaleDateString()}
+                           </span>
+                        </div>
+                      );
+                    })}
+                    {filteredResponses.length === 0 && <p className="text-slate-300 italic text-sm">No hay respuestas que coincidan con estos filtros</p>}
+                  </div>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -191,6 +196,27 @@ export default function SurveyResultsPage() {
           );
         })}
       </div>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+      `}</style>
     </main>
+  );
+}
+
+export default function SurveyResultsPage() {
+  return (
+    <AdminAuthGuard>
+       <SurveyResultsPageContent />
+    </AdminAuthGuard>
   );
 }

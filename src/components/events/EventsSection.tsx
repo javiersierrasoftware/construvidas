@@ -124,9 +124,9 @@ export default function EventsSection() {
                       {event.price && (
                         <div className="bg-slate-50 px-4 py-2 rounded-xl border border-slate-100">
                             <span className="text-xs font-gobold text-slate-900 uppercase tracking-widest">
-                            {event.price === "0" || event.price.toLowerCase() === "gratis"
+                             {event.price === 0 || event.price === "0"
                                 ? "Gratis"
-                                : `$${event.price}`}
+                                : `$${Number(event.price).toLocaleString()}`}
                             </span>
                         </div>
                       )}

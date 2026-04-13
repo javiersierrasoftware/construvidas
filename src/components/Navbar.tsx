@@ -14,7 +14,7 @@ type UserSession = {
   [key: string]: any;
 } | null;
 
-type AdminSection = "historias" | "eventos" | "tienda" | "hero" | null;
+type AdminSection = "historias" | "eventos" | "tienda" | "hero" | "surveys" | "proyeccion" | null;
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -193,6 +193,14 @@ export default function Navbar() {
                             >
                             Hero Slider
                             </Link>
+                            
+                            <Link
+                            href="/admin/social-outreach"
+                            className="block px-6 py-2.5 text-xs font-bold hover:bg-slate-100 transition text-secondary-600 bg-secondary-50/30 rounded-xl"
+                            onClick={() => setMenuOpen(false)}
+                            >
+                            Proyección Social
+                            </Link>
                         </div>
                       </div>
                     </div>
@@ -348,6 +356,16 @@ export default function Navbar() {
                         </MobileAdminLink>
                         <MobileAdminLink href="/admin/surveys/create" onClick={closeMobile}>
                         Crear Nueva Encuesta
+                        </MobileAdminLink>
+                    </MobileSection>
+
+                    <MobileSection
+                        title="Social"
+                        open={adminOpen === "proyeccion"}
+                        onToggle={() => setAdminOpen((v) => (v === "proyeccion" ? null : "proyeccion"))}
+                    >
+                        <MobileAdminLink href="/admin/social-outreach" onClick={closeMobile}>
+                        Proyección Social
                         </MobileAdminLink>
                     </MobileSection>
                   </div>

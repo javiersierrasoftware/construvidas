@@ -62,58 +62,31 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     const updatedData: any = {};
 
     // Campos simples (Strings)
-    const stringFields = ["name", "description", "time", "location", "type", "distance", "price", "maxRegistrationTime"];
+    const stringFields = ["name", "description", "time", "location", "ministry", "maxRegistrationTime"];
     stringFields.forEach(field => {
       const val = formData.get(field);
       if (val !== null) updatedData[field] = val as string;
     });
 
+    // Precio
+    const priceVal = formData.get("price");
+    if (priceVal !== null) updatedData.price = Number(priceVal);
+
     // Fechas
     const dateRawVal = formData.get("date") as string;
-    if (dateRawVal) updatedData.date = new Date(dateRawVal);
+    if (dateRawVal) updatedData.date = new Date(`${dateRawVal}T12:00:00`);
 
     const maxRegDateRawVal = formData.get("maxRegistrationDate") as string;
     if (maxRegDateRawVal !== null) {
       if (maxRegDateRawVal.trim() !== "") {
-        updatedData.maxRegistrationDate = new Date(`${maxRegDateRawVal}T00:00:00`);
+        updatedData.maxRegistrationDate = new Date(`${maxRegDateRawVal}T12:00:00`);
       } else {
         updatedData.maxRegistrationDate = null;
       }
     }
 
-    // Números
-    const minAgeRawVal = formData.get("minAge");
-    if (minAgeRawVal !== null) updatedData.minAge = Number(minAgeRawVal);
-
-    const maxAgeRawVal = formData.get("maxAge");
-    if (maxAgeRawVal !== null) updatedData.maxAge = Number(maxAgeRawVal);
-
-    const slotsLeftRawVal = formData.get("slotsLeft");
-    if (slotsLeftRawVal !== null) updatedData.slotsLeft = Number(slotsLeftRawVal);
-
-    // Arrays y Objetos (JSON)
-    const distancesRawVal = formData.get("distances") as string;
-    if (distancesRawVal !== null) {
-      updatedData.distances = distancesRawVal.split(",").map(d => d.trim());
-    }
-
-    const categoryRawVal = formData.get("category") as string;
-    if (categoryRawVal) {
-      try { updatedData.category = JSON.parse(categoryRawVal); } catch (e) { console.error("Error parsing category", e); }
-    }
-
-    const shirtSizesRawVal = formData.get("shirtSizes") as string;
-    if (shirtSizesRawVal) {
-      try { updatedData.shirtSizes = JSON.parse(shirtSizesRawVal); } catch (e) { console.error("Error parsing shirtSizes", e); }
-    }
-
-    const regPeriodsRawVal = formData.get("registrationPeriods") as string;
-    if (regPeriodsRawVal) {
-      try { updatedData.registrationPeriods = JSON.parse(regPeriodsRawVal); } catch (e) { console.error("Error parsing regPeriods", e); }
-    }
-
-
     if (imageUrl) updatedData.image = imageUrl;
+
 
     console.log("LOG API: Procediendo a actualizar evento con:", updatedData);
 

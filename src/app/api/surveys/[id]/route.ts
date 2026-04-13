@@ -6,12 +6,14 @@ import { isValidObjectId } from "mongoose";
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    if (!isValidObjectId(id)) {
-      return NextResponse.json({ message: "ID no válido" }, { status: 400 });
-    }
-
     await connectDB();
-    const survey = await Survey.findById(id).select("title description questions active");
+    
+    let survey;
+    if (isValidObjectId(id)) {
+      survey = await Survey.findById(id).select("title description questions active slug");
+    } else {
+      survey = await Survey.findOne({ slug: id }).select("title description questions active slug");
+    }
 
     if (!survey) {
       return NextResponse.json({ message: "Encuesta no encontrada" }, { status: 404 });

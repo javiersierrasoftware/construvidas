@@ -25,31 +25,72 @@ export async function uploadFile(file: File, visibility: 'public' | 'private' = 
     }
 
     const data = await response.json();
+    console.log("[!] DATOS RECIBIDOS DEL STORAGE:", JSON.stringify(data, null, 2));
     
-    // The response structure usually contains the path or filename.
-    // Based on common patterns for this type of API:
-    // If it returns a path, we might need to prepend the S3 URL.
-    // However, if it returns a full URL, we use that.
-    
+    // Función auxiliar mejorada para buscar de forma profunda
+    const findValue = (obj: any, keys: string[]): string | null => {
+      if (!obj) return null;
+      
+      // Si es un string y termina en una extensión de imagen común (y lo buscamos como path)
+      if (typeof obj === 'string' && keys.includes('path')) {
+         const lower = obj.toLowerCase();
+         if (lower.match(/\.(jpg|jpeg|png|gif|webp|svg)$/)) return obj;
+      }
+
+      // 1. Buscar en las llaves del nivel actual
+      for (const key of keys) {
+        if (obj[key] && typeof obj[key] === 'string') return obj[key];
+      }
+
+      // 2. Si es un Array, buscar en cada elemento
+      if (Array.isArray(obj)) {
+        for (const item of obj) {
+          const found = findValue(item, keys);
+          if (found) return found;
+        }
+      } 
+      // 3. Si es un Objeto, buscar recursivamente
+      else if (typeof obj === 'object') {
+        for (const key in obj) {
+          const found = findValue(obj[key], keys);
+          if (found) return found;
+        }
+      }
+      return null;
+    };
+
     let finalUrl = "";
     
-    if (data.url) {
-      finalUrl = data.url;
-    } else if (data.path) {
-      // If data.path is like "/ConstruVIDAS/filename.jpg"
-      // and s3Url is "https://s3.licitacionesefectivas.com"
-      // we combine them.
-      const path = data.path.startsWith('/') ? data.path : `/${data.path}`;
-      finalUrl = `${s3Url}${path}`;
-    } else if (data.filename) {
-      // If it only returns filename, it might be in the app folder
-      finalUrl = `${s3Url}/ConstruVIDAS/${data.filename}`;
-    } else {
-      // Fallback: return the whole data or try to find a string that looks like a path
-      console.warn("Storage API returned unknown structure:", data);
-      finalUrl = data.url || data.path || JSON.stringify(data);
+    // Intentar encontrar URL, Path o Filename
+    const extractedUrl = findValue(data, ['url', 'secure_url', 'publicUrl', 'link', 'href']);
+
+    if (extractedUrl && extractedUrl.startsWith('http')) {
+      finalUrl = extractedUrl;
+    } 
+    // 2. Intentar encontrar un path y combinarlo con S3
+    else {
+      const bucket = data.bucket || data.data?.bucket || 'media';
+      const extractedPath = findValue(data, ['objectKey', 'path', 'key', 'filename', 'filePath', 'name']);
+      
+      if (extractedPath) {
+        if (extractedPath.startsWith('http')) {
+          finalUrl = extractedPath;
+        } else {
+          const cleanPath = extractedPath.startsWith('/') ? extractedPath.substring(1) : extractedPath;
+          // Si el path ya es completo (bucket/public/...) o si hay que construirlo
+          finalUrl = extractedPath.includes(bucket)
+            ? `${s3Url}/${cleanPath}`
+            : `${s3Url}/${bucket}/${cleanPath}`;
+        }
+      }
     }
 
+    if (!finalUrl || finalUrl.includes('{')) {
+      console.error("[!!!] FALLO DE EXTRACCIÓN. Cuerpo recibido:", JSON.stringify(data, null, 2));
+      throw new Error("No se encontró una URL, path o filename válido en la respuesta del storage.");
+    }
+
+    console.log("[✔] URL GENERADA EXITOSAMENTE:", finalUrl);
     return finalUrl;
   } catch (error) {
     console.error("Error in uploadFile:", error);

@@ -1,42 +1,6 @@
 {
   "app": {
-    "[project]/Software/construvidas/src/app/admin/hero-slider/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/admin/products/manage/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/admin/surveys/[id]/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/admin/surveys/[id]/results/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/admin/surveys/create/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/admin/surveys/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/discipulado/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/events/manage/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/events/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/join/page": [
+    "[project]/Software/construvidas/src/app/admin/social-outreach/page": [
       "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
       "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
     ],
@@ -45,22 +9,6 @@
       "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
     ],
     "[project]/Software/construvidas/src/app/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/perfil/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/stories/manage/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/stories/page": [
-      "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
-      "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
-    ],
-    "[project]/Software/construvidas/src/app/surveys/[id]/page": [
       "static/media/6ad1cda2f16975ee-s.p.b58dc1ff.woff2",
       "static/media/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
     ]

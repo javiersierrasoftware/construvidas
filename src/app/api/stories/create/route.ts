@@ -1,8 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import { connectDB } from "@/lib/mongodb";
-import cloudinary from "@/lib/cloudinary";
 import Story from "@/models/Story";
-import { Readable } from "stream";
+import { uploadFile } from "@/lib/storage";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
@@ -39,35 +38,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ---------------------------------
-    // 3️⃣ SUBIR IMAGEN A CLOUDINARY
-    // ---------------------------------
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    const result: any = await new Promise((resolve, reject) => {
-      const uploadStream = cloudinary.uploader.upload_stream(
-        {
-          folder: "construvidas_stories",
-          public_id: `${Date.now()}_${file.name}`,
-          resource_type: "image",
-        },
-        (error, result) => {
-          if (error) return reject(error);
-          resolve(result);
-        }
-      );
-      Readable.from(buffer).pipe(uploadStream);
-    });
-
-    const imageUrl = result.secure_url;
-    console.log("📸 Imagen subida a Cloudinary:", imageUrl);
+    const imageUrl = await uploadFile(file);
+    console.log("📸 Imagen subida al servidor:", imageUrl);
 
     // -------------------------------------
     // 4️⃣ GUARDAR HISTORIA EN MONGODB
     // -------------------------------------
     await connectDB();
-
     await Story.create({
       title: `${category} de ${user}`,
       content: description,

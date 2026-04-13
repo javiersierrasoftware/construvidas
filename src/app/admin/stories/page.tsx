@@ -3,12 +3,23 @@
 import { useEffect, useState } from "react";
 
 export default function AdminStoriesPage() {
-  const [stories, setStories] = useState([]);
+  const [stories, setStories] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const loadStories = async () => {
-    const res = await fetch("/api/stories");
-    const data = await res.json();
-    setStories(data);
+    try {
+      const res = await fetch("/api/stories");
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setStories(data);
+      } else {
+        console.error("No se pudieron cargar las historias:", data);
+      }
+    } catch (error) {
+      console.error("Error al cargar historias:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {

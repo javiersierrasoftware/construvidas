@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import HeroSlide from '@/models/HeroSlide';
-import cloudinary from "@/lib/cloudinary";
+import { uploadFile } from '@/lib/storage';
 import { v4 as uuidv4 } from "uuid";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
@@ -57,29 +57,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: "Faltan campos obligatorios o imagen" }, { status: 400 });
     }
 
-    const arrayBuffer = await imageFile.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    const public_id = uuidv4();
-    const uploadResult = await new Promise((resolve, reject) => {
-      const uploadStream = cloudinary.uploader.upload_stream(
-        {
-          folder: "hero-slider",
-          public_id: public_id,
-          resource_type: "image",
-        },
-        (error, result) => {
-          if (result) {
-            resolve(result);
-          } else {
-            reject(error);
-          }
-        }
-      );
-      uploadStream.end(buffer);
-    }) as { secure_url: string };
-
-    const imageUrl = uploadResult.secure_url;
+    const imageUrl = await uploadFile(imageFile);
 
     if (!imageUrl) {
       return NextResponse.json({ message: "Fallo al subir la imagen" }, { status: 500 });

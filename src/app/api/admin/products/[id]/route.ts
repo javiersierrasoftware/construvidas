@@ -2,8 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import { isValidObjectId } from "mongoose";
-import cloudinary from "@/lib/cloudinary"; // Added
-import { Readable } from "stream"; // Added
+import { uploadFile } from "@/lib/storage";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
@@ -75,27 +74,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     let imageUrl: string | undefined | null = description === '' ? undefined : description; // If description is empty, set to undefined to remove from DB.
 
     if (file && typeof file !== 'string' && file.size > 0) { // If a new file is uploaded
-      // ---------------------------------
-      // 3️⃣ SUBIR IMAGEN A CLOUDINARY
-      // ---------------------------------
-      const bytes = await file.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-
-      const result: any = await new Promise((resolve, reject) => {
-        const uploadStream = cloudinary.uploader.upload_stream(
-          {
-            folder: "construvidas_products",
-            public_id: `${Date.now()}_${(file as File).name}`, // Cast to File if it's a File
-            resource_type: "image",
-          },
-          (error, result) => {
-            if (error) return reject(error);
-            resolve(result);
-          }
-        );
-        Readable.from(buffer).pipe(uploadStream);
-      });
-      imageUrl = result.secure_url;
+      imageUrl = await uploadFile(file as File);
     } else if (typeof file === 'string' && file) { // If 'image' is a string (existing URL)
       imageUrl = file;
     } else if (file === null || (typeof file !== 'string' && file && file.size === 0)) { // If image is explicitly removed or empty file

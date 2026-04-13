@@ -67,7 +67,7 @@ export default function DiscipuladoPage() {
           <div className="aspect-video w-full rounded-3xl overflow-hidden border border-slate-200 shadow-lg">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/sPgpoHl_Icg"
+              src="https://www.youtube.com/embed/bpijnYPO_JQ"
               title="Discipulado Video 1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -77,7 +77,7 @@ export default function DiscipuladoPage() {
           <div className="aspect-video w-full rounded-3xl overflow-hidden border border-slate-200 shadow-lg">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/vVCrlgwrxl4"
+              src="https://www.youtube.com/embed/VHDeGaQA07A"
               title="Discipulado Video 2"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

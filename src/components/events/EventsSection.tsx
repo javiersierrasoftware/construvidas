@@ -25,45 +25,35 @@ export default function EventsSection() {
   }, []);
 
   return (
-    <section className="w-full" id="eventos">
-      {/* CONTENEDOR PRINCIPAL – IGUAL QUE FEED */}
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="w-full py-12" id="eventos">
+      {/* CONTENEDOR PRINCIPAL */}
+      <div className="max-w-6xl mx-auto px-6">
         {/* TITULO */}
-        <div className="flex flex-col gap-3 mb-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              src="/construvidastransparente.png"
-              alt="logo"
-              className="h-7 w-7 object-contain"
-            />
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm">
+                <Calendar className="text-secondary-600" size={24} />
+            </div>
             <div>
-              <h2 className="text-2xl font-bold">Eventos CONSTRUVIDAS</h2>
-              <p className="text-slate-700 text-sm">
-                Próximas carreras, fondos y entrenamientos especiales
+              <h2 className="text-3xl font-gobold text-slate-900 uppercase tracking-tight">Próximos Eventos</h2>
+              <p className="text-slate-500 font-medium text-sm">
+                Actividades, servicios especiales y congresos para toda la familia
               </p>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-2 text-xs">
-            {/* A futuro: este botón puede ser solo para ADMIN */}
+          <div className="flex flex-wrap gap-3">
             <Link
-              href="/events/create"
-              className="inline-flex items-center gap-2 bg-gradient-to-br from-secondary-400 to-accent-400 text-black font-semibold px-4 py-2 rounded-full"
+              href="/events"
+              className="bg-slate-900 text-white font-gobold px-8 py-4 rounded-2xl text-[10px] uppercase tracking-widest shadow-lg hover:bg-secondary-600 transition-all"
             >
-              Crear evento (ADMIN)
-            </Link>
-
-            <Link
-              href="/events/request"
-              className="inline-flex items-center gap-2 border border-secondary-400/60 text-secondary-400 px-4 py-2 rounded-full bg-secondary-400/5"
-            >
-              Soy organizador, quiero publicar mi evento
+              Ver calendario completo
             </Link>
           </div>
         </div>
 
         {/* LISTA DE EVENTOS */}
-        <div className="space-y-6">
+        <div className="grid gap-6">
           {events.map((event) => {
             let isRegistrationClosed = false;
             if (event.maxRegistrationDate) {
@@ -85,86 +75,76 @@ export default function EventsSection() {
             return (
               <article
                 key={event.id || event._id}
-                className="bg-[#111] border border-white/5 rounded-2xl px-4 py-4
-                         flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+                className="group bg-white border border-slate-200 rounded-[2rem] p-6 hover:shadow-2xl hover:border-secondary-500/30 transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-6"
               >
                 {/* IZQUIERDA */}
-                <div className="flex items-start gap-3">
+                <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left w-full">
                   <div
-                    className="h-10 w-10 rounded-xl bg-gradient-to-br 
-                                from-secondary-400 to-accent-400 
-                                flex items-center justify-center"
+                    className="h-20 w-20 rounded-3xl bg-slate-50 border border-slate-100 
+                                flex flex-col items-center justify-center shadow-sm"
                   >
-                    <Calendar className="text-black" size={22} />
+                    <span className="text-xs font-bold text-secondary-600 uppercase tracking-widest">
+                        {new Date(event.date).toLocaleDateString("es-CO", { month: "short" }).replace(".", "")}
+                    </span>
+                    <span className="text-2xl font-gobold text-slate-900">
+                        {new Date(event.date).getDate() + 1}
+                    </span>
                   </div>
 
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <Link
                       href={`/events/${event._id || event.id}`}
-                      className="text-sm font-semibold hover:underline text-slate-900"
+                      className="text-xl font-gobold text-slate-900 uppercase tracking-tight group-hover:text-secondary-600 transition-colors"
                     >
                       {event.name}
                     </Link>
 
-                    <div className="flex flex-wrap items-center gap-3 mt-1 text-xs text-slate-700">
-                      <span className="inline-flex items-center gap-1">
-                        <Clock size={12} />
-                        {new Date(event.date).toLocaleDateString("es-CO", {
-                          month: "long",
-                          day: "numeric",
-                        })} · {event.time}
+                    <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 mt-3 text-xs font-medium text-slate-500">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Clock size={14} className="text-secondary-500" />
+                        {event.time}
                       </span>
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin size={12} />
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin size={14} className="text-secondary-500" />
                         {event.location}
                       </span>
-                      <span className="inline-flex items-center gap-1">
-                        <Users size={12} />
-                        Cupos: {event.slotsLeft}
-                      </span>
+                      {event.slotsLeft && (
+                        <span className="inline-flex items-center gap-1.5">
+                          <Users size={14} className="text-secondary-500" />
+                          Cupos: {event.slotsLeft}
+                        </span>
+                      )}
                     </div>
-
-                    <p className="mt-1 text-xs text-slate-800">
-                      Distancia:{" "}
-                      <span className="font-semibold">{event.distance}</span>
-                    </p>
                   </div>
                 </div>
 
                 {/* DERECHA */}
-                <div className="flex flex-col items-end gap-2 text-xs">
-                  <Link
-                    href={`/events/${event._id || event.id}`}
-                    className="text-xs text-secondary-400 hover:underline font-semibold"
-                  >
-                    Ver detalles
-                  </Link>
-
-                  <span className="px-2 py-1 rounded-full bg-white/5 text-slate-800">
-                    {event.type}
-                  </span>
-
-                  {event.price && (
-                    <span className="inline-flex items-center gap-1 text-secondary-400 font-semibold">
-                      <CreditCard size={12} />
-                      {event.price === "0" || event.price.toLowerCase() === "gratis"
-                        ? "Gratis"
-                        : event.price}
-                    </span>
-                  )}
+                <div className="flex flex-col md:items-end items-center gap-4 w-full md:w-auto mt-4 md:mt-0">
+                  <div className="flex items-center gap-3">
+                      {event.price && (
+                        <div className="bg-slate-50 px-4 py-2 rounded-xl border border-slate-100">
+                            <span className="text-xs font-gobold text-slate-900 uppercase tracking-widest">
+                            {event.price === "0" || event.price.toLowerCase() === "gratis"
+                                ? "Gratis"
+                                : `$${event.price}`}
+                            </span>
+                        </div>
+                      )}
+                      <span className="px-4 py-2 bg-secondary-50 text-secondary-600 text-[10px] font-bold uppercase tracking-widest rounded-xl">
+                        {event.type || "Presencial"}
+                      </span>
+                  </div>
 
                   {isRegistrationClosed ? (
-                    <span className="mt-1 inline-flex items-center gap-2 bg-red-500/10 text-red-500 border border-red-500/20 px-4 py-1.5 rounded-full text-xs font-semibold">
-                      Cerrado
+                    <span className="px-8 py-4 bg-red-50 text-red-600 text-[10px] font-gobold uppercase tracking-widest rounded-2xl border border-red-100">
+                      Inscripciones Cerradas
                     </span>
                   ) : (
                     <button
                       onClick={() => openRegistration(event.id || event._id, event.distance)}
-                      className="mt-1 inline-flex items-center gap-2 bg-gradient-to-br 
-                               from-secondary-400 to-accent-400 text-black 
-                               font-semibold px-4 py-1.5 rounded-full text-xs hover:opacity-90"
+                      className="bg-slate-900 text-white font-gobold px-8 py-4 rounded-2xl text-[10px] uppercase tracking-widest hover:bg-secondary-600 transition-all shadow-lg"
                     >
-                      Inscribirme
+                      Inscribirme Ahora
                     </button>
                   )}
                 </div>

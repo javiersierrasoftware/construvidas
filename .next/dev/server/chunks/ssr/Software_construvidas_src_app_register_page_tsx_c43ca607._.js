@@ -26,8 +26,6 @@ function RegisterPage() {
             const name = String(formData.get("name") || "");
             const email = String(formData.get("email") || "");
             const password = String(formData.get("password") || "");
-            const discipline = String(formData.get("discipline") || "");
-            const goal = String(formData.get("goal") || "");
             const res = await fetch("/api/auth/register", {
                 method: "POST",
                 headers: {
@@ -36,9 +34,7 @@ function RegisterPage() {
                 body: JSON.stringify({
                     name,
                     email,
-                    password,
-                    discipline,
-                    goal
+                    password
                 })
             });
             if (!res.ok) {
@@ -66,7 +62,7 @@ function RegisterPage() {
                             children: "Registro"
                         }, void 0, false, {
                             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 49,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -74,7 +70,7 @@ function RegisterPage() {
                             children: "Crear cuenta"
                         }, void 0, false, {
                             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 50,
+                            lineNumber: 47,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -86,20 +82,20 @@ function RegisterPage() {
                                     children: "CONSTRUVIDAS"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 49,
                                     columnNumber: 32
                                 }, this),
                                 " y sé parte de nuestra comunidad espiritual."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 51,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                    lineNumber: 48,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this),
                 errorMsg && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -107,7 +103,7 @@ function RegisterPage() {
                     children: errorMsg
                 }, void 0, false, {
                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                    lineNumber: 58,
+                    lineNumber: 55,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -122,7 +118,7 @@ function RegisterPage() {
                                     children: "Nombre completo"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 67,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -133,13 +129,13 @@ function RegisterPage() {
                                     className: "bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 65,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 66,
+                            lineNumber: 63,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -150,7 +146,7 @@ function RegisterPage() {
                                     children: "Correo electrónico"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 76,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -161,13 +157,13 @@ function RegisterPage() {
                                     className: "bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 78,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -178,7 +174,7 @@ function RegisterPage() {
                                     children: "Contraseña"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 88,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -189,117 +185,13 @@ function RegisterPage() {
                                     className: "bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 89,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 90,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col space-y-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
-                                    children: "Ministerio de Interés"
-                                }, void 0, false, {
-                                    fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 103,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                    required: true,
-                                    name: "discipline",
-                                    className: "bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                            value: "",
-                                            children: "Selecciona una opción"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                            lineNumber: 109,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                            value: "casas_de_vida",
-                                            children: "Casas de Vida"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                            lineNumber: 110,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                            value: "alabanza",
-                                            children: "Ministerio de Alabanza"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                            lineNumber: 111,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                            value: "proyeccion",
-                                            children: "Proyección Social"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                            lineNumber: 112,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                            value: "legado",
-                                            children: "Legado (Jóvenes)"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                            lineNumber: 113,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                            value: "construkids",
-                                            children: "ConstruKids"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                            lineNumber: 114,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 104,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 102,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col space-y-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
-                                    children: "Tu propósito"
-                                }, void 0, false, {
-                                    fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 120,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    required: true,
-                                    name: "goal",
-                                    type: "text",
-                                    placeholder: "Ej: Crecer espiritualmente, servir a otros...",
-                                    className: "bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
-                                }, void 0, false, {
-                                    fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                    lineNumber: 121,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 119,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -309,13 +201,13 @@ function RegisterPage() {
                             children: loading ? "Creando perfil..." : "Crear cuenta"
                         }, void 0, false, {
                             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                            lineNumber: 131,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                    lineNumber: 64,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -331,29 +223,29 @@ function RegisterPage() {
                                 children: "Inicia sesión"
                             }, void 0, false, {
                                 fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                                lineNumber: 144,
+                                lineNumber: 112,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                        lineNumber: 142,
+                        lineNumber: 110,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-                    lineNumber: 141,
+                    lineNumber: 109,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-            lineNumber: 46,
+            lineNumber: 43,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Software/construvidas/src/app/register/page.tsx",
-        lineNumber: 45,
+        lineNumber: 42,
         columnNumber: 5
     }, this);
 }

@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import ManageStories from "@/components/ManageStories";
 import AdminAuthGuard from "@/components/auth/AdminAuthGuard";
 
 function ManageStoriesPageContent() {
   return (
-    <main className="min-h-screen px-6 pt-28 pb-16 text-slate-900 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Administrar Historias</h1>
+    <main className="max-w-7xl mx-auto px-6 py-12 pb-32">
+      <div className="mb-12">
+        <h2 className="text-secondary-600 text-[10px] font-gobold uppercase tracking-[0.4em]">Administración</h2>
+        <h1 className="text-4xl font-gobold text-slate-900 uppercase tracking-tight">Gestionar Historias</h1>
+      </div>
 
-      {/* Panel de administración */}
       <ManageStories />
     </main>
   );

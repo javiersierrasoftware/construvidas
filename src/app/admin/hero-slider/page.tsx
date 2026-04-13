@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import { Loader2 } from 'lucide-react';
+import { Loader2, Pencil, Trash2 } from 'lucide-react';
 import AdminAuthGuard from "@/components/auth/AdminAuthGuard";
 
 interface HeroSlide {
@@ -173,9 +173,12 @@ function ManageHeroSliderPageContent() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Administrar Hero Slider</h1>
+    <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
+        <div>
+            <h2 className="text-secondary-600 text-[10px] font-gobold uppercase tracking-[0.4em]">Administración</h2>
+            <h1 className="text-4xl font-gobold text-slate-900 uppercase tracking-tight">Administrar Hero Slider</h1>
+        </div>
         <button
           onClick={() => {
             setIsModalOpen(true);
@@ -183,43 +186,47 @@ function ManageHeroSliderPageContent() {
             setFormData({ title: "", subtitle: "", buttonLink: "", order: "", image: null });
             setPreviewImage(null);
           }}
-          className="bg-blue-500 hover:bg-blue-700 text-slate-900 font-bold py-2 px-4 rounded mb-4"
+          className="bg-slate-900 text-white font-gobold py-4 px-8 rounded-2xl shadow-lg hover:bg-secondary-600 transition-all uppercase tracking-widest text-xs"
         >
           Agregar Nuevo Slide
         </button>
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-75 overflow-y-auto h-full w-full flex justify-center items-center z-50">
-          <div className="bg-gray-800 p-8 rounded-lg shadow-xl max-w-md w-full border border-secondary-500/30">
-            <h2 className="text-xl font-bold mb-4 text-slate-900">
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm overflow-y-auto h-full w-full flex justify-center items-center z-50 p-4">
+          <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl max-w-lg w-full border border-slate-200 animate-in fade-in zoom-in duration-300">
+            <h2 className="text-2xl font-gobold mb-8 text-slate-900 uppercase tracking-tight">
               {currentSlide ? "Editar Slide" : "Crear Nuevo Slide"}
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="title" className="block text-sm font-medium text-slate-800">Title</label>
-                <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900" required />
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <label htmlFor="title" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Título</label>
+                <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium" required />
               </div>
-              <div>
-                <label htmlFor="subtitle" className="block text-sm font-medium text-slate-800">Subtitle</label>
-                <textarea name="subtitle" id="subtitle" value={formData.subtitle} onChange={handleChange} rows={3} className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900" required ></textarea>
+              <div className="space-y-2">
+                <label htmlFor="subtitle" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Subtítulo</label>
+                <textarea name="subtitle" id="subtitle" value={formData.subtitle} onChange={handleChange} rows={3} className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium" required ></textarea>
               </div>
-              <div>
-                <label htmlFor="buttonLink" className="block text-sm font-medium text-slate-800">Button Link (URL)</label>
-                <input type="url" name="buttonLink" id="buttonLink" value={formData.buttonLink} onChange={handleChange} className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900" required />
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                    <label htmlFor="buttonLink" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Link del Botón</label>
+                    <input type="url" name="buttonLink" id="buttonLink" value={formData.buttonLink} onChange={handleChange} className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium" required />
+                </div>
+                <div className="space-y-2">
+                    <label htmlFor="order" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Orden</label>
+                    <input type="number" name="order" id="order" value={formData.order} onChange={handleChange} className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium" required />
+                </div>
               </div>
-              <div>
-                <label htmlFor="order" className="block text-sm font-medium text-slate-800">Order (Number)</label>
-                <input type="number" name="order" id="order" value={formData.order} onChange={handleChange} className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900" required />
+              <div className="space-y-2">
+                <label htmlFor="image" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Imagen</label>
+                <div className="flex flex-col gap-4">
+                    <input type="file" name="image" id="image" accept="image/*" onChange={handleFileChange} className="w-full text-sm text-slate-500 file:mr-4 file:py-3 file:px-6 file:rounded-2xl file:border-0 file:text-xs file:font-gobold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 transition-all cursor-pointer"/>
+                    {previewImage && <div className="w-full h-40 relative border border-slate-200 rounded-2xl overflow-hidden shadow-sm"><Image src={previewImage} alt="Image Preview" layout="fill" objectFit="cover" /></div>}
+                </div>
               </div>
-              <div>
-                <label htmlFor="image" className="block text-sm font-medium text-slate-800">Image</label>
-                <input type="file" name="image" id="image" accept="image/*" onChange={handleFileChange} className="mt-1 block w-full text-sm text-slate-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-cyan-700 file:text-cyan-100 hover:file:bg-secondary-700"/>
-                {previewImage && <div className="mt-2 w-32 h-24 relative border rounded-md overflow-hidden"><Image src={previewImage} alt="Image Preview" layout="fill" objectFit="cover" /></div>}
-              </div>
-              <div className="flex justify-end space-x-2 pt-4">
-                <button type="button" onClick={resetForm} disabled={isSubmitting} className="bg-gray-600 hover:bg-gray-500 text-gray-100 font-bold py-2 px-4 rounded disabled:opacity-50">Cancel</button>
-                <button type="submit" disabled={isSubmitting} className="bg-green-600 hover:bg-green-700 text-slate-900 font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center">
+              <div className="flex justify-end space-x-3 pt-6">
+                <button type="button" onClick={resetForm} disabled={isSubmitting} className="px-8 py-4 bg-slate-50 text-slate-700 font-gobold rounded-2xl hover:bg-slate-100 transition-all uppercase tracking-widest text-[10px] shadow-sm">Cancelar</button>
+                <button type="submit" disabled={isSubmitting} className="px-8 py-4 bg-slate-900 text-white font-gobold rounded-2xl hover:bg-secondary-600 hover:shadow-xl transition-all uppercase tracking-widest text-[10px] flex items-center justify-center">
                   {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   {isSubmitting ? 'Guardando...' : (currentSlide ? "Actualizar" : "Crear")}
                 </button>
@@ -229,32 +236,40 @@ function ManageHeroSliderPageContent() {
         </div>
       )}
 
-      <div className="bg-[#111] rounded-lg shadow overflow-x-auto">
-        <table className="min-w-full divide-y divide-white/10">
-        <thead className="bg-[#181818]">
-            <tr>
-              <th className="py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Image</th>
-              <th className="py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Title</th>
-              <th className="py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Subtitle</th>
-              <th className="py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Order</th>
-              <th className="py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-white/10">
-            {slides.map((slide) => (
-              <tr key={slide._id}>
-                <td className="px-6 py-4"><div className="w-16 h-9 relative rounded-md overflow-hidden"><Image src={slide.image} alt={slide.title} layout="fill" objectFit="cover"/></div></td>
-                <td className="px-6 py-4">{slide.title}</td>
-                <td className="px-6 py-4 text-sm text-slate-700">{slide.subtitle.substring(0, 50)}...</td>
-                <td className="px-6 py-4">{slide.order}</td>
-                <td className="px-6 py-4">
-                  <button onClick={() => handleEdit(slide)} className="bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-1 px-2 rounded text-xs mr-2">Edit</button>
-                  <button onClick={() => handleDelete(slide._id)} className="bg-red-600 hover:bg-red-700 text-slate-900 font-bold py-1 px-2 rounded text-xs">Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="bg-white rounded-[2.5rem] shadow-xl border border-slate-200 overflow-hidden">
+        <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-slate-100">
+                <thead className="bg-slate-50/50">
+                    <tr>
+                    <th className="py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Imagen</th>
+                    <th className="py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Título</th>
+                    <th className="py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Subtítulo</th>
+                    <th className="py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Orden</th>
+                    <th className="py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-50">
+                    {slides.map((slide) => (
+                    <tr key={slide._id} className="hover:bg-slate-50/50 transition-colors">
+                        <td className="px-6 py-6 border-b border-slate-50">
+                            <div className="w-24 h-14 relative rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                                <Image src={slide.image} alt={slide.title} layout="fill" objectFit="cover"/>
+                            </div>
+                        </td>
+                        <td className="px-6 py-6 font-semibold text-slate-900 border-b border-slate-50">{slide.title}</td>
+                        <td className="px-6 py-6 text-sm text-slate-500 border-b border-slate-50 max-w-xs truncate">{slide.subtitle}</td>
+                        <td className="px-6 py-6 font-bold text-slate-900 border-b border-slate-50">{slide.order}</td>
+                        <td className="px-6 py-6 border-b border-slate-50">
+                            <div className="flex gap-2">
+                                <button onClick={() => handleEdit(slide)} className="p-3 bg-slate-50 text-slate-700 rounded-xl hover:bg-slate-100 transition-all shadow-sm border border-slate-100"><Pencil size={18} /></button>
+                                <button onClick={() => handleDelete(slide._id)} className="p-3 bg-red-50 text-red-600 rounded-xl hover:bg-red-100 transition-all shadow-sm border border-red-50"><Trash2 size={18} /></button>
+                            </div>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
       </div>
     </div>
   );

@@ -189,150 +189,186 @@ function SalesPageContent() {
   }
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold mb-6">Ventas Realizadas</h1>
-
-      {/* FILTERS */}
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-        {/* Date Filters */}
-        <div className="flex items-center gap-4 p-4 bg-gray-800/50 rounded-lg border border-white/10">
-          <div>
-            <label htmlFor="year-filter" className="block text-sm font-medium text-slate-700">Año</label>
-            <select id="year-filter" value={selectedYear} onChange={(e) => setSelectedYear(parseInt(e.target.value))} className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm">
-              {years.map(year => <option key={year} value={year}>{year}</option>)}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="month-filter" className="block text-sm font-medium text-slate-700">Mes</label>
-            <select id="month-filter" value={selectedMonth} onChange={(e) => setSelectedMonth(parseInt(e.target.value))} className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm">
-              {months.map(month => <option key={month.value} value={month.value}>{month.name}</option>)}
-            </select>
-          </div>
+    <main className="max-w-7xl mx-auto px-6 py-12 pb-32">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+        <div>
+            <h2 className="text-secondary-600 text-[10px] font-gobold uppercase tracking-[0.4em]">Tienda Online</h2>
+            <h1 className="text-4xl font-gobold text-slate-900 uppercase tracking-tight">Ventas Realizadas</h1>
         </div>
-
-        {/* Search and Status Filter */}
-        <div className="flex flex-wrap gap-4 flex-grow">
-          <div className="relative flex-grow min-w-[250px]">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-700" size={18} />
-            <input
-              type="text"
-              placeholder="Buscar por nombre, email, cédula..."
-              className="w-full bg-gray-800/50 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-secondary-600"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          <select
-            className="bg-gray-800/50 border border-white/10 rounded-lg px-4 py-2 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-secondary-600"
-            value={filterStatus}
-            onChange={(e) => setFilterStatus(e.target.value)}
-          >
-            <option value="">Todos los Estados</option>
-            <option value="PAID">Pagadas</option>
-            <option value="PENDING_PAYMENT">Pendientes</option>
-            <option value="FAILED">Fallidas</option>
-          </select>
-        </div>
-
+        
         <button
           onClick={handleExportToExcel}
-          className="flex items-center gap-2 bg-gradient-to-br from-purple-500 to-indigo-500 text-slate-900 px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:from-purple-600 hover:to-indigo-600 transition-colors"
+          className="flex items-center gap-3 bg-slate-900 text-white font-gobold px-8 py-4 rounded-2xl text-[10px] uppercase tracking-widest shadow-lg hover:bg-secondary-600 transition-all"
         >
-          <FileText size={18} /> Exportar a Excel
+          <FileText size={18} /> Exportar Reporte
         </button>
       </div>
 
+      {/* FILTERS */}
+      <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 mb-10 shadow-xl space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="space-y-2">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Año</label>
+                <select 
+                    value={selectedYear} 
+                    onChange={(e) => setSelectedYear(parseInt(e.target.value))} 
+                    className="w-full bg-slate-50 border border-slate-100 text-slate-900 rounded-xl px-4 py-3 focus:border-secondary-500 transition-all outline-none text-sm font-medium appearance-none"
+                >
+                    {years.map(year => <option key={year} value={year}>{year}</option>)}
+                </select>
+            </div>
+            <div className="space-y-2">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Mes</label>
+                <select 
+                    value={selectedMonth} 
+                    onChange={(e) => setSelectedMonth(parseInt(e.target.value))} 
+                    className="w-full bg-slate-50 border border-slate-100 text-slate-900 rounded-xl px-4 py-3 focus:border-secondary-500 transition-all outline-none text-sm font-medium appearance-none"
+                >
+                    {months.map(month => <option key={month.value} value={month.value}>{month.name}</option>)}
+                </select>
+            </div>
+            <div className="space-y-2 md:col-span-2">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Búsqueda rápida</label>
+                <div className="relative">
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                    <input
+                        type="text"
+                        placeholder="Nombre, email o cédula..."
+                        className="w-full bg-slate-50 border border-slate-100 rounded-xl pl-12 pr-4 py-3 text-sm text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div className="flex border-t border-slate-50 pt-6">
+            <div className="flex flex-wrap gap-2">
+                {["", "PAID", "PENDING_PAYMENT", "FAILED"].map((status) => (
+                    <button
+                        key={status}
+                        onClick={() => setFilterStatus(status)}
+                        className={`px-6 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all ${
+                            filterStatus === status 
+                            ? "bg-secondary-600 text-white shadow-lg" 
+                            : "bg-slate-50 text-slate-400 hover:bg-slate-100 border border-slate-100"
+                        }`}
+                    >
+                        {status === "" ? "Todos" : status === "PAID" ? "Pagados" : status === "PENDING_PAYMENT" ? "Pendientes" : "Fallidos"}
+                    </button>
+                ))}
+            </div>
+        </div>
+      </div>
+
       {/* ANALYTICS DASHBOARD */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-gray-800/50 p-6 rounded-lg border border-white/10 flex items-center gap-4">
-          <DollarSign className="h-8 w-8 text-green-400" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-xl flex items-center gap-6 group hover:border-secondary-500/30 transition-all">
+          <div className="p-4 bg-green-50 rounded-2xl group-hover:bg-green-100 transition-colors">
+            <DollarSign className="h-8 w-8 text-green-600" />
+          </div>
           <div>
-            <p className="text-sm text-slate-700">Ingresos (Pagados)</p>
-            <p className="text-2xl font-bold">${analytics.totalRevenue.toLocaleString('es-CO')}</p>
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Ingresos Pagados</p>
+            <p className="text-3xl font-gobold text-slate-900">${analytics.totalRevenue.toLocaleString('es-CO')}</p>
           </div>
         </div>
-        <div className="bg-gray-800/50 p-6 rounded-lg border border-white/10 flex items-center gap-4">
-          <ShoppingCart className="h-8 w-8 text-secondary-500" />
+        <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-xl flex items-center gap-6 group hover:border-secondary-500/30 transition-all">
+          <div className="p-4 bg-secondary-50 rounded-2xl group-hover:bg-secondary-100 transition-colors">
+            <ShoppingCart className="h-8 w-8 text-secondary-600" />
+          </div>
           <div>
-            <p className="text-sm text-slate-700">Órdenes (Filtradas)</p>
-            <p className="text-2xl font-bold">{analytics.totalOrders}</p>
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Órdenes Totales</p>
+            <p className="text-3xl font-gobold text-slate-900">{analytics.totalOrders}</p>
           </div>
         </div>
-        <div className="bg-gray-800/50 p-6 rounded-lg border border-white/10 flex items-center gap-4">
-          <BarChart2 className="h-8 w-8 text-accent-500" />
+        <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-xl flex items-center gap-6 group hover:border-secondary-500/30 transition-all">
+          <div className="p-4 bg-accent-50 rounded-2xl group-hover:bg-accent-100 transition-colors">
+            <BarChart2 className="h-8 w-8 text-slate-400" />
+          </div>
           <div>
-            <p className="text-sm text-slate-700">Órdenes Pagadas</p>
-            <p className="text-2xl font-bold">{analytics.paidOrders}</p>
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Éxito en Ventas</p>
+            <p className="text-3xl font-gobold text-slate-900">{analytics.paidOrders}</p>
           </div>
         </div>
       </div>
 
       {/* ORDERS TABLE */}
       {filteredOrders.length === 0 ? (
-        <p className="text-center text-slate-700 p-8">No se encontraron órdenes para el período y filtros seleccionados.</p>
+        <div className="bg-white border border-slate-200 rounded-[2.5rem] p-20 text-center shadow-lg">
+            <Package size={48} className="mx-auto text-slate-100 mb-6" />
+            <p className="text-slate-400 font-medium italic">No se encontraron órdenes para este período.</p>
+        </div>
       ) : (
-        <div className="bg-gray-800/50 rounded-lg shadow-xl overflow-hidden">
+        <div className="bg-white border border-slate-200 rounded-[2.5rem] shadow-2xl overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-700">
-              <thead className="bg-gray-700">
+            <table className="min-w-full divide-y divide-slate-100">
+              <thead className="bg-slate-50/50">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-800 uppercase tracking-wider">Fecha</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-800 uppercase tracking-wider">Cliente</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-800 uppercase tracking-wider">Contacto</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-800 uppercase tracking-wider">Productos</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-800 uppercase tracking-wider">Total</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-800 uppercase tracking-wider">Estado</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-800 uppercase tracking-wider">Acciones</th>
+                  <th className="px-8 py-5 text-left text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fecha</th>
+                  <th className="px-8 py-5 text-left text-[10px] font-bold text-slate-400 uppercase tracking-widest">Cliente</th>
+                  <th className="px-8 py-5 text-left text-[10px] font-bold text-slate-400 uppercase tracking-widest">Contacto</th>
+                  <th className="px-8 py-5 text-left text-[10px] font-bold text-slate-400 uppercase tracking-widest">Productos</th>
+                  <th className="px-8 py-5 text-left text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total</th>
+                  <th className="px-8 py-5 text-left text-[10px] font-bold text-slate-400 uppercase tracking-widest">Estado</th>
+                  <th className="px-8 py-5 text-left text-[10px] font-bold text-slate-400 uppercase tracking-widest">Acciones</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-700">
+              <tbody className="divide-y divide-slate-50">
                 {filteredOrders.map((order) => (
-                  <tr key={order._id} className="hover:bg-gray-800">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-800">{new Date(order.createdAt).toLocaleDateString()}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">
-                      <div>{order.guestInfo.name}</div>
-                      <div className="text-xs text-slate-700">{order.guestInfo.cedula}</div>
+                  <tr key={order._id} className="hover:bg-slate-50 transition-colors">
+                    <td className="px-8 py-6 whitespace-nowrap text-sm text-slate-600 font-medium">
+                        {new Date(order.createdAt).toLocaleDateString('es-CO', { day: '2-digit', month: 'short' })}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-800">
-                      <div>{order.guestInfo.email}</div>
-                      <div className="text-xs">{order.guestInfo.phoneNumber}</div>
+                    <td className="px-8 py-6 whitespace-nowrap">
+                        <p className="text-sm font-gobold text-slate-900 uppercase tracking-tight">{order.guestInfo.name}</p>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{order.guestInfo.cedula}</p>
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-800">
-                      <ul className="space-y-2">
-                        {order.items.map((item: OrderItem) => (
-                          <li key={item.productId} className="flex items-center gap-2">
-                            {item.image ? (
-                              <Image src={item.image} alt={item.name} width={24} height={24} className="rounded object-cover" />
-                            ) : (
-                              <div className="w-6 h-6 bg-gray-600 rounded flex items-center justify-center"><Package size={14}/></div>
-                            )}
-                            <span>{item.name} (x{item.qty})</span>
-                          </li>
+                    <td className="px-8 py-6 whitespace-nowrap">
+                        <p className="text-sm text-slate-600 font-medium">{order.guestInfo.email}</p>
+                        <p className="text-xs text-slate-400">{order.guestInfo.phoneNumber}</p>
+                    </td>
+                    <td className="px-8 py-6">
+                      <div className="flex -space-x-2">
+                        {order.items.map((item: OrderItem, idx) => (
+                          <div key={idx} className="relative h-10 w-10 rounded-full border-2 border-white overflow-hidden shadow-sm bg-slate-100 group/img">
+                            <Image 
+                                src={item.image || "/placeholder-image.jpg"} 
+                                alt={item.name} 
+                                fill 
+                                className="object-cover" 
+                            />
+                            <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-[10px] text-white font-bold">
+                                x{item.qty}
+                            </div>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-800">${order.totalAmount.toLocaleString('es-CO')}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm">
-                                            <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${ 
-                                              order.status === 'PAID' || order.status === 'COMPLETED' ? 'bg-green-100 text-green-800' :
-                                              order.status === 'PENDING_PAYMENT' ? 'bg-yellow-100 text-yellow-800' :
-                                              'bg-red-100 text-red-800'
-                                            }`}> 
-                                              {order.status}
-                                            </span>
-                                          </td>
-                                          <td className="px-6 py-4 whitespace-nowrap text-sm">
-                                            {order.status === 'PENDING_PAYMENT' && (
-                                              <button
-                                                onClick={() => handleForceProcess(order._id)}
-                                                disabled={processingId === order._id}
-                                                className="text-xs bg-secondary-700 hover:bg-cyan-700 text-slate-900 font-bold py-1 px-2 rounded disabled:bg-gray-500 flex items-center justify-center"
-                                              >
-                                                {processingId === order._id ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Aprobar Pago'}
-                                              </button>
-                                            )}
-                                          </td>
-                                        </tr>                ))}
+                    <td className="px-8 py-6 whitespace-nowrap">
+                        <p className="text-sm font-gobold text-slate-900">${order.totalAmount.toLocaleString('es-CO')}</p>
+                    </td>
+                    <td className="px-8 py-6 whitespace-nowrap">
+                        <span className={`px-4 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full ${ 
+                            order.status === 'PAID' || order.status === 'COMPLETED' ? 'bg-green-50 text-green-600 border border-green-100' :
+                            order.status === 'PENDING_PAYMENT' ? 'bg-yellow-50 text-yellow-600 border border-yellow-100' :
+                            'bg-red-50 text-red-600 border border-red-100'
+                        }`}> 
+                            {order.status === "PAID" ? "Pagado" : order.status === "PENDING_PAYMENT" ? "Pendiente" : "Fallido"}
+                        </span>
+                    </td>
+                    <td className="px-8 py-6 whitespace-nowrap">
+                        {order.status === 'PENDING_PAYMENT' && (
+                            <button
+                            onClick={() => handleForceProcess(order._id)}
+                            disabled={processingId === order._id}
+                            className="bg-secondary-600 text-white font-gobold px-4 py-2 rounded-xl text-[10px] uppercase tracking-widest hover:bg-slate-900 transition-all shadow-sm"
+                            >
+                            {processingId === order._id ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Aprobar Pago'}
+                            </button>
+                        )}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

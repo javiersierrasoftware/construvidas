@@ -20,55 +20,61 @@ export default function EventsFilters({ onFilterChange }: EventsFiltersProps) {
   };
 
   return (
-    <div className="bg-[#111] border border-white/10 rounded-2xl p-5 mb-6 space-y-4">
-      <h3 className="text-lg font-semibold">Filtrar eventos</h3>
+    <div className="bg-white border border-slate-200 rounded-[2rem] p-8 mb-10 shadow-lg space-y-6">
+      <h3 className="text-xl font-gobold text-slate-900 uppercase tracking-tight">Filtrar eventos</h3>
 
-      {/* BUSCADOR */}
-      <div>
-        <input
-          type="text"
-          placeholder="Buscar evento..."
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            handleUpdate();
-          }}
-          className="w-full bg-white/30 border border-white/10 text-slate-900 rounded-xl px-4 py-2"
-        />
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* BUSCADOR */}
+        <div className="space-y-2">
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Búsqueda</label>
+            <input
+            type="text"
+            placeholder="¿Qué estás buscando?"
+            value={search}
+            onChange={(e) => {
+                setSearch(e.target.value);
+                onFilterChange({ search: e.target.value, type, city });
+            }}
+            className="w-full bg-slate-50 border border-slate-100 text-slate-900 rounded-xl px-4 py-3 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none text-sm font-medium"
+            />
+        </div>
 
-      {/* SELECT TIPO */}
-      <div>
-        <select
-          value={type}
-          onChange={(e) => {
-            setType(e.target.value);
-            handleUpdate();
-          }}
-          className="w-full bg-white/30 border border-white/10 text-slate-900 rounded-xl px-4 py-2"
-        >
-          <option value="">Tipo de evento</option>
-          <option value="Carrera">Carrera</option>
-          <option value="Triatlón">Triatlón</option>
-          <option value="Entrenamiento">Entrenamiento</option>
-        </select>
-      </div>
+        {/* SELECT TIPO */}
+        <div className="space-y-2">
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Categoría</label>
+            <select
+            value={type}
+            onChange={(e) => {
+                setType(e.target.value);
+                onFilterChange({ search, type: e.target.value, city });
+            }}
+            className="w-full bg-slate-50 border border-slate-100 text-slate-900 rounded-xl px-4 py-3 focus:border-secondary-500 transition-all outline-none text-sm font-medium appearance-none"
+            >
+            <option value="">Todas las categorías</option>
+            <option value="Servicio">Servicios</option>
+            <option value="Congreso">Congresos</option>
+            <option value="Vigilia">Vigilias</option>
+            <option value="Ministerio">Ministerios</option>
+            </select>
+        </div>
 
-      {/* SELECT CIUDAD */}
-      <div>
-        <select
-          value={city}
-          onChange={(e) => {
-            setCity(e.target.value);
-            handleUpdate();
-          }}
-          className="w-full bg-white/30 border border-white/10 text-slate-900 rounded-xl px-4 py-2"
-        >
-          <option value="">Ciudad</option>
-          <option value="Sincelejo">Sincelejo</option>
-          <option value="Santa Marta">Santa Marta</option>
-          <option value="Ruta Caribe">Ruta Caribe</option>
-        </select>
+        {/* SELECT CIUDAD */}
+        <div className="space-y-2">
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Lugar</label>
+            <select
+            value={city}
+            onChange={(e) => {
+                setCity(e.target.value);
+                onFilterChange({ search, type, city: e.target.value });
+            }}
+            className="w-full bg-slate-50 border border-slate-100 text-slate-900 rounded-xl px-4 py-3 focus:border-secondary-500 transition-all outline-none text-sm font-medium appearance-none"
+            >
+            <option value="">Cualquier lugar</option>
+            <option value="Sede Principal">Sede Principal</option>
+            <option value="Sincelejo">Sincelejo</option>
+            <option value="Virtual">Virtual</option>
+            </select>
+        </div>
       </div>
     </div>
   );

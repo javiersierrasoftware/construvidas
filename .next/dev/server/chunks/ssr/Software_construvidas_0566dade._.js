@@ -283,15 +283,31 @@ function ManageHeroSliderPageContent() {
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "max-w-6xl mx-auto px-4 py-8",
+        className: "max-w-6xl mx-auto px-6 py-12",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between items-center mb-6",
+                className: "flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-3xl font-bold",
-                        children: "Administrar Hero Slider"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-secondary-600 text-[10px] font-gobold uppercase tracking-[0.4em]",
+                                children: "Administración"
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                lineNumber: 179,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "text-4xl font-gobold text-slate-900 uppercase tracking-tight",
+                                children: "Administrar Hero Slider"
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                lineNumber: 180,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
                         lineNumber: 178,
                         columnNumber: 9
@@ -309,11 +325,11 @@ function ManageHeroSliderPageContent() {
                             });
                             setPreviewImage(null);
                         },
-                        className: "bg-blue-500 hover:bg-blue-700 text-slate-900 font-bold py-2 px-4 rounded mb-4",
+                        className: "bg-slate-900 text-white font-gobold py-4 px-8 rounded-2xl shadow-lg hover:bg-secondary-600 transition-all uppercase tracking-widest text-xs",
                         children: "Agregar Nuevo Slide"
                     }, void 0, false, {
                         fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                        lineNumber: 179,
+                        lineNumber: 182,
                         columnNumber: 9
                     }, this)
                 ]
@@ -323,31 +339,32 @@ function ManageHeroSliderPageContent() {
                 columnNumber: 7
             }, this),
             isModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "fixed inset-0 bg-gray-900 bg-opacity-75 overflow-y-auto h-full w-full flex justify-center items-center z-50",
+                className: "fixed inset-0 bg-slate-900/60 backdrop-blur-sm overflow-y-auto h-full w-full flex justify-center items-center z-50 p-4",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gray-800 p-8 rounded-lg shadow-xl max-w-md w-full border border-secondary-500/30",
+                    className: "bg-white p-10 rounded-[2.5rem] shadow-2xl max-w-lg w-full border border-slate-200 animate-in fade-in zoom-in duration-300",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-xl font-bold mb-4 text-slate-900",
+                            className: "text-2xl font-gobold mb-8 text-slate-900 uppercase tracking-tight",
                             children: currentSlide ? "Editar Slide" : "Crear Nuevo Slide"
                         }, void 0, false, {
                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                            lineNumber: 195,
+                            lineNumber: 198,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                             onSubmit: handleSubmit,
-                            className: "space-y-4",
+                            className: "space-y-6",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "title",
-                                            className: "block text-sm font-medium text-slate-800",
-                                            children: "Title"
+                                            className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                            children: "Título"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 200,
+                                            lineNumber: 203,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -356,28 +373,29 @@ function ManageHeroSliderPageContent() {
                                             id: "title",
                                             value: formData.title,
                                             onChange: handleChange,
-                                            className: "mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900",
+                                            className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium",
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 204,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 202,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "subtitle",
-                                            className: "block text-sm font-medium text-slate-800",
-                                            children: "Subtitle"
+                                            className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                            children: "Subtítulo"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 207,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -386,152 +404,134 @@ function ManageHeroSliderPageContent() {
                                             value: formData.subtitle,
                                             onChange: handleChange,
                                             rows: 3,
-                                            className: "mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900",
+                                            className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium",
                                             required: true
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 205,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                    lineNumber: 203,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                            htmlFor: "buttonLink",
-                                            className: "block text-sm font-medium text-slate-800",
-                                            children: "Button Link (URL)"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
                                             lineNumber: 208,
                                             columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                            type: "url",
-                                            name: "buttonLink",
-                                            id: "buttonLink",
-                                            value: formData.buttonLink,
-                                            onChange: handleChange,
-                                            className: "mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900",
-                                            required: true
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 209,
-                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                    lineNumber: 207,
+                                    lineNumber: 206,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "grid md:grid-cols-2 gap-4",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                            htmlFor: "order",
-                                            className: "block text-sm font-medium text-slate-800",
-                                            children: "Order (Number)"
-                                        }, void 0, false, {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                    htmlFor: "buttonLink",
+                                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                                    children: "Link del Botón"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 212,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "url",
+                                                    name: "buttonLink",
+                                                    id: "buttonLink",
+                                                    value: formData.buttonLink,
+                                                    onChange: handleChange,
+                                                    className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium",
+                                                    required: true
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 213,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 212,
+                                            lineNumber: 211,
                                             columnNumber: 17
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                            type: "number",
-                                            name: "order",
-                                            id: "order",
-                                            value: formData.order,
-                                            onChange: handleChange,
-                                            className: "mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm p-2 text-slate-900",
-                                            required: true
-                                        }, void 0, false, {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                    htmlFor: "order",
+                                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                                    children: "Orden"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 216,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "number",
+                                                    name: "order",
+                                                    id: "order",
+                                                    value: formData.order,
+                                                    onChange: handleChange,
+                                                    className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium",
+                                                    required: true
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 217,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 213,
+                                            lineNumber: 215,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 210,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "image",
-                                            className: "block text-sm font-medium text-slate-800",
-                                            children: "Image"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 216,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                            type: "file",
-                                            name: "image",
-                                            id: "image",
-                                            accept: "image/*",
-                                            onChange: handleFileChange,
-                                            className: "mt-1 block w-full text-sm text-slate-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-cyan-700 file:text-cyan-100 hover:file:bg-secondary-700"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 217,
-                                            columnNumber: 17
-                                        }, this),
-                                        previewImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mt-2 w-32 h-24 relative border rounded-md overflow-hidden",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                src: previewImage,
-                                                alt: "Image Preview",
-                                                layout: "fill",
-                                                objectFit: "cover"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                                lineNumber: 218,
-                                                columnNumber: 109
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 218,
-                                            columnNumber: 34
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                    lineNumber: 215,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex justify-end space-x-2 pt-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "button",
-                                            onClick: resetForm,
-                                            disabled: isSubmitting,
-                                            className: "bg-gray-600 hover:bg-gray-500 text-gray-100 font-bold py-2 px-4 rounded disabled:opacity-50",
-                                            children: "Cancel"
+                                            className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                            children: "Imagen"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
                                             lineNumber: 221,
                                             columnNumber: 17
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "submit",
-                                            disabled: isSubmitting,
-                                            className: "bg-green-600 hover:bg-green-700 text-slate-900 font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex flex-col gap-4",
                                             children: [
-                                                isSubmitting && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                                    className: "mr-2 h-4 w-4 animate-spin"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "file",
+                                                    name: "image",
+                                                    id: "image",
+                                                    accept: "image/*",
+                                                    onChange: handleFileChange,
+                                                    className: "w-full text-sm text-slate-500 file:mr-4 file:py-3 file:px-6 file:rounded-2xl file:border-0 file:text-xs file:font-gobold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 transition-all cursor-pointer"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
                                                     lineNumber: 223,
-                                                    columnNumber: 36
+                                                    columnNumber: 21
                                                 }, this),
-                                                isSubmitting ? 'Guardando...' : currentSlide ? "Actualizar" : "Crear"
+                                                previewImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "w-full h-40 relative border border-slate-200 rounded-2xl overflow-hidden shadow-sm",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                        src: previewImage,
+                                                        alt: "Image Preview",
+                                                        layout: "fill",
+                                                        objectFit: "cover"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                        lineNumber: 224,
+                                                        columnNumber: 138
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 224,
+                                                    columnNumber: 38
+                                                }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
@@ -543,186 +543,249 @@ function ManageHeroSliderPageContent() {
                                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
                                     lineNumber: 220,
                                     columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex justify-end space-x-3 pt-6",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            type: "button",
+                                            onClick: resetForm,
+                                            disabled: isSubmitting,
+                                            className: "px-8 py-4 bg-slate-50 text-slate-700 font-gobold rounded-2xl hover:bg-slate-100 transition-all uppercase tracking-widest text-[10px] shadow-sm",
+                                            children: "Cancelar"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                            lineNumber: 228,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            type: "submit",
+                                            disabled: isSubmitting,
+                                            className: "px-8 py-4 bg-slate-900 text-white font-gobold rounded-2xl hover:bg-secondary-600 hover:shadow-xl transition-all uppercase tracking-widest text-[10px] flex items-center justify-center",
+                                            children: [
+                                                isSubmitting && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                                    className: "mr-2 h-4 w-4 animate-spin"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 230,
+                                                    columnNumber: 36
+                                                }, this),
+                                                isSubmitting ? 'Guardando...' : currentSlide ? "Actualizar" : "Crear"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                            lineNumber: 229,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                    lineNumber: 227,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                            lineNumber: 198,
+                            lineNumber: 201,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                    lineNumber: 194,
+                    lineNumber: 197,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                lineNumber: 193,
+                lineNumber: 196,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-[#111] rounded-lg shadow overflow-x-auto",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
-                    className: "min-w-full divide-y divide-white/10",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
-                            className: "bg-[#181818]",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                        className: "py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider",
-                                        children: "Image"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                        lineNumber: 236,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                        className: "py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider",
-                                        children: "Title"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                        lineNumber: 237,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                        className: "py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider",
-                                        children: "Subtitle"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                        lineNumber: 238,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                        className: "py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider",
-                                        children: "Order"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                        lineNumber: 239,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                        className: "py-3 px-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider",
-                                        children: "Actions"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                        lineNumber: 240,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                lineNumber: 235,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                            lineNumber: 234,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                            className: "divide-y divide-white/10",
-                            children: slides.map((slide)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                className: "bg-white rounded-[2.5rem] shadow-xl border border-slate-200 overflow-hidden",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "overflow-x-auto",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                        className: "min-w-full divide-y divide-slate-100",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                className: "bg-slate-50/50",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-4",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-16 h-9 relative rounded-md overflow-hidden",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                    src: slide.image,
-                                                    alt: slide.title,
-                                                    layout: "fill",
-                                                    objectFit: "cover"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                                    lineNumber: 246,
-                                                    columnNumber: 105
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                                lineNumber: 246,
-                                                columnNumber: 43
-                                            }, this)
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]",
+                                            children: "Imagen"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                            lineNumber: 244,
+                                            columnNumber: 21
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]",
+                                            children: "Título"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                            lineNumber: 245,
+                                            columnNumber: 21
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]",
+                                            children: "Subtítulo"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
                                             lineNumber: 246,
-                                            columnNumber: 17
+                                            columnNumber: 21
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-4",
-                                            children: slide.title
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]",
+                                            children: "Orden"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
                                             lineNumber: 247,
-                                            columnNumber: 17
+                                            columnNumber: 21
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-4 text-sm text-slate-700",
-                                            children: [
-                                                slide.subtitle.substring(0, 50),
-                                                "..."
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 248,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-4",
-                                            children: slide.order
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                            className: "py-4 px-6 text-left text-xs font-bold text-slate-400 uppercase tracking-[0.2em]",
+                                            children: "Acciones"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 249,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>handleEdit(slide),
-                                                    className: "bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-1 px-2 rounded text-xs mr-2",
-                                                    children: "Edit"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                                    lineNumber: 251,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>handleDelete(slide._id),
-                                                    className: "bg-red-600 hover:bg-red-700 text-slate-900 font-bold py-1 px-2 rounded text-xs",
-                                                    children: "Delete"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                                    lineNumber: 252,
-                                                    columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                            lineNumber: 250,
-                                            columnNumber: 17
+                                            lineNumber: 248,
+                                            columnNumber: 21
                                         }, this)
                                     ]
-                                }, slide._id, true, {
+                                }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                                    lineNumber: 245,
-                                    columnNumber: 15
-                                }, this))
-                        }, void 0, false, {
-                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                            lineNumber: 243,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                                    lineNumber: 243,
+                                    columnNumber: 21
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                lineNumber: 242,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                className: "divide-y divide-slate-50",
+                                children: slides.map((slide)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                        className: "hover:bg-slate-50/50 transition-colors",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "px-6 py-6 border-b border-slate-50",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "w-24 h-14 relative rounded-xl overflow-hidden shadow-sm border border-slate-200",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                        src: slide.image,
+                                                        alt: slide.title,
+                                                        layout: "fill",
+                                                        objectFit: "cover"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                        lineNumber: 256,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 255,
+                                                    columnNumber: 29
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                lineNumber: 254,
+                                                columnNumber: 25
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "px-6 py-6 font-semibold text-slate-900 border-b border-slate-50",
+                                                children: slide.title
+                                            }, void 0, false, {
+                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                lineNumber: 259,
+                                                columnNumber: 25
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "px-6 py-6 text-sm text-slate-500 border-b border-slate-50 max-w-xs truncate",
+                                                children: slide.subtitle
+                                            }, void 0, false, {
+                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                lineNumber: 260,
+                                                columnNumber: 25
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "px-6 py-6 font-bold text-slate-900 border-b border-slate-50",
+                                                children: slide.order
+                                            }, void 0, false, {
+                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                lineNumber: 261,
+                                                columnNumber: 25
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                className: "px-6 py-6 border-b border-slate-50",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex gap-2",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            onClick: ()=>handleEdit(slide),
+                                                            className: "p-3 bg-slate-50 text-slate-700 rounded-xl hover:bg-slate-100 transition-all shadow-sm border border-slate-100",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Pencil, {
+                                                                size: 18
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                                lineNumber: 264,
+                                                                columnNumber: 197
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                            lineNumber: 264,
+                                                            columnNumber: 33
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            onClick: ()=>handleDelete(slide._id),
+                                                            className: "p-3 bg-red-50 text-red-600 rounded-xl hover:bg-red-100 transition-all shadow-sm border border-red-50",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Trash2, {
+                                                                size: 18
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                                lineNumber: 265,
+                                                                columnNumber: 194
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                            lineNumber: 265,
+                                                            columnNumber: 33
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                    lineNumber: 263,
+                                                    columnNumber: 29
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                                lineNumber: 262,
+                                                columnNumber: 25
+                                            }, this)
+                                        ]
+                                    }, slide._id, true, {
+                                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                        lineNumber: 253,
+                                        columnNumber: 21
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                                lineNumber: 251,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
+                        lineNumber: 241,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                    lineNumber: 233,
+                    lineNumber: 240,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-                lineNumber: 232,
+                lineNumber: 239,
                 columnNumber: 7
             }, this)
         ]
@@ -736,12 +799,12 @@ function ManageHeroSlider() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$src$2f$components$2f$auth$2f$AdminAuthGuard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ManageHeroSliderPageContent, {}, void 0, false, {
             fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-            lineNumber: 266,
+            lineNumber: 281,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Software/construvidas/src/app/admin/hero-slider/page.tsx",
-        lineNumber: 265,
+        lineNumber: 280,
         columnNumber: 5
     }, this);
 }

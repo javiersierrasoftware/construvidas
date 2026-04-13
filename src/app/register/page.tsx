@@ -18,13 +18,10 @@ export default function RegisterPage() {
       const name = String(formData.get("name") || "");
       const email = String(formData.get("email") || "");
       const password = String(formData.get("password") || "");
-      const discipline = String(formData.get("discipline") || "");
-      const goal = String(formData.get("goal") || "");
-
       const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, discipline, goal }),
+        body: JSON.stringify({ name, email, password }),
       });
 
       if (!res.ok) {
@@ -94,35 +91,6 @@ export default function RegisterPage() {
               name="password"
               type="password"
               placeholder="Mínimo 6 caracteres"
-              className="bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
-            />
-          </div>
-
-          {/* Ministerio de Interés */}
-          <div className="flex flex-col space-y-2">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Ministerio de Interés</label>
-            <select
-              required
-              name="discipline"
-              className="bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none"
-            >
-              <option value="">Selecciona una opción</option>
-              <option value="casas_de_vida">Casas de Vida</option>
-              <option value="alabanza">Ministerio de Alabanza</option>
-              <option value="proyeccion">Proyección Social</option>
-              <option value="legado">Legado (Jóvenes)</option>
-              <option value="construkids">ConstruKids</option>
-            </select>
-          </div>
-
-          {/* Objetivo Espiritual */}
-          <div className="flex flex-col space-y-2">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Tu propósito</label>
-            <input
-              required
-              name="goal"
-              type="text"
-              placeholder="Ej: Crecer espiritualmente, servir a otros..."
               className="bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
             />
           </div>

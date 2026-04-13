@@ -65,159 +65,178 @@ export default function RegistrationForm({ event, user, calculatedPrice }: Regis
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-slate-800">
-          Nombre Completo
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-          placeholder="Tu nombre"
-        />
-      </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-800">
-          Correo Electrónico
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-          placeholder="tu@email.com"
-        />
-      </div>
-      <div>
-        <label htmlFor="cedula" className="block text-sm font-medium text-slate-800">
-          Cédula
-        </label>
-        <input
-          type="text"
-          id="cedula"
-          name="cedula"
-          value={formData.cedula}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-          placeholder="Tu número de identificación"
-        />
-      </div>
-      <div>
-        <label htmlFor="phoneNumber" className="block text-sm font-medium text-slate-800">
-          Teléfono móvil
-        </label>
-        <input
-          type="tel"
-          id="phoneNumber"
-          name="phoneNumber"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-          placeholder="Ej: 3001234567"
-        />
-      </div>
-      <div>
-        <label htmlFor="dateOfBirth" className="block text-sm font-medium text-slate-800">
-          Fecha de Nacimiento
-        </label>
-        <input
-          type="date"
-          id="dateOfBirth"
-          name="dateOfBirth"
-          value={formData.dateOfBirth}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-        />
-      </div>
-      {event.distances && event.distances.length > 0 && (
-        <div>
-          <label htmlFor="distance" className="block text-sm font-medium text-slate-800">
-            Distancia
-          </label>
-          <select
-            id="distance"
-            name="distance"
-            value={formData.distance}
+    <form onSubmit={handleSubmit} className="space-y-6" autoComplete="off">
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+            <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+            Nombre Completo
+            </label>
+            <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
             onChange={handleChange}
-            className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-          >
-            {event.distances.map((d) => (
-              <option key={d}>{d}</option>
-            ))}
-          </select>
+            required
+            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+            placeholder="Tu nombre"
+            />
         </div>
-      )}
-      {event.categories && event.categories.length > 0 && (
-        <div>
-          <label htmlFor="category" className="block text-sm font-medium text-slate-800">
-            Categoría
-          </label>
-          <select
-            id="category"
-            name="category"
-            value={formData.category}
+        <div className="space-y-2">
+            <label htmlFor="email" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+            Correo Electrónico
+            </label>
+            <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
-            className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-          >
-            {event.categories.map((c) => (
-              <option key={c}>{c}</option>
-            ))}
-          </select>
+            required
+            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+            placeholder="tu@email.com"
+            />
         </div>
-      )}
-      <div>
-        <label htmlFor="gender" className="block text-sm font-medium text-slate-800">
-          Género
-        </label>
-        <select
-          id="gender"
-          name="gender"
-          value={formData.gender}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+            <label htmlFor="cedula" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+            Cédula
+            </label>
+            <input
+            type="text"
+            id="cedula"
+            name="cedula"
+            value={formData.cedula}
+            onChange={handleChange}
+            required
+            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+            placeholder="Documento de identidad"
+            />
+        </div>
+        <div className="space-y-2">
+            <label htmlFor="phoneNumber" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+            Teléfono móvil
+            </label>
+            <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            required
+            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+            placeholder="Ej: 3001234567"
+            />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+            <label htmlFor="dateOfBirth" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+            Fecha de Nacimiento
+            </label>
+            <input
+            type="date"
+            id="dateOfBirth"
+            name="dateOfBirth"
+            value={formData.dateOfBirth}
+            onChange={handleChange}
+            required
+            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+            />
+        </div>
+        <div className="space-y-2">
+            <label htmlFor="gender" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+            Género
+            </label>
+            <select
+            id="gender"
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            required
+            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none"
+            >
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+            </select>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-6">
+          {event.distances && event.distances.length > 0 && (
+            <div className="space-y-2">
+              <label htmlFor="distance" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+                Distancia
+              </label>
+              <select
+                id="distance"
+                name="distance"
+                value={formData.distance}
+                onChange={handleChange}
+                className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none"
+              >
+                {event.distances.map((d) => (
+                  <option key={d}>{d}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          {event.categories && event.categories.length > 0 && (
+            <div className="space-y-2">
+              <label htmlFor="category" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+                Categoría
+              </label>
+              <select
+                id="category"
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+                className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none"
+              >
+                {event.categories.map((c) => (
+                  <option key={c}>{c}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          {event.shirtSizes && event.shirtSizes.length > 0 && (
+            <div className="space-y-2">
+              <label htmlFor="tshirtSize" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+                Talla de Camiseta
+              </label>
+              <select
+                id="tshirtSize"
+                name="tshirtSize"
+                value={formData.tshirtSize}
+                onChange={handleChange}
+                className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none"
+              >
+                {event.shirtSizes.map((s) => (
+                  <option key={s}>{s}</option>
+                ))}
+              </select>
+            </div>
+          )}
+      </div>
+
+      <div className="pt-6">
+        <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-slate-900 text-white font-gobold py-5 rounded-2xl hover:bg-secondary-600 hover:shadow-xl transition-all uppercase tracking-widest text-xs shadow-lg disabled:opacity-50"
         >
-          <option value="Hombre">Hombre</option>
-          <option value="Mujer">Mujer</option>
-        </select>
+            {isLoading ? "Procesando..." : `Inscribirme y pagar ${calculatedPrice.toLocaleString()} COP`}
+        </button>
       </div>
-      {event.shirtSizes && event.shirtSizes.length > 0 && (
-        <div>
-          <label htmlFor="tshirtSize" className="block text-sm font-medium text-slate-800">
-            Talla de Camiseta
-          </label>
-          <select
-            id="tshirtSize"
-            name="tshirtSize"
-            value={formData.tshirtSize}
-            onChange={handleChange}
-            className="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-          >
-            {event.shirtSizes.map((s) => (
-              <option key={s}>{s}</option>
-            ))}
-          </select>
+
+      {error && (
+        <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-center text-sm font-medium border border-red-100 animate-pulse">
+            {error}
         </div>
       )}
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="w-full bg-secondary-600 text-black font-bold py-3 px-4 rounded-md hover:bg-secondary-500 transition-colors disabled:opacity-50"
-      >
-        {isLoading ? "Procesando..." : `Pagar ${calculatedPrice} COP`}
-      </button>
-      {error && <p className="text-red-500 text-center mt-2">{error}</p>}
     </form>
   );
 }

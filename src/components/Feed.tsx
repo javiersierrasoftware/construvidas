@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Feed() {
-  const [stories, setStories] = useState([]);
+  const [stories, setStories] = useState<any[]>([]);
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
@@ -14,8 +14,18 @@ export default function Feed() {
 
     fetch("/api/stories?featured=1")
       .then((res) => res.json())
-      .then((data) => setStories(data))
-      .catch(console.error);
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setStories(data);
+        } else {
+          console.error("API Error or invalid data:", data);
+          setStories([]);
+        }
+      })
+      .catch((err) => {
+        console.error("Fetch error:", err);
+        setStories([]);
+      });
   }, []);
 
   return (

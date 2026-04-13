@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
-import cloudinary from "@/lib/cloudinary";
-import { Readable } from "stream";
+import { uploadFile } from "@/lib/storage";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
@@ -49,26 +48,9 @@ export async function POST(req: Request) {
 
     if (file && file.size > 0) {
       // ---------------------------------
-      // 3️⃣ SUBIR IMAGEN A CLOUDINARY
+      // 3️⃣ SUBIR IMAGEN AL SERVIDOR PROPIO
       // ---------------------------------
-      const bytes = await file.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-
-      const result: any = await new Promise((resolve, reject) => {
-        const uploadStream = cloudinary.uploader.upload_stream(
-          {
-            folder: "construvidas_products", // Specific folder for products
-            public_id: `${Date.now()}_${file.name}`,
-            resource_type: "image",
-          },
-          (error, result) => {
-            if (error) return reject(error);
-            resolve(result);
-          }
-        );
-        Readable.from(buffer).pipe(uploadStream);
-      });
-      imageUrl = result.secure_url;
+      imageUrl = await uploadFile(file);
     }
 
     // Generate slug

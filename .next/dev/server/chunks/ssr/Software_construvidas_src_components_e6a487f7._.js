@@ -165,7 +165,17 @@ function Feed() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const stored = localStorage.getItem("user");
         if (stored) setUser(JSON.parse(stored));
-        fetch("/api/stories?featured=1").then((res)=>res.json()).then((data)=>setStories(data)).catch(console.error);
+        fetch("/api/stories?featured=1").then((res)=>res.json()).then((data)=>{
+            if (Array.isArray(data)) {
+                setStories(data);
+            } else {
+                console.error("API Error or invalid data:", data);
+                setStories([]);
+            }
+        }).catch((err)=>{
+            console.error("Fetch error:", err);
+            setStories([]);
+        });
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "comunidad",
@@ -183,7 +193,7 @@ function Feed() {
                                 className: "h-10 w-10 object-contain"
                             }, void 0, false, {
                                 fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                lineNumber: 28,
+                                lineNumber: 38,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -193,7 +203,7 @@ function Feed() {
                                         children: "COMUNIDAD"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                        lineNumber: 31,
+                                        lineNumber: 41,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -201,24 +211,24 @@ function Feed() {
                                         children: "Últimas publicaciones"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                        lineNumber: 32,
+                                        lineNumber: 42,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                lineNumber: 30,
+                                lineNumber: 40,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                        lineNumber: 27,
+                        lineNumber: 37,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                    lineNumber: 26,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -239,12 +249,12 @@ function Feed() {
                                         sizes: "(max-width: 768px) 100vw, 33vw"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 60,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 59,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -258,7 +268,7 @@ function Feed() {
                                                     children: userInitial
                                                 }, void 0, false, {
                                                     fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                                    lineNumber: 62,
+                                                    lineNumber: 72,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -269,7 +279,7 @@ function Feed() {
                                                             children: authorName
                                                         }, void 0, false, {
                                                             fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                                            lineNumber: 69,
+                                                            lineNumber: 79,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -280,19 +290,19 @@ function Feed() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                                            lineNumber: 72,
+                                                            lineNumber: 82,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                                    lineNumber: 68,
+                                                    lineNumber: 78,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 71,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -300,13 +310,13 @@ function Feed() {
                                             children: post.category || "General"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                            lineNumber: 78,
+                                            lineNumber: 88,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 70,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -316,35 +326,35 @@ function Feed() {
                                         children: post.content || post.description
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                        lineNumber: 87,
+                                        lineNumber: 97,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 96,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, post._id, true, {
                             fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                            lineNumber: 44,
+                            lineNumber: 54,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-                    lineNumber: 38,
+                    lineNumber: 48,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-            lineNumber: 23,
+            lineNumber: 33,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Software/construvidas/src/components/Feed.tsx",
-        lineNumber: 22,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }
@@ -371,64 +381,92 @@ function EventsFeed() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const stored = localStorage.getItem("user");
         if (stored) setUser(JSON.parse(stored));
-        fetch("/api/events?limit=3").then((res)=>res.json()).then((data)=>setEvents(data)).catch(console.error);
+        fetch("/api/events?limit=3").then((res)=>res.json()).then((data)=>{
+            if (Array.isArray(data)) {
+                setEvents(data);
+            } else {
+                console.error("API Error or invalid data:", data);
+                setEvents([]);
+            }
+        }).catch((err)=>{
+            console.error("Fetch error:", err);
+            setEvents([]);
+        });
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "eventos",
+        className: "py-12",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-6xl mx-auto px-4",
+            className: "max-w-6xl mx-auto px-6",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex justify-between items-start mb-6",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                src: "/construvidastransparente.png",
-                                alt: "Logo",
-                                className: "h-10 w-10 object-contain"
-                            }, void 0, false, {
-                                fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                lineNumber: 28,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-3xl font-gobold text-slate-900 uppercase tracking-tight",
-                                        children: "VIVE LA COMUNIDAD"
+                    className: "flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
+                                        className: "text-secondary-600",
+                                        size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                        lineNumber: 31,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-slate-500 text-sm font-semibold uppercase tracking-widest",
-                                        children: "Próximos eventos"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                        lineNumber: 32,
-                                        columnNumber: 15
+                                        lineNumber: 39,
+                                        columnNumber: 17
                                     }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                lineNumber: 30,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                        lineNumber: 27,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
+                                }, void 0, false, {
+                                    fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                    lineNumber: 38,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "text-3xl font-gobold text-slate-900 uppercase tracking-tight",
+                                            children: "VIVE LA COMUNIDAD"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                            lineNumber: 42,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-slate-500 text-sm font-medium",
+                                            children: "Próximos eventos y actividades especiales"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                            lineNumber: 43,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                    lineNumber: 41,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                            lineNumber: 37,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            href: "/events",
+                            className: "bg-slate-900 text-white font-gobold px-8 py-4 rounded-2xl text-[10px] uppercase tracking-widest shadow-lg hover:bg-secondary-600 transition-all",
+                            children: "Ver Calendario"
+                        }, void 0, false, {
+                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                            lineNumber: 47,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                    lineNumber: 26,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-1 md:grid-cols-3 gap-6",
+                    className: "grid grid-cols-1 md:grid-cols-3 gap-8",
                     children: events.map((event)=>{
                         const formatDate = (dateString)=>{
                             return new Date(dateString).toLocaleDateString("es-CO", {
@@ -461,170 +499,185 @@ function EventsFeed() {
                             }
                         }
                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
-                            className: "relative bg-white border border-accent-300 rounded-3xl overflow-hidden shadow-lg group hover:shadow-xl transition-all",
+                            className: "group relative bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-6 space-y-4",
+                                    className: "p-8 space-y-6 flex-1",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center gap-2 text-slate-500",
+                                            className: "space-y-2",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
-                                                    size: 20
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "px-3 py-1 bg-secondary-50 text-secondary-600 text-[10px] font-bold uppercase tracking-widest rounded-md",
+                                                    children: event.category || "Evento"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                    lineNumber: 83,
+                                                    lineNumber: 101,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-xl font-gobold text-slate-900 uppercase tracking-tight",
+                                                    className: "text-2xl font-gobold text-slate-900 uppercase tracking-tight group-hover:text-secondary-600 transition-colors",
                                                     children: event.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                    lineNumber: 84,
+                                                    lineNumber: 104,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 100,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-1",
+                                            className: "space-y-3",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-slate-800 font-medium",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-3 text-slate-600",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "font-bold text-primary-950",
-                                                            children: "Fecha:"
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
+                                                            size: 16,
+                                                            className: "text-secondary-500"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                            lineNumber: 88,
-                                                            columnNumber: 23
+                                                            lineNumber: 109,
+                                                            columnNumber: 25
                                                         }, this),
-                                                        " ",
-                                                        formatDate(event.date)
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-sm font-medium",
+                                                            children: formatDate(event.date)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                                            lineNumber: 110,
+                                                            columnNumber: 25
+                                                        }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 108,
                                                     columnNumber: 21
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-slate-800 font-medium",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-3 text-slate-600",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "font-bold text-primary-950",
-                                                            children: "Hora:"
+                                                            className: "w-1 h-1 bg-secondary-500 rounded-full ml-1.5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                            lineNumber: 91,
-                                                            columnNumber: 23
+                                                            lineNumber: 113,
+                                                            columnNumber: 25
                                                         }, this),
-                                                        " ",
-                                                        formatTime(event.time)
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-sm font-medium ml-1.5",
+                                                            children: formatTime(event.time)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                                            lineNumber: 114,
+                                                            columnNumber: 25
+                                                        }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                    lineNumber: 90,
+                                                    lineNumber: 112,
                                                     columnNumber: 21
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-slate-800 font-medium",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "font-bold text-primary-950",
-                                                            children: "Lugar:"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                            lineNumber: 94,
-                                                            columnNumber: 23
-                                                        }, this),
-                                                        " ",
-                                                        event.location
-                                                    ]
-                                                }, void 0, true, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-3 text-slate-400",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-[10px] font-bold uppercase tracking-widest ml-1",
+                                                        children: event.location
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                                        lineNumber: 117,
+                                                        columnNumber: 25
+                                                    }, this)
+                                                }, void 0, false, {
                                                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                                    lineNumber: 93,
+                                                    lineNumber: 116,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 107,
                                             columnNumber: 19
                                         }, this),
-                                        event.price && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-2xl font-gobold text-slate-900 mt-4",
-                                            children: event.price === "0" || event.price.toLowerCase() === "gratis" ? "Gratis" : event.price
+                                        event.price && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "pt-4 mt-auto",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-3xl font-gobold text-slate-900",
+                                                children: event.price === "0" || event.price.toLowerCase() === "gratis" ? "Gratis" : event.price
+                                            }, void 0, false, {
+                                                fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                                lineNumber: 124,
+                                                columnNumber: 25
+                                            }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 123,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                    lineNumber: 81,
+                                    lineNumber: 99,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-6 pt-0 flex justify-between items-center bg-gray-50 border-t border-accent-100",
+                                    className: "p-8 pt-0 flex flex-col gap-3",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                            href: `/events/${event._id}`,
-                                            className: "text-slate-500 hover:text-secondary-500 text-sm font-bold transition-colors",
-                                            children: "Ver detalles"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                            lineNumber: 108,
-                                            columnNumber: 19
-                                        }, this),
                                         isRegistrationClosed ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "bg-red-50 text-red-600 border border-red-100 px-4 py-2 rounded-xl text-sm font-bold",
-                                            children: "Cerrado"
+                                            className: "text-center bg-red-50 text-red-600 border border-red-100 py-4 rounded-2xl text-[10px] font-gobold uppercase tracking-widest",
+                                            children: "Inscripciones Cerradas"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 135,
                                             columnNumber: 21
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                             href: `/events/register/${event._id}`,
-                                            className: "bg-primary-500 text-slate-900 px-5 py-2 rounded-xl text-sm font-gobold uppercase tracking-wide hover:bg-primary-600 transition shadow-md border border-primary-600",
-                                            children: "Inscribirme"
+                                            className: "bg-slate-900 text-white text-center py-4 rounded-2xl text-[10px] font-gobold uppercase tracking-widest hover:bg-secondary-600 transition-all shadow-lg",
+                                            children: "Inscribirme Ahora"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                            lineNumber: 116,
+                                            lineNumber: 139,
                                             columnNumber: 21
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            href: `/events/${event._id}`,
+                                            className: "text-slate-400 hover:text-slate-900 text-[10px] font-gobold text-center uppercase tracking-widest transition-colors",
+                                            children: "Ver Detalles"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
+                                            lineNumber: 143,
+                                            columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 133,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, event._id, true, {
                             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                            lineNumber: 77,
+                            lineNumber: 95,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-                    lineNumber: 38,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-            lineNumber: 23,
+            lineNumber: 33,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Software/construvidas/src/components/EventsFeed.tsx",
-        lineNumber: 22,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }

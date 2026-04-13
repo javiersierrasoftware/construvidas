@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Event from "@/models/Event";
-import cloudinary from "@/lib/cloudinary";
-import { Readable } from "stream";
+import { uploadFile } from "@/lib/storage";
 import { isValidObjectId } from "mongoose";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
@@ -56,22 +55,8 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 
     let imageUrl = formData.get("currentImage") as string || "";
 
-    // Si se sube una nueva imagen, procesarla y subirla a Cloudinary
     if (file && typeof file !== 'string') {
-      const bytes = await file.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-
-      const result: any = await new Promise((resolve, reject) => {
-        const uploadStream = cloudinary.uploader.upload_stream(
-          { folder: "construvidas_events" },
-          (error, result) => {
-            if (error) return reject(error);
-            resolve(result);
-          }
-        );
-        Readable.from(buffer).pipe(uploadStream);
-      });
-      imageUrl = result.secure_url;
+      imageUrl = await uploadFile(file);
     }
 
     const updatedData: any = {};

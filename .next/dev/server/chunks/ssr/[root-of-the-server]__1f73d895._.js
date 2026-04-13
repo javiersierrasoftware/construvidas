@@ -275,163 +275,140 @@ function Navbar() {
                                         columnNumber: 15
                                     }, this),
                                     menuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute right-0 mt-2 w-56 bg-[#111] border border-gray-800 rounded-xl shadow-lg z-50 overflow-hidden",
+                                        className: "absolute right-0 mt-4 w-72 bg-white border border-slate-100 rounded-[2rem] shadow-2xl z-50 overflow-hidden py-4 animate-in fade-in slide-in-from-top-2 duration-300",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/perfil",
-                                                className: "block px-4 py-3 text-sm hover:bg-white/10 transition text-gray-200",
-                                                onClick: ()=>setMenuOpen(false),
-                                                children: "Mi Perfil"
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "px-6 py-4 mb-2 border-b border-slate-50",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1",
+                                                        children: "Bienvenido"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                        lineNumber: 136,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm font-gobold text-slate-900 uppercase truncate",
+                                                        children: user?.name
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                        lineNumber: 137,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
                                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
                                                 lineNumber: 135,
                                                 columnNumber: 19
                                             }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/perfil",
+                                                className: "block px-6 py-3 text-sm font-medium hover:bg-slate-50 hover:text-secondary-600 transition text-slate-600",
+                                                onClick: ()=>setMenuOpen(false),
+                                                children: "Mi Perfil"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                lineNumber: 140,
+                                                columnNumber: 19
+                                            }, this),
                                             user?.role === "ADMIN" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "border-t border-gray-800",
+                                                className: "mt-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "px-4 pt-3 pb-2 text-[11px] uppercase tracking-wider text-gray-500 font-semibold",
+                                                        className: "px-6 py-3 text-[10px] uppercase tracking-[0.2em] text-secondary-500 font-bold bg-secondary-50/50",
                                                         children: "Administración"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 151,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "px-2 pb-2",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "px-2 py-2 text-[11px] uppercase tracking-wider text-gray-500",
-                                                                children: "Historias"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 151,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/stories/create",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Crear historia"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 154,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/stories/manage",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Gestionar historias"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 161,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "px-2 pt-3 pb-2 text-[11px] uppercase tracking-wider text-gray-500",
-                                                                children: "Eventos"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 169,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/events/create",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Crear evento"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 172,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/events/manage",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Gestionar eventos"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 179,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "px-2 pt-3 pb-2 text-[11px] uppercase tracking-wider text-gray-500",
-                                                                children: "Tienda"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 187,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/admin/products/create",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Crear producto"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 190,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/admin/products/manage",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Gestionar productos"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 197,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/admin/sales",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Ventas realizadas"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 204,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "px-2 pt-3 pb-2 text-[11px] uppercase tracking-wider text-gray-500",
-                                                                children: "Hero Slider"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 212,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                href: "/admin/hero-slider",
-                                                                className: "block px-4 py-2 text-sm hover:bg-white/10 transition text-gray-200 rounded-lg",
-                                                                onClick: ()=>setMenuOpen(false),
-                                                                children: "Gestionar Hero Slider"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                                lineNumber: 215,
-                                                                columnNumber: 25
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "mt-2 flex flex-col gap-1",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: "/stories/manage",
+                                                                    className: "block px-6 py-2.5 text-xs font-bold hover:bg-slate-50 transition text-slate-500 rounded-xl",
+                                                                    onClick: ()=>setMenuOpen(false),
+                                                                    children: "Gestionar Historias"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                    lineNumber: 157,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: "/events/manage",
+                                                                    className: "block px-6 py-2.5 text-xs font-bold hover:bg-slate-50 transition text-slate-500 rounded-xl",
+                                                                    onClick: ()=>setMenuOpen(false),
+                                                                    children: "Gestionar Eventos"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                    lineNumber: 165,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: "/admin/products/manage",
+                                                                    className: "block px-6 py-2.5 text-xs font-bold hover:bg-slate-50 transition text-slate-500 rounded-xl",
+                                                                    onClick: ()=>setMenuOpen(false),
+                                                                    children: "Gestionar Tienda"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                    lineNumber: 173,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: "/admin/surveys",
+                                                                    className: "block px-6 py-2.5 text-xs font-bold hover:bg-slate-50 transition text-slate-500 rounded-xl",
+                                                                    onClick: ()=>setMenuOpen(false),
+                                                                    children: "Gestionar Encuestas"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                    lineNumber: 181,
+                                                                    columnNumber: 30
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: "/admin/hero-slider",
+                                                                    className: "block px-6 py-2.5 text-xs font-bold hover:bg-slate-50 transition text-slate-500 rounded-xl",
+                                                                    onClick: ()=>setMenuOpen(false),
+                                                                    children: "Hero Slider"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                    lineNumber: 189,
+                                                                    columnNumber: 29
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                            lineNumber: 156,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    }, void 0, false, {
                                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 150,
+                                                        lineNumber: 155,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 150,
                                                 columnNumber: 21
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: handleLogout,
-                                                className: "block w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 transition border-t border-gray-800",
-                                                children: "Cerrar sesión"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "mt-4 pt-4 border-t border-slate-50 px-2",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: handleLogout,
+                                                    className: "flex items-center w-full text-left px-6 py-3 text-sm font-bold text-red-500 hover:bg-red-50 transition rounded-2xl",
+                                                    children: "Cerrar sesión"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                    lineNumber: 202,
+                                                    columnNumber: 21
+                                                }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 226,
+                                                lineNumber: 201,
                                                 columnNumber: 19
                                             }, this)
                                         ]
@@ -457,7 +434,7 @@ function Navbar() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: toggleCart,
-                                className: "relative",
+                                className: "relative p-2",
                                 "aria-label": "Abrir carrito",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
@@ -465,50 +442,51 @@ function Navbar() {
                                         className: "text-slate-900"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 218,
                                         columnNumber: 13
                                     }, this),
                                     totalItems > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "absolute -top-2 -right-2 bg-gradient-to-br from-secondary-400 to-accent-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center",
+                                        className: "absolute top-1 right-1 bg-secondary-600 text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-lg transform translate-x-1 -translate-y-1",
                                         children: totalItems
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 246,
+                                        lineNumber: 220,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                lineNumber: 243,
+                                lineNumber: 217,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: toggleMobile,
+                                className: "p-2",
                                 "aria-label": "Abrir menú",
                                 children: mobileOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
                                     size: 26,
                                     className: "text-slate-900"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                    lineNumber: 253,
+                                    lineNumber: 227,
                                     columnNumber: 27
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                     size: 26,
                                     className: "text-slate-900"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                    lineNumber: 253,
+                                    lineNumber: 227,
                                     columnNumber: 72
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                lineNumber: 252,
+                                lineNumber: 226,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                        lineNumber: 242,
+                        lineNumber: 216,
                         columnNumber: 9
                     }, this)
                 ]
@@ -520,53 +498,70 @@ function Navbar() {
             mobileOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 "aria-label": "Cerrar menú",
                 onClick: closeMobile,
-                className: "fixed inset-0 bg-white/60 z-[55] md:hidden"
+                className: "fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[55] md:hidden animate-in fade-in duration-500"
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 260,
+                lineNumber: 234,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `fixed top-0 right-0 w-80 max-w-[88vw] h-dvh bg-[#0b0b0b]/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl transform transition-transform duration-300 z-[60] md:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"}`,
+                className: `fixed top-0 right-0 w-[20rem] max-w-[85vw] h-dvh bg-white border-l border-slate-100 shadow-2xl transform transition-transform duration-500 ease-out z-[60] md:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"}`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex justify-between items-center p-5 border-b border-gray-800",
+                        className: "flex justify-between items-center p-8 border-b border-slate-50",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-lg font-bold text-slate-900",
-                                children: "Menú"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1",
+                                        children: "Navegación"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                        lineNumber: 248,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xl font-gobold text-slate-900 uppercase tracking-tight",
+                                        children: "Menú Principal"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                        lineNumber: 249,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                lineNumber: 273,
-                                columnNumber: 11
+                                lineNumber: 247,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: closeMobile,
+                                className: "p-2 hover:bg-slate-50 rounded-full transition-colors",
                                 "aria-label": "Cerrar menú",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
                                     size: 26,
-                                    className: "text-slate-800"
+                                    className: "text-slate-400"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                    lineNumber: 275,
+                                    lineNumber: 252,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                lineNumber: 274,
+                                lineNumber: 251,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                        lineNumber: 272,
+                        lineNumber: 246,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col p-5 text-sm",
+                        className: "flex flex-col p-8 overflow-y-auto h-[calc(100vh-100px)]",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-col gap-4",
+                                className: "flex flex-col gap-2",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileLink, {
                                         href: "/",
@@ -574,7 +569,7 @@ function Navbar() {
                                         children: "Inicio"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 282,
+                                        lineNumber: 259,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileLink, {
@@ -583,16 +578,16 @@ function Navbar() {
                                         children: "Comunidad"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 283,
+                                        lineNumber: 260,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileLink, {
-                                        href: "/entrenamiento",
+                                        href: "/discipulado",
                                         onClick: closeMobile,
-                                        children: "Entrenamiento"
+                                        children: "Discipulado"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 284,
+                                        lineNumber: 261,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileLink, {
@@ -601,16 +596,7 @@ function Navbar() {
                                         children: "Eventos"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 285,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileLink, {
-                                        href: "/tienda",
-                                        onClick: closeMobile,
-                                        children: "Tienda"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 286,
+                                        lineNumber: 262,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileLink, {
@@ -619,189 +605,216 @@ function Navbar() {
                                         children: "Únete"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 287,
+                                        lineNumber: 264,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                lineNumber: 281,
+                                lineNumber: 258,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "my-5 border-t border-gray-800"
+                                className: "my-8 border-t border-slate-50"
                             }, void 0, false, {
                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                lineNumber: 290,
+                                lineNumber: 267,
                                 columnNumber: 11
                             }, this),
                             !user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/login",
                                 onClick: closeMobile,
-                                className: "bg-gradient-to-br from-secondary-400 to-accent-400 text-black font-semibold px-4 py-2 rounded-full text-center",
+                                className: "bg-slate-900 text-white font-gobold py-5 rounded-2xl text-center uppercase tracking-widest text-xs shadow-lg",
                                 children: "Ingresar"
                             }, void 0, false, {
                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                lineNumber: 294,
+                                lineNumber: 271,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex flex-col gap-4",
+                                        className: "flex flex-col gap-2",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileLink, {
                                             href: "/perfil",
                                             onClick: closeMobile,
                                             children: "Mi Perfil"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                            lineNumber: 304,
+                                            lineNumber: 281,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 303,
+                                        lineNumber: 280,
                                         columnNumber: 15
                                     }, this),
-                                    user?.role === "ADMIN" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                    user?.role === "ADMIN" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mt-8 pt-8 border-t border-slate-50",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "mt-5 mb-3 border-t border-gray-800"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 310,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-2",
+                                                className: "text-[10px] uppercase tracking-[0.2em] text-secondary-500 font-bold mb-6",
                                                 children: "Administración"
                                             }, void 0, false, {
                                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 311,
+                                                lineNumber: 287,
                                                 columnNumber: 19
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
-                                                title: "Historias",
-                                                open: adminOpen === "historias",
-                                                onToggle: ()=>setAdminOpen((v)=>v === "historias" ? null : "historias"),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-4",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                        href: "/stories/create",
-                                                        onClick: closeMobile,
-                                                        children: "Crear historia"
-                                                    }, void 0, false, {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
+                                                        title: "Historias",
+                                                        open: adminOpen === "historias",
+                                                        onToggle: ()=>setAdminOpen((v)=>v === "historias" ? null : "historias"),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/stories/create",
+                                                                onClick: closeMobile,
+                                                                children: "Crear historia"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 297,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/stories/manage",
+                                                                onClick: closeMobile,
+                                                                children: "Gestionar historias"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 300,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 320,
+                                                        lineNumber: 292,
                                                         columnNumber: 21
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                        href: "/stories/manage",
-                                                        onClick: closeMobile,
-                                                        children: "Gestionar historias"
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
+                                                        title: "Eventos",
+                                                        open: adminOpen === "eventos",
+                                                        onToggle: ()=>setAdminOpen((v)=>v === "eventos" ? null : "eventos"),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/events/create",
+                                                                onClick: closeMobile,
+                                                                children: "Crear evento"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 310,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/events/manage",
+                                                                onClick: closeMobile,
+                                                                children: "Gestionar eventos"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 313,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                        lineNumber: 305,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
+                                                        title: "Tienda",
+                                                        open: adminOpen === "tienda",
+                                                        onToggle: ()=>setAdminOpen((v)=>v === "tienda" ? null : "tienda"),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/admin/products/manage",
+                                                                onClick: closeMobile,
+                                                                children: "Gestionar tienda"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 323,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/admin/sales",
+                                                                onClick: closeMobile,
+                                                                children: "Ventas realizadas"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 326,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                        lineNumber: 318,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
+                                                        title: "Hero Slider",
+                                                        open: adminOpen === "hero",
+                                                        onToggle: ()=>setAdminOpen((v)=>v === "hero" ? null : "hero"),
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                            href: "/admin/hero-slider",
+                                                            onClick: closeMobile,
+                                                            children: "Gestionar Hero Slider"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                            lineNumber: 336,
+                                                            columnNumber: 25
+                                                        }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 323,
+                                                        lineNumber: 331,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
+                                                        title: "Encuestas",
+                                                        open: adminOpen === "surveys",
+                                                        onToggle: ()=>setAdminOpen((v)=>v === "surveys" ? null : "surveys"),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/admin/surveys",
+                                                                onClick: closeMobile,
+                                                                children: "Gestionar Encuestas"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 346,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
+                                                                href: "/admin/surveys/create",
+                                                                onClick: closeMobile,
+                                                                children: "Crear Nueva Encuesta"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                                lineNumber: 349,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                                        lineNumber: 341,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 315,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
-                                                title: "Eventos",
-                                                open: adminOpen === "eventos",
-                                                onToggle: ()=>setAdminOpen((v)=>v === "eventos" ? null : "eventos"),
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                        href: "/events/create",
-                                                        onClick: closeMobile,
-                                                        children: "Crear evento"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 333,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                        href: "/events/manage",
-                                                        onClick: closeMobile,
-                                                        children: "Gestionar eventos"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 336,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 328,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
-                                                title: "Tienda",
-                                                open: adminOpen === "tienda",
-                                                onToggle: ()=>setAdminOpen((v)=>v === "tienda" ? null : "tienda"),
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                        href: "/admin/products/create",
-                                                        onClick: closeMobile,
-                                                        children: "Crear producto"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 346,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                        href: "/admin/products/manage",
-                                                        onClick: closeMobile,
-                                                        children: "Gestionar productos"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 349,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                        href: "/admin/sales",
-                                                        onClick: closeMobile,
-                                                        children: "Ventas realizadas"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                        lineNumber: 352,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 341,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileSection, {
-                                                title: "Hero Slider",
-                                                open: adminOpen === "hero",
-                                                onToggle: ()=>setAdminOpen((v)=>v === "hero" ? null : "hero"),
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileAdminLink, {
-                                                    href: "/admin/hero-slider",
-                                                    onClick: closeMobile,
-                                                    children: "Gestionar Hero Slider"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                    lineNumber: 362,
-                                                    columnNumber: 21
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                                lineNumber: 357,
+                                                lineNumber: 291,
                                                 columnNumber: 19
                                             }, this)
                                         ]
-                                    }, void 0, true),
+                                    }, void 0, true, {
+                                        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+                                        lineNumber: 286,
+                                        columnNumber: 17
+                                    }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: handleLogout,
-                                        className: "mt-6 text-red-400 text-left",
+                                        className: "mt-12 text-red-500 font-bold text-center py-4 bg-red-50 rounded-2xl border border-red-100 uppercase tracking-widest text-[10px]",
                                         children: "Cerrar sesión"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                                        lineNumber: 369,
+                                        lineNumber: 357,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -809,13 +822,13 @@ function Navbar() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                        lineNumber: 279,
+                        lineNumber: 256,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 268,
+                lineNumber: 242,
                 columnNumber: 7
             }, this)
         ]
@@ -826,74 +839,70 @@ function Navbar() {
     }, this);
 }
 /* --------------------- LINKS DESKTOP --------------------- */ function NavLinks() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "flex items-center gap-10",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "/",
-                className: "text-slate-700 hover:text-secondary-600 transition font-medium",
+                className: "text-slate-600 hover:text-secondary-600 transition font-bold uppercase tracking-widest text-[10px]",
                 children: "Inicio"
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 384,
+                lineNumber: 372,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "/stories",
-                className: "text-slate-700 hover:text-secondary-600 transition font-medium",
+                className: "text-slate-600 hover:text-secondary-600 transition font-bold uppercase tracking-widest text-[10px]",
                 children: "Comunidad"
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 385,
+                lineNumber: 373,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "/discipulado",
-                className: "text-slate-700 hover:text-secondary-600 transition font-medium",
+                className: "text-slate-600 hover:text-secondary-600 transition font-bold uppercase tracking-widest text-[10px]",
                 children: "Discipulado"
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 386,
+                lineNumber: 374,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "/events",
-                className: "text-slate-700 hover:text-secondary-600 transition font-medium",
+                className: "text-slate-600 hover:text-secondary-600 transition font-bold uppercase tracking-widest text-[10px]",
                 children: "Eventos"
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 387,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                href: "/tienda",
-                className: "text-slate-700 hover:text-secondary-600 transition font-medium",
-                children: "Tienda"
-            }, void 0, false, {
-                fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 388,
+                lineNumber: 375,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "/join",
-                className: "text-slate-700 hover:text-secondary-600 transition font-medium",
+                className: "text-slate-600 hover:text-secondary-600 transition font-bold uppercase tracking-widest text-[10px]",
                 children: "Únete"
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 389,
+                lineNumber: 377,
                 columnNumber: 7
             }, this)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
+        lineNumber: 371,
+        columnNumber: 5
+    }, this);
 }
-/* --------------------- LINK MOBILE (AHORA BLOCK PARA QUE NO SE PEGUEN) --------------------- */ function MobileLink({ href, children, onClick }) {
+/* --------------------- LINK MOBILE --------------------- */ function MobileLink({ href, children, onClick }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         href: href,
         onClick: onClick,
-        className: "block text-gray-100 hover:text-secondary-400 transition",
+        className: "block text-slate-600 hover:text-secondary-600 transition font-gobold uppercase tracking-widest text-lg py-1",
         children: children
     }, void 0, false, {
         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-        lineNumber: 405,
+        lineNumber: 393,
         columnNumber: 5
     }, this);
 }
@@ -906,39 +915,39 @@ function Navbar() {
                 className: "w-full flex items-center justify-between py-2 text-left",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-[11px] uppercase tracking-wider text-gray-500 font-semibold",
+                        className: "text-xs uppercase tracking-wider text-slate-400 font-bold",
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                        lineNumber: 430,
+                        lineNumber: 418,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                         size: 16,
-                        className: `text-gray-500 transition-transform ${open ? "rotate-180" : ""}`
+                        className: `text-slate-400 transition-transform ${open ? "rotate-180" : ""}`
                     }, void 0, false, {
                         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                        lineNumber: 433,
+                        lineNumber: 421,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 429,
+                lineNumber: 417,
                 columnNumber: 7
             }, this),
             open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-2 space-y-2 pl-3 border-l border-gray-800",
+                className: "mt-4 space-y-4 pl-4 border-l-2 border-slate-50 flex flex-col",
                 children: children
             }, void 0, false, {
                 fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-                lineNumber: 440,
+                lineNumber: 428,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-        lineNumber: 428,
+        lineNumber: 416,
         columnNumber: 5
     }, this);
 }
@@ -946,11 +955,11 @@ function Navbar() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         href: href,
         onClick: onClick,
-        className: "block text-gray-100 hover:text-secondary-400 transition py-1",
+        className: "text-slate-600 hover:text-secondary-600 transition font-bold text-sm",
         children: children
     }, void 0, false, {
         fileName: "[project]/Software/construvidas/src/components/Navbar.tsx",
-        lineNumber: 459,
+        lineNumber: 447,
         columnNumber: 5
     }, this);
 }
@@ -1403,12 +1412,12 @@ function CheckoutForm({ onClose, totalAmount }) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed inset-0 bg-white/70 backdrop-blur-sm flex items-center justify-center z-50 p-4",
+        className: "fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "bg-[#111] border border-white/10 rounded-xl p-6 max-w-lg w-full space-y-4",
+            className: "bg-white border border-slate-100 rounded-[2.5rem] p-10 max-w-lg w-full shadow-2xl animate-in fade-in zoom-in duration-300 max-h-[90vh] overflow-y-auto",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                    className: "text-2xl font-bold mb-4",
+                    className: "text-3xl font-gobold text-slate-900 uppercase tracking-tight mb-8",
                     children: "Datos del Comprador"
                 }, void 0, false, {
                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
@@ -1417,13 +1426,14 @@ function CheckoutForm({ onClose, totalAmount }) {
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                     onSubmit: handleSubmit,
-                    className: "space-y-4",
+                    className: "space-y-6",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "space-y-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "name",
-                                    className: "block text-sm font-medium text-slate-800",
+                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
                                     children: "Nombre Completo"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
@@ -1437,7 +1447,7 @@ function CheckoutForm({ onClose, totalAmount }) {
                                     value: formData.name,
                                     onChange: handleChange,
                                     required: true,
-                                    className: "mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
+                                    className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
                                     lineNumber: 156,
@@ -1450,28 +1460,69 @@ function CheckoutForm({ onClose, totalAmount }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid md:grid-cols-2 gap-4",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    htmlFor: "email",
-                                    className: "block text-sm font-medium text-slate-800",
-                                    children: "Correo Electrónico"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                            htmlFor: "email",
+                                            className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                            children: "Email"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                            lineNumber: 169,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "email",
+                                            id: "email",
+                                            name: "email",
+                                            value: formData.email,
+                                            onChange: handleChange,
+                                            required: true,
+                                            className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                            lineNumber: 172,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
                                     lineNumber: 168,
-                                    columnNumber: 13
+                                    columnNumber: 15
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "email",
-                                    id: "email",
-                                    name: "email",
-                                    value: formData.email,
-                                    onChange: handleChange,
-                                    required: true,
-                                    className: "mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                            htmlFor: "cedula",
+                                            className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                            children: "Cédula"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                            lineNumber: 183,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "text",
+                                            id: "cedula",
+                                            name: "cedula",
+                                            value: formData.cedula,
+                                            onChange: handleChange,
+                                            required: true,
+                                            className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                            lineNumber: 186,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 171,
-                                    columnNumber: 13
+                                    lineNumber: 182,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
@@ -1480,43 +1531,14 @@ function CheckoutForm({ onClose, totalAmount }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "space-y-3",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    htmlFor: "cedula",
-                                    className: "block text-sm font-medium text-slate-800",
-                                    children: "Cédula"
-                                }, void 0, false, {
-                                    fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 183,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "text",
-                                    id: "cedula",
-                                    name: "cedula",
-                                    value: formData.cedula,
-                                    onChange: handleChange,
-                                    required: true,
-                                    className: "mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 186,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                            lineNumber: 182,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "block text-sm font-medium text-slate-800 mb-2",
+                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
                                     children: "Método de Entrega"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 200,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1525,138 +1547,150 @@ function CheckoutForm({ onClose, totalAmount }) {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "button",
                                             onClick: ()=>handleShippingMethodChange("pickup"),
-                                            className: `flex-1 py-2 px-4 rounded-lg border transition ${shippingMethod === "pickup" ? "bg-secondary-600/20 border-secondary-600 text-secondary-400" : "bg-gray-800 border-gray-700 text-slate-700 hover:bg-gray-700"}`,
+                                            className: `flex-1 py-4 px-6 rounded-2xl border font-gobold text-[10px] uppercase tracking-widest transition-all ${shippingMethod === "pickup" ? "bg-slate-900 border-slate-900 text-white shadow-lg" : "bg-white border-slate-200 text-slate-500 hover:bg-slate-50"}`,
                                             children: "Acordar por WhatsApp"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 204,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "button",
                                             onClick: ()=>handleShippingMethodChange("shipping"),
-                                            className: `flex-1 py-2 px-4 rounded-lg border transition ${shippingMethod === "shipping" ? "bg-secondary-600/20 border-secondary-600 text-secondary-400" : "bg-gray-800 border-gray-700 text-slate-700 hover:bg-gray-700"}`,
+                                            className: `flex-1 py-4 px-6 rounded-2xl border font-gobold text-[10px] uppercase tracking-widest transition-all ${shippingMethod === "shipping" ? "bg-slate-900 border-slate-900 text-white shadow-lg" : "bg-white border-slate-200 text-slate-500 hover:bg-slate-50"}`,
                                             children: "Envío a dirección"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 213,
+                                            lineNumber: 214,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 202,
+                                    lineNumber: 203,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                            lineNumber: 198,
+                            lineNumber: 199,
                             columnNumber: 11
                         }, this),
                         shippingMethod === "shipping" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "space-y-4 border-t border-white/10 pt-4 mt-2",
+                            className: "space-y-6 pt-6 border-t border-slate-100 mt-6 animate-in slide-in-from-top-4 duration-300",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "grid md:grid-cols-2 gap-4",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                            htmlFor: "department",
-                                            className: "block text-sm font-medium text-slate-800",
-                                            children: "Departamento"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 230,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                            id: "department",
-                                            value: selectedDepartment,
-                                            onChange: handleDepartmentChange,
-                                            className: "mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-2",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                    value: "",
-                                                    children: "Selecciona un departamento"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                    htmlFor: "department",
+                                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                                    children: "Departamento"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                                    lineNumber: 239,
-                                                    columnNumber: 19
+                                                    lineNumber: 232,
+                                                    columnNumber: 21
                                                 }, this),
-                                                __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$src$2f$data$2f$colombia$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["COLOMBIA_DATA"].map((dept)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                        value: dept.departamento,
-                                                        children: dept.departamento
-                                                    }, dept.departamento, false, {
-                                                        fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                                        lineNumber: 241,
-                                                        columnNumber: 21
-                                                    }, this))
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                    id: "department",
+                                                    value: selectedDepartment,
+                                                    onChange: handleDepartmentChange,
+                                                    className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                            value: "",
+                                                            children: "Selecciona"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                                            lineNumber: 241,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$src$2f$data$2f$colombia$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["COLOMBIA_DATA"].map((dept)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: dept.departamento,
+                                                                children: dept.departamento
+                                                            }, dept.departamento, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                                                lineNumber: 243,
+                                                                columnNumber: 25
+                                                            }, this))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                                    lineNumber: 235,
+                                                    columnNumber: 21
+                                                }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 233,
-                                            columnNumber: 17
+                                            lineNumber: 231,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                    htmlFor: "city",
+                                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
+                                                    children: "Ciudad"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                                    lineNumber: 251,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                    id: "city",
+                                                    value: selectedCity,
+                                                    onChange: handleCityChange,
+                                                    disabled: !selectedDepartment,
+                                                    className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium appearance-none disabled:opacity-50",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                            value: "",
+                                                            children: "Selecciona"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                                            lineNumber: 261,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        availableCities.map((city)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: city,
+                                                                children: city
+                                                            }, city, false, {
+                                                                fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                                                lineNumber: 263,
+                                                                columnNumber: 25
+                                                            }, this))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                                    lineNumber: 254,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                            lineNumber: 250,
+                                            columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 229,
+                                    lineNumber: 230,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                            htmlFor: "city",
-                                            className: "block text-sm font-medium text-slate-800",
-                                            children: "Ciudad"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 249,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                            id: "city",
-                                            value: selectedCity,
-                                            onChange: handleCityChange,
-                                            disabled: !selectedDepartment,
-                                            className: "mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm disabled:opacity-50",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                    value: "",
-                                                    children: "Selecciona una ciudad"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                                    lineNumber: 259,
-                                                    columnNumber: 19
-                                                }, this),
-                                                availableCities.map((city)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                        value: city,
-                                                        children: city
-                                                    }, city, false, {
-                                                        fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                                        lineNumber: 261,
-                                                        columnNumber: 21
-                                                    }, this))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 252,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 248,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "addressLine",
-                                            className: "block text-sm font-medium text-slate-800",
+                                            className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
                                             children: "Dirección exacta"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 269,
+                                            lineNumber: 272,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1667,41 +1701,49 @@ function CheckoutForm({ onClose, totalAmount }) {
                                             onChange: (e)=>setAddressLine(e.target.value),
                                             placeholder: "Ej: Carrera 12 # 34-56, Apt 201",
                                             required: shippingMethod === "shipping",
-                                            className: "mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
+                                            className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 272,
+                                            lineNumber: 275,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 268,
+                                    lineNumber: 271,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                            lineNumber: 228,
+                            lineNumber: 229,
                             columnNumber: 13
                         }, this),
-                        shippingMethod === "pickup" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm text-secondary-400/80 italic text-center",
-                            children: "Coordinaremos la entrega contigo vía WhatsApp."
+                        shippingMethod === "pickup" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "bg-secondary-50 border border-secondary-100 p-4 rounded-2xl",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-sm text-secondary-600 font-medium text-center italic",
+                                children: "Coordinaremos la entrega contigo vía WhatsApp para que retires en nuestra sede."
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                lineNumber: 291,
+                                columnNumber: 18
+                            }, this)
                         }, void 0, false, {
                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                            lineNumber: 287,
+                            lineNumber: 290,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "space-y-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "phoneNumber",
-                                    className: "block text-sm font-medium text-slate-800",
+                                    className: "text-xs font-bold text-slate-500 uppercase tracking-widest ml-1",
                                     children: "Teléfono móvil"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 293,
+                                    lineNumber: 298,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1711,74 +1753,91 @@ function CheckoutForm({ onClose, totalAmount }) {
                                     value: formData.phoneNumber,
                                     onChange: handleChange,
                                     required: true,
-                                    className: "mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-slate-900 focus:outline-none focus:ring-secondary-600 focus:border-secondary-600 sm:text-sm"
+                                    className: "w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 focus:border-secondary-500 focus:ring-4 focus:ring-secondary-500/10 transition-all outline-none font-medium"
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 296,
+                                    lineNumber: 301,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                            lineNumber: 292,
+                            lineNumber: 297,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex justify-between items-center pt-2",
+                            className: "flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-100 gap-6",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-xl font-bold",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-center md:text-left",
                                     children: [
-                                        "Total: $",
-                                        totalAmount.toLocaleString()
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-slate-400 text-xs font-bold uppercase tracking-widest block mb-1",
+                                            children: "Total a pagar"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                            lineNumber: 314,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-3xl font-gobold text-slate-900",
+                                            children: [
+                                                "$",
+                                                totalAmount.toLocaleString()
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
+                                            lineNumber: 315,
+                                            columnNumber: 17
+                                        }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 308,
+                                    lineNumber: 313,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex gap-3",
+                                    className: "flex gap-3 w-full md:w-auto",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "button",
                                             onClick: onClose,
-                                            className: "px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition",
+                                            className: "flex-1 px-8 py-4 bg-slate-50 text-slate-700 font-gobold rounded-2xl hover:bg-slate-100 transition-all uppercase tracking-widest text-[10px] shadow-sm border border-slate-100",
                                             children: "Cancelar"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 310,
+                                            lineNumber: 318,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "submit",
                                             disabled: isLoading,
-                                            className: "px-4 py-2 rounded-lg bg-gradient-to-br from-secondary-400 to-accent-400 text-black font-bold hover:opacity-90 transition",
-                                            children: isLoading ? "Procesando..." : "Pagar con Wompi"
+                                            className: "flex-[2] px-8 py-4 bg-slate-900 text-white font-gobold rounded-2xl hover:bg-secondary-600 hover:shadow-xl transition-all uppercase tracking-widest text-[10px] shadow-lg",
+                                            children: isLoading ? "Procesando..." : "Finalizar Compra"
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                            lineNumber: 317,
+                                            lineNumber: 325,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                                    lineNumber: 309,
+                                    lineNumber: 317,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                            lineNumber: 307,
+                            lineNumber: 312,
                             columnNumber: 11
                         }, this),
-                        error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-red-500 mt-2 text-center",
+                        error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "p-4 bg-red-50 text-red-600 rounded-2xl text-center text-sm font-medium border border-red-100 animate-pulse",
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/Software/construvidas/src/components/store/CheckoutForm.tsx",
-                            lineNumber: 327,
-                            columnNumber: 21
+                            lineNumber: 336,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
@@ -1834,32 +1893,49 @@ function CartSidebar() {
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `fixed top-0 right-0 h-full w-80 bg-[#111] border-l border-white/10 p-5 transition-transform duration-300 z-50 ${isOpen ? "translate-x-0" : "translate-x-full"}`,
+        className: `fixed top-0 right-0 h-full w-[24rem] bg-white border-l border-slate-100 p-8 shadow-2xl transition-transform duration-500 z-50 overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"}`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between items-center mb-4",
+                className: "flex justify-between items-center mb-8",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                        className: "text-lg font-bold",
-                        children: "Tu carrito"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-secondary-600 text-[10px] font-gobold uppercase tracking-[0.4em]",
+                                children: "Mi Pedido"
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                                lineNumber: 28,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-2xl font-gobold text-slate-900 uppercase tracking-tight",
+                                children: "Tu Carrito"
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                                lineNumber: 29,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
                         lineNumber: 27,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: toggleCart,
+                        className: "p-2 hover:bg-slate-50 rounded-full transition-colors",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                            size: 22,
-                            className: "text-slate-800"
+                            size: 24,
+                            className: "text-slate-400"
                         }, void 0, false, {
                             fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                            lineNumber: 29,
+                            lineNumber: 32,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                        lineNumber: 28,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1869,48 +1945,73 @@ function CartSidebar() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-4 overflow-y-auto max-h-[70vh] pr-2",
+                className: "space-y-6 pb-40",
                 children: [
-                    items.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-slate-700",
-                        children: "Tu carrito está vacío."
-                    }, void 0, false, {
+                    items.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-center py-20 space-y-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                    size: 32,
+                                    className: "text-slate-200"
+                                }, void 0, false, {
+                                    fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                                    lineNumber: 41,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                                lineNumber: 40,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-slate-400 font-medium italic",
+                                children: "Tu carrito está vacío."
+                            }, void 0, false, {
+                                fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                                lineNumber: 43,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                        lineNumber: 36,
+                        lineNumber: 39,
                         columnNumber: 11
                     }, this),
                     items.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-3 bg-white/20 p-3 rounded-xl",
+                            className: "flex items-center gap-4 bg-slate-50 border border-slate-100 p-4 rounded-2xl group transition-all",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative h-16 w-16 rounded-lg overflow-hidden",
+                                    className: "relative h-20 w-20 rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         src: item.image || "/placeholder-image.jpg",
                                         alt: item.name,
-                                        fill: true
+                                        fill: true,
+                                        className: "object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 53,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 52,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex-1",
+                                    className: "flex-1 min-w-0",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "font-semibold",
+                                            className: "font-gobold text-slate-900 uppercase tracking-wide text-sm truncate",
                                             children: item.name
                                         }, void 0, false, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                            lineNumber: 49,
+                                            lineNumber: 57,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-slate-700",
+                                            className: "text-xs font-bold text-secondary-600 mt-1",
                                             children: [
                                                 item.qty,
                                                 " × $",
@@ -1918,84 +2019,93 @@ function CartSidebar() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                            lineNumber: 50,
+                                            lineNumber: 58,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 56,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>removeItem(item.productId),
+                                    className: "p-2 opacity-0 group-hover:opacity-100 hover:bg-red-50 rounded-lg transition-all",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
                                         size: 18,
                                         className: "text-red-400"
                                     }, void 0, false, {
                                         fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 64,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, item.productId, true, {
                             fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                            lineNumber: 40,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                lineNumber: 34,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute bottom-5 left-0 w-full px-5",
+                className: "absolute bottom-0 left-0 w-full px-8 py-8 bg-white border-t border-slate-100 shadow-[0_-10px_40px_rgba(0,0,0,0.02)]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex justify-between font-semibold mb-3",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                children: "Total:"
-                            }, void 0, false, {
-                                fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                lineNumber: 65,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                children: [
-                                    "$",
-                                    total.toLocaleString()
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                                lineNumber: 66,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                        className: "flex justify-between items-end mb-6",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] block",
+                                    children: "Total"
+                                }, void 0, false, {
+                                    fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                                    lineNumber: 74,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-3xl font-gobold text-slate-900",
+                                    children: [
+                                        "$",
+                                        total.toLocaleString()
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                                    lineNumber: 75,
+                                    columnNumber: 17
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
+                            lineNumber: 73,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
                         fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                        lineNumber: 64,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Software$2f$construvidas$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setShowCheckoutForm(true),
-                        className: "w-full bg-gradient-to-br from-secondary-400 to-accent-400 text-black font-bold py-2 rounded-xl",
-                        children: "Procesar pago"
+                        className: "w-full bg-slate-900 text-white font-gobold py-5 rounded-2xl hover:bg-secondary-600 hover:shadow-xl transition-all uppercase tracking-widest text-xs",
+                        children: "Finalizar Pedido"
                     }, void 0, false, {
                         fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                        lineNumber: 69,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Software/construvidas/src/components/store/CartSidebar.tsx",
-                lineNumber: 63,
+                lineNumber: 71,
                 columnNumber: 7
             }, this)
         ]

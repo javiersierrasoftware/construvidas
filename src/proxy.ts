@@ -16,7 +16,7 @@ const adminRoutes = [
 // Rutas de USUARIO (cualquier rol)
 const protectedRoutes = ["/dashboard", "/perfil", "/cursos/mis-cursos"];
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   const isAdminRoute = adminRoutes.some((route) => pathname.startsWith(route));

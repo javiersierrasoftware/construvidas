@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://construvidasweb.vercel.app"),
+  metadataBase: new URL("https://construvidas.org"),
   title: "CONSTRUVIDAS | Iglesia Cristiana",
   description: "Plataforma oficial del Iglesia Cristiana CONSTRUVIDAS. Portal oficial de la Iglesia Cristiana ConstruVidas.",
   keywords: ["CONSTRUVIDAS", "Iglesia Cristiana", "Comunidad", "Entrenamiento", "Crecimiento Espiritual", "Ministerio", "ConstruVidas Web", "Eventos y Comunidad", "Iglesia Cristiana"],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CONSTRUVIDAS | Iglesia Cristiana",
     description: "Únete al Iglesia Cristiana CONSTRUVIDAS. Excelencia en comunidad y entrenamiento deportivo.",
-    url: "https://construvidasweb.vercel.app",
+    url: "https://construvidas.org",
     siteName: "CONSTRUVIDAS Club",
     locale: "es_ES",
     type: "website",

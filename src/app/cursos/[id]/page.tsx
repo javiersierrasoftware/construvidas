@@ -21,7 +21,9 @@ import {
   Menu,
   X,
   Lock,
+  Target,
 } from "lucide-react";
+import RichLessonContent from "@/components/RichLessonEditor/../RichLessonContent";
 
 export default function CourseViewerPage({
   params,
@@ -43,6 +45,7 @@ export default function CourseViewerPage({
 
   // Quiz state for current active lesson
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
+  const [openAnswers, setOpenAnswers] = useState<Record<number, string>>({});
   const [quizSubmitted, setQuizSubmitted] = useState(false);
   const [quizScore, setQuizScore] = useState<{ score: number; total: number } | null>(null);
 
@@ -70,6 +73,7 @@ export default function CourseViewerPage({
   // Reset quiz answers when active lesson changes
   useEffect(() => {
     setSelectedAnswers({});
+    setOpenAnswers({});
     setQuizSubmitted(false);
     setQuizScore(null);
   }, [activeModuleIndex, activeLessonIndex]);
@@ -145,8 +149,15 @@ export default function CourseViewerPage({
 
     let score = 0;
     currentLesson.quizzes.forEach((q: any, idx: number) => {
-      if (selectedAnswers[idx] === q.correctOptionIndex) {
-        score += 1;
+      const qType = q.type || "MULTIPLE_CHOICE";
+      if (qType === "OPEN") {
+        if (openAnswers[idx]?.trim()) {
+          score += 1;
+        }
+      } else {
+        if (selectedAnswers[idx] === q.correctOptionIndex) {
+          score += 1;
+        }
       }
     });
 
@@ -284,6 +295,35 @@ export default function CourseViewerPage({
               </span>
             </div>
 
+            {course.rewardFruits > 0 && (
+              <div className="bg-amber-400/10 border border-amber-400/20 rounded-xl p-2.5 flex items-center justify-between text-xs">
+                <span className="text-amber-300 font-medium flex items-center gap-1.5">
+                  <Award size={14} className="text-amber-400" />
+                  Recompensa al completar:
+                </span>
+                <span className="font-gobold text-amber-400">+{course.rewardFruits} Frutos</span>
+              </div>
+            )}
+
+            {course.goal && (
+              <div className="bg-secondary-950/40 border border-secondary-800/40 rounded-xl p-2.5 text-[11px] text-secondary-200">
+                <div className="font-gobold uppercase text-[10px] text-secondary-300 tracking-wider mb-0.5 flex items-center gap-1">
+                  <Target size={11} className="text-secondary-400" />
+                  Meta del Curso
+                </div>
+                {course.goal}
+              </div>
+            )}
+
+            {course.enablesDescription && (
+              <div className="bg-purple-900/20 border border-purple-800/40 rounded-xl p-2.5 text-[11px] text-purple-200">
+                <div className="font-gobold uppercase text-[10px] text-purple-300 tracking-wider mb-0.5">
+                  Habilitación Ministerial
+                </div>
+                {course.enablesDescription}
+              </div>
+            )}
+
             <div className="md:hidden space-y-1">
               <div className="flex justify-between text-xs font-bold text-slate-400">
                 <span>Progreso</span>
@@ -400,11 +440,7 @@ export default function CourseViewerPage({
                 </h1>
 
                 {currentLesson.content && (
-                  <div className="text-slate-300 text-base leading-relaxed space-y-4 font-medium pt-2">
-                    {currentLesson.content.split("\n").map((para: string, idx: number) => (
-                      <p key={idx}>{para}</p>
-                    ))}
-                  </div>
+                  <RichLessonContent content={currentLesson.content} className="pt-2" />
                 )}
               </div>
 
@@ -494,57 +530,134 @@ export default function CourseViewerPage({
                   </div>
 
                   <div className="space-y-8">
-                    {currentLesson.quizzes.map((quiz: any, qIdx: number) => (
-                      <div key={qIdx} className="space-y-4">
-                        <p className="text-sm md:text-base font-gobold text-slate-200">
-                          {qIdx + 1}. {quiz.question}
-                        </p>
+                    {currentLesson.quizzes.map((quiz: any, qIdx: number) => {
+                      const qType = quiz.type || "MULTIPLE_CHOICE";
 
-                        <div className="space-y-2.5">
-                          {quiz.options.map((opt: string, oIdx: number) => {
-                            const isSelected = selectedAnswers[qIdx] === oIdx;
-                            const isCorrect = quiz.correctOptionIndex === oIdx;
+                      return (
+                        <div key={qIdx} className="space-y-4">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-gobold text-secondary-400 bg-secondary-950/60 px-2 py-0.5 rounded-md border border-secondary-800">
+                              {qType === "OPEN" ? "Reflexión Abierta" : qType === "TRUE_FALSE" ? "Falso / Verdadero" : "Opción Múltiple"}
+                            </span>
+                          </div>
+                          <p className="text-sm md:text-base font-gobold text-slate-200">
+                            {qIdx + 1}. {quiz.question}
+                          </p>
 
-                            let optionStyle = "bg-slate-900 border-slate-800 text-slate-300";
-                            if (quizSubmitted) {
-                              if (isCorrect) {
-                                optionStyle = "bg-emerald-950/80 border-emerald-500/80 text-emerald-200 font-semibold";
-                              } else if (isSelected && !isCorrect) {
-                                optionStyle = "bg-red-950/80 border-red-500/80 text-red-200 font-semibold";
-                              }
-                            } else if (isSelected) {
-                              optionStyle = "bg-secondary-500/20 border-secondary-500 text-white font-semibold";
-                            }
-
-                            return (
-                              <button
-                                key={oIdx}
+                          {/* TIPO: PREGUNTA ABIERTA */}
+                          {qType === "OPEN" && (
+                            <div className="space-y-2">
+                              <textarea
+                                rows={3}
                                 disabled={quizSubmitted}
-                                onClick={() =>
-                                  setSelectedAnswers((prev) => ({
+                                value={openAnswers[qIdx] || ""}
+                                onChange={(e) =>
+                                  setOpenAnswers((prev) => ({
                                     ...prev,
-                                    [qIdx]: oIdx,
+                                    [qIdx]: e.target.value,
                                   }))
                                 }
-                                className={`w-full text-left p-4 rounded-2xl border text-xs md:text-sm transition-all flex items-center justify-between ${optionStyle}`}
-                              >
-                                <span>{opt}</span>
-                                {quizSubmitted && isCorrect && (
-                                  <CheckCircle2 size={18} className="text-emerald-400" />
-                                )}
-                              </button>
-                            );
-                          })}
-                        </div>
+                                placeholder="Escribe aquí tu respuesta y reflexión personal..."
+                                className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 text-xs md:text-sm text-slate-100 outline-none focus:border-secondary-500 transition resize-y"
+                              />
+                              {quizSubmitted && (
+                                <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold bg-emerald-950/40 border border-emerald-800/40 p-3 rounded-xl">
+                                  <CheckCircle2 size={16} />
+                                  Tu reflexión ha sido registrada con éxito para tu crecimiento espiritual.
+                                </div>
+                              )}
+                            </div>
+                          )}
 
-                        {quizSubmitted && quiz.explanation && (
-                          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-xs text-slate-300 italic">
-                            <span className="font-bold text-secondary-400 not-italic mr-1">Explicación:</span>
-                            {quiz.explanation}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                          {/* TIPO: FALSO / VERDADERO */}
+                          {qType === "TRUE_FALSE" && (
+                            <div className="grid grid-cols-2 gap-3">
+                              {["Verdadero", "Falso"].map((label, optIdx) => {
+                                const isSelected = selectedAnswers[qIdx] === optIdx;
+                                const isCorrect = quiz.correctOptionIndex === optIdx;
+
+                                let btnStyle = "bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700";
+                                if (quizSubmitted) {
+                                  if (isCorrect) {
+                                    btnStyle = "bg-emerald-950/80 border-emerald-500/80 text-emerald-200 font-bold";
+                                  } else if (isSelected && !isCorrect) {
+                                    btnStyle = "bg-red-950/80 border-red-500/80 text-red-200 font-bold";
+                                  }
+                                } else if (isSelected) {
+                                  btnStyle = "bg-secondary-500/20 border-secondary-500 text-white font-bold";
+                                }
+
+                                return (
+                                  <button
+                                    key={optIdx}
+                                    disabled={quizSubmitted}
+                                    onClick={() =>
+                                      setSelectedAnswers((prev) => ({
+                                        ...prev,
+                                        [qIdx]: optIdx,
+                                      }))
+                                    }
+                                    className={`p-4 rounded-2xl border text-sm font-gobold uppercase tracking-wide transition-all flex items-center justify-center gap-2 ${btnStyle}`}
+                                  >
+                                    <span>{label}</span>
+                                    {quizSubmitted && isCorrect && (
+                                      <CheckCircle2 size={16} className="text-emerald-400" />
+                                    )}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          )}
+
+                          {/* TIPO: OPCIÓN MÚLTIPLE */}
+                          {qType === "MULTIPLE_CHOICE" && quiz.options && (
+                            <div className="space-y-2.5">
+                              {quiz.options.map((opt: string, oIdx: number) => {
+                                const isSelected = selectedAnswers[qIdx] === oIdx;
+                                const isCorrect = quiz.correctOptionIndex === oIdx;
+
+                                let optionStyle = "bg-slate-900 border-slate-800 text-slate-300";
+                                if (quizSubmitted) {
+                                  if (isCorrect) {
+                                    optionStyle = "bg-emerald-950/80 border-emerald-500/80 text-emerald-200 font-semibold";
+                                  } else if (isSelected && !isCorrect) {
+                                    optionStyle = "bg-red-950/80 border-red-500/80 text-red-200 font-semibold";
+                                  }
+                                } else if (isSelected) {
+                                  optionStyle = "bg-secondary-500/20 border-secondary-500 text-white font-semibold";
+                                }
+
+                                return (
+                                  <button
+                                    key={oIdx}
+                                    disabled={quizSubmitted}
+                                    onClick={() =>
+                                      setSelectedAnswers((prev) => ({
+                                        ...prev,
+                                        [qIdx]: oIdx,
+                                      }))
+                                    }
+                                    className={`w-full text-left p-4 rounded-2xl border text-xs md:text-sm transition-all flex items-center justify-between ${optionStyle}`}
+                                  >
+                                    <span>{opt}</span>
+                                    {quizSubmitted && isCorrect && (
+                                      <CheckCircle2 size={18} className="text-emerald-400" />
+                                    )}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          )}
+
+                          {quizSubmitted && quiz.explanation && (
+                            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-xs text-slate-300 italic">
+                              <span className="font-bold text-secondary-400 not-italic mr-1">Explicación:</span>
+                              {quiz.explanation}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
 
                   {/* RESULTADO Y ENVIAR */}

@@ -1,9 +1,14 @@
 import { Schema, model, models } from "mongoose";
 
 const QuizQuestionSchema = new Schema({
+  type: {
+    type: String,
+    enum: ["MULTIPLE_CHOICE", "TRUE_FALSE", "OPEN"],
+    default: "MULTIPLE_CHOICE",
+  },
   question: { type: String, required: true },
-  options: [{ type: String, required: true }],
-  correctOptionIndex: { type: Number, required: true, default: 0 },
+  options: [{ type: String }],
+  correctOptionIndex: { type: Number, default: 0 },
   explanation: { type: String, default: "" },
 });
 
@@ -53,6 +58,10 @@ const CourseSchema = new Schema(
       type: String,
       required: [true, "La descripción es obligatoria."],
     },
+    goal: {
+      type: String,
+      default: "",
+    },
     coverImage: {
       type: String,
       default: "https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?q=80&w=1200&auto=format&fit=crop",
@@ -68,6 +77,26 @@ const CourseSchema = new Schema(
     isPublished: {
       type: Boolean,
       default: true,
+    },
+    durationHours: {
+      type: String,
+      default: "",
+    },
+    instructor: {
+      type: String,
+      default: "",
+    },
+    rewardFruits: {
+      type: Number,
+      default: 0,
+    },
+    enablesRoles: {
+      type: [String],
+      default: [],
+    },
+    enablesDescription: {
+      type: String,
+      default: "",
     },
     modules: [ModuleSchema],
   },

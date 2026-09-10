@@ -86,7 +86,21 @@ export async function POST(req: Request) {
     await connectDB();
     const body = await req.json();
 
-    const { title, description, coverImage, category, level, isPublished, modules } = body;
+    const {
+      title,
+      description,
+      goal,
+      coverImage,
+      category,
+      level,
+      isPublished,
+      durationHours,
+      instructor,
+      rewardFruits,
+      enablesRoles,
+      enablesDescription,
+      modules,
+    } = body;
 
     if (!title || !description) {
       return NextResponse.json(
@@ -106,10 +120,16 @@ export async function POST(req: Request) {
       title,
       slug,
       description,
+      goal: goal || "",
       coverImage: coverImage || undefined,
       category: category || "Fundamentos",
       level: level || "Principiante",
       isPublished: isPublished ?? true,
+      durationHours: durationHours || "",
+      instructor: instructor || "",
+      rewardFruits: typeof rewardFruits === "number" ? rewardFruits : Number(rewardFruits) || 0,
+      enablesRoles: Array.isArray(enablesRoles) ? enablesRoles : [],
+      enablesDescription: enablesDescription || "",
       modules: modules || [],
     });
 

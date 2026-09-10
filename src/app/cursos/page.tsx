@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, Layers, CheckCircle2, PlayCircle, Sparkles, UserCheck, ArrowRight } from "lucide-react";
+import { BookOpen, Layers, CheckCircle2, PlayCircle, Sparkles, UserCheck, ArrowRight, Award, Clock, ShieldCheck } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -155,13 +155,19 @@ export default function CursosPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
                     
-                    <div className="absolute top-4 left-4 flex gap-2">
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                       <span className="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-gobold uppercase tracking-widest px-3 py-1 rounded-full border border-white/10">
                         {course.category}
                       </span>
                       <span className="bg-secondary-500/90 text-slate-950 text-[10px] font-gobold uppercase tracking-widest px-3 py-1 rounded-full">
                         {course.level}
                       </span>
+                      {course.rewardFruits > 0 && (
+                        <span className="bg-amber-400 text-slate-950 text-[10px] font-gobold uppercase tracking-wider px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                          <Award size={12} className="text-slate-900" />
+                          +{course.rewardFruits} Frutos
+                        </span>
+                      )}
                     </div>
 
                     {enrolled && (
@@ -178,13 +184,36 @@ export default function CursosPage() {
                       <h3 className="text-xl font-gobold uppercase text-slate-900 group-hover:text-secondary-600 transition-colors leading-snug">
                         {course.title}
                       </h3>
+                      {course.instructor && (
+                        <p className="text-xs font-semibold text-secondary-700">
+                          Instructor: {course.instructor}
+                        </p>
+                      )}
                       <p className="text-slate-600 text-sm font-medium leading-relaxed line-clamp-3">
                         {course.description}
                       </p>
+
+                      {course.goal && (
+                        <div className="bg-secondary-50/70 border border-secondary-100 rounded-xl p-2.5 flex items-start gap-2 text-secondary-900 text-xs">
+                          <span className="text-secondary-600 font-bold flex-shrink-0">🎯 Meta:</span>
+                          <span className="font-medium text-[11px] leading-tight line-clamp-2">
+                            {course.goal}
+                          </span>
+                        </div>
+                      )}
+
+                      {course.enablesDescription && (
+                        <div className="bg-purple-50/70 border border-purple-100 rounded-xl p-2.5 flex items-start gap-2 text-purple-900 text-xs">
+                          <ShieldCheck size={14} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                          <span className="font-medium text-[11px] leading-tight line-clamp-2">
+                            {course.enablesDescription}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     {/* ESTADÍSTICAS */}
-                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-semibold">
+                    <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 font-semibold">
                       <div className="flex items-center gap-1.5">
                         <Layers size={16} className="text-secondary-600" />
                         <span>{moduleCount} Módulos</span>
@@ -193,6 +222,12 @@ export default function CursosPage() {
                         <BookOpen size={16} className="text-secondary-600" />
                         <span>{course.totalLessons} Temas</span>
                       </div>
+                      {course.durationHours && (
+                        <div className="flex items-center gap-1.5">
+                          <Clock size={15} className="text-secondary-600" />
+                          <span>{course.durationHours}</span>
+                        </div>
+                      )}
                     </div>
 
                     {/* BARRA DE PROGRESO SI ESTÁ INSCRITO */}

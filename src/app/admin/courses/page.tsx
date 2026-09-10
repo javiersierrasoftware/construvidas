@@ -14,6 +14,9 @@ import {
   CheckCircle,
   XCircle,
   Sparkles,
+  Award,
+  Clock,
+  ShieldCheck,
 } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -134,8 +137,8 @@ export default function AdminCoursesPage() {
                         className="object-cover"
                       />
                     </div>
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2">
+                    <div className="space-y-1.5">
+                      <div className="flex flex-wrap items-center gap-2">
                         <span className="text-[10px] font-gobold text-secondary-600 bg-secondary-50 px-2 py-0.5 rounded-full uppercase tracking-widest">
                           {course.category}
                         </span>
@@ -148,16 +151,50 @@ export default function AdminCoursesPage() {
                         >
                           {course.isPublished ? "Publicado" : "Borrador"}
                         </span>
+                        {course.rewardFruits > 0 && (
+                          <span className="text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                            <Award size={11} className="text-amber-600" />
+                            {course.rewardFruits} Frutos
+                          </span>
+                        )}
+                        {course.enablesRoles && course.enablesRoles.length > 0 && (
+                          <span className="text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                            <ShieldCheck size={11} className="text-purple-600" />
+                            {course.enablesRoles.length} {course.enablesRoles.length === 1 ? "Rol" : "Roles"}
+                          </span>
+                        )}
                       </div>
                       <h3 className="text-lg font-gobold text-slate-900 uppercase">
                         {course.title}
                       </h3>
-                      <div className="flex items-center gap-4 text-xs text-slate-500 font-semibold">
+                      {course.goal && (
+                        <p className="text-xs text-slate-500 line-clamp-1 italic">
+                          🎯 Meta: {course.goal}
+                        </p>
+                      )}
+                      <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 font-semibold">
                         <span>{moduleCount} Módulos</span>
                         <span>•</span>
                         <span>{course.totalLessons || 0} Temas</span>
                         <span>•</span>
                         <span>Nivel {course.level}</span>
+                        {course.durationHours && (
+                          <>
+                            <span>•</span>
+                            <span className="flex items-center gap-1">
+                              <Clock size={12} className="text-slate-400" />
+                              {course.durationHours}
+                            </span>
+                          </>
+                        )}
+                        {course.instructor && (
+                          <>
+                            <span>•</span>
+                            <span className="text-slate-600 italic">
+                              {course.instructor}
+                            </span>
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>

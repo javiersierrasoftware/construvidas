@@ -8,7 +8,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const SITE_URL = process.env.NEXTAUTH_URL || "https://construvidas.org";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_APP_URL ||
+  (process.env.NEXTAUTH_URL && !process.env.NEXTAUTH_URL.includes("localhost")
+    ? process.env.NEXTAUTH_URL
+    : "https://construvidas.org");
 
 export async function sendEmail({
   to,

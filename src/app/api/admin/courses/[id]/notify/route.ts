@@ -4,7 +4,7 @@ import Course from "@/models/Course";
 import CourseEnrollment from "@/models/CourseEnrollment";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { sendCourseReminderEmail } from "@/lib/mail";
+import { sendCourseReminderEmail, SITE_URL } from "@/lib/mail";
 
 // POST /api/admin/courses/[id]/notify
 export async function POST(
@@ -44,8 +44,7 @@ export async function POST(
       .populate("userId", "name email")
       .lean();
 
-    const siteUrl = process.env.NEXTAUTH_URL || "https://construvidas.org";
-    const courseUrl = `${siteUrl}/cursos/${course._id}`;
+    const courseUrl = `${SITE_URL}/cursos/${course._id}`;
 
     let sentCount = 0;
     enrollments.forEach((e: any) => {

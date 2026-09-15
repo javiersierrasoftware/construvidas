@@ -5,7 +5,7 @@ import User from "@/models/User";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { generateSlug } from "@/lib/slugs";
-import { sendNewDevotionalEmail } from "@/lib/mail";
+import { sendNewDevotionalEmail, SITE_URL } from "@/lib/mail";
 
 // GET /api/devotionals
 export async function GET(req: Request) {
@@ -89,8 +89,7 @@ export async function POST(req: Request) {
 
     // Send email notification to all registered users if published (non-blocking)
     if (newDevotional.isPublished) {
-      const siteUrl = process.env.NEXTAUTH_URL || "https://construvidas.org";
-      const devotionalUrl = `${siteUrl}/devocionales/${newDevotional._id}`;
+      const devotionalUrl = `${SITE_URL}/devocionales/${newDevotional._id}`;
       const reflectionSnippet = reflection.length > 250 ? reflection.slice(0, 250) + "..." : reflection;
 
       User.find({ email: { $exists: true, $ne: "" } })

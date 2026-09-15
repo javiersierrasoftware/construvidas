@@ -4,7 +4,7 @@ import Course from "@/models/Course";
 import CourseEnrollment from "@/models/CourseEnrollment";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { sendCourseEnrollmentEmail } from "@/lib/mail";
+import { sendCourseEnrollmentEmail, SITE_URL } from "@/lib/mail";
 
 export async function POST(
   req: Request,
@@ -50,8 +50,7 @@ export async function POST(
 
     // Send course enrollment email notification (non-blocking)
     if (isNewEnrollment && session.user.email) {
-      const siteUrl = process.env.NEXTAUTH_URL || "https://construvidas.org";
-      const courseUrl = `${siteUrl}/cursos/${course._id}`;
+      const courseUrl = `${SITE_URL}/cursos/${course._id}`;
 
       sendCourseEnrollmentEmail({
         to: session.user.email,
